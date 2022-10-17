@@ -17,6 +17,7 @@ struct PixelGameLiteApp: App {
             VStack(spacing: 0) {
                 AdBanner()
                 ContentView()
+                    .frame(maxHeight: .infinity)
             }
         }
         .onChange(of: scenePhase) { newValue in
