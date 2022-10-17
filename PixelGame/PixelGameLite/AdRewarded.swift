@@ -21,7 +21,9 @@ struct AdRewarded {
             if let ad = ad, let rootViewController = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController {
                 ad.present(fromRootViewController: rootViewController) {
                     debugPrint("观看成功")
-                    handler()
+                    DispatchQueue.main.async {
+                        handler()
+                    }
                 }
             }
         }

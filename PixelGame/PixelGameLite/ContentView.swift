@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var color: Color = .accentColor
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
-                .foregroundColor(.accentColor)
+                .foregroundColor(color)
             Text("Hello, world!")
         }
         .padding()
+        .onTapGesture {
+            AdRewarded.load {
+                color = .red
+            }
+        }
     }
 }
 
