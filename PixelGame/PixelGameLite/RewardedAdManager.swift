@@ -79,7 +79,9 @@ class RewardedAdManager: NSObject {
             debugPrint("App open ad will be displayed.")
             isShowingAd = true
             ad.present(fromRootViewController: rootViewController) {
-                handler()
+                DispatchQueue.main.async {
+                    handler()
+                }
             }
         }
     }

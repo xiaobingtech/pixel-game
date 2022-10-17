@@ -19,7 +19,6 @@
 		AE6E1FC128FCF4D100F15F00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FC028FCF4D100F15F00 /* AppDelegate.swift */; };
 		AE6E1FC328FCF79B00F15F00 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FC228FCF79B00F15F00 /* AppOpenAdManager.swift */; };
 		AE6E1FC528FD0A0700F15F00 /* AdBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FC428FD0A0700F15F00 /* AdBanner.swift */; };
-		AE6E1FC928FD363200F15F00 /* AdRewarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FC828FD363200F15F00 /* AdRewarded.swift */; };
 		AE6E1FCB28FD39C400F15F00 /* RewardedAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FCA28FD39C400F15F00 /* RewardedAdManager.swift */; };
 		C4B5702BAA515C7392DBBF68 /* Pods_PixelGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9531B8DEAA4FADC6EAF807D0 /* Pods_PixelGame.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		AE6E1FC028FCF4D100F15F00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE6E1FC228FCF79B00F15F00 /* AppOpenAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdManager.swift; sourceTree = "<group>"; };
 		AE6E1FC428FD0A0700F15F00 /* AdBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBanner.swift; sourceTree = "<group>"; };
-		AE6E1FC828FD363200F15F00 /* AdRewarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdRewarded.swift; sourceTree = "<group>"; };
 		AE6E1FCA28FD39C400F15F00 /* RewardedAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedAdManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,7 +135,6 @@
 				AE6E1FC228FCF79B00F15F00 /* AppOpenAdManager.swift */,
 				AE6E1FCA28FD39C400F15F00 /* RewardedAdManager.swift */,
 				AE6E1FC428FD0A0700F15F00 /* AdBanner.swift */,
-				AE6E1FC828FD363200F15F00 /* AdRewarded.swift */,
 				AE6E1FB528FCF05B00F15F00 /* ContentView.swift */,
 				AE6E1FB728FCF05D00F15F00 /* Assets.xcassets */,
 				AE6E1FB928FCF05D00F15F00 /* Preview Content */,
@@ -370,7 +367,6 @@
 				AE6E1FC128FCF4D100F15F00 /* AppDelegate.swift in Sources */,
 				AE6E1FC528FD0A0700F15F00 /* AdBanner.swift in Sources */,
 				AE6E1FB628FCF05B00F15F00 /* ContentView.swift in Sources */,
-				AE6E1FC928FD363200F15F00 /* AdRewarded.swift in Sources */,
 				AE6E1FB428FCF05B00F15F00 /* PixelGameLiteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
