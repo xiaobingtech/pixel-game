@@ -16,7 +16,7 @@ struct AdBanner: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> some UIViewController {
         let uiViewController = UIViewController()
         let bannerView = context.coordinator.bannerView
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
+//        bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = uiViewController
         uiViewController.view = bannerView
@@ -33,7 +33,7 @@ struct AdBanner: UIViewControllerRepresentable {
     class Coordinator: NSObject {
         private let parent: AdBanner
         
-        lazy var bannerView = GADBannerView()
+        lazy var bannerView = GADBannerView(adSize: GADAdSizeBanner)
         
         init(_ parent: AdBanner) {
             self.parent = parent
