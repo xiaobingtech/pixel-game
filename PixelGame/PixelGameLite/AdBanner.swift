@@ -24,7 +24,7 @@ struct AdBanner: UIViewControllerRepresentable {
         return uiViewController
     }
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        context.coordinator.bannerView.adSize = GADAdSizeFromCGSize(uiViewController.view.bounds.size)
+        context.coordinator.bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
         context.coordinator.bannerView.load(GADRequest())
     }
     
