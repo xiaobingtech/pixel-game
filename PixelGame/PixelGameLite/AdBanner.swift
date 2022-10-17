@@ -15,7 +15,7 @@ struct AdBanner: UIViewControllerRepresentable {
         let bannerView = context.coordinator.bannerView
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-//        bannerView.rootViewController = uiViewController
+        bannerView.rootViewController = uiViewController
         view.addSubview(bannerView)
         let adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
         uiViewController.view.frame = CGRect(origin: .zero, size: adSize.size)
