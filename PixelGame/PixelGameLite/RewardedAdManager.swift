@@ -75,7 +75,7 @@ class RewardedAdManager: NSObject {
             loadAd()
             return
         }
-        if let ad = rewardedAd, let rootViewController = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController {
+        if let ad = rewardedAd, let rootViewController = UIApplication.keyWindow?.rootViewController {
             debugPrint("App open ad will be displayed.")
             isShowingAd = true
             ad.present(fromRootViewController: rootViewController) {
