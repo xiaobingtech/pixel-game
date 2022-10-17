@@ -27,8 +27,8 @@ struct PixelGameLiteApp: App {
                 ContentView()
                     .frame(maxHeight: .infinity)
                 let size = AdBanner.size
-                AdBanner()
-                    .frame(width: size.width, height: size.height)
+//                AdBanner()
+//                    .frame(width: size.width, height: size.height)
             }
         }
         .onChange(of: scenePhase) { newValue in
