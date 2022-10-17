@@ -18,7 +18,7 @@ struct AdBanner: UIViewControllerRepresentable {
         let bannerView = context.coordinator.bannerView
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.adUnitID = adBannerKey
-        bannerView.rootViewController = UIApplication.keyWindow?.rootViewController
+        bannerView.rootViewController = uiViewController
         uiViewController.view = bannerView
         return uiViewController
     }
