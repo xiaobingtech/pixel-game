@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+var rootVC: UIViewController?
+
 @main
 struct PixelGameLiteApp: App {
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
@@ -21,6 +23,7 @@ struct PixelGameLiteApp: App {
                 AdBanner()
                     .frame(width: size.width, height: size.height)
             }
+            .background(MyView())
         }
         .onChange(of: scenePhase) { newValue in
             switch newValue {
@@ -31,6 +34,24 @@ struct PixelGameLiteApp: App {
                 }
             default:
                 break
+            }
+        }
+    }
+}
+
+struct MyView: UIViewRepresentable {
+    func makeUIView(context: Context) -> some UIView {
+        UIView()
+    }
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        if uiView.superview != nil {
+            var n = uiView.next
+            while n != nil {
+                if n is UIViewController {
+                    rootVC = n as? UIViewController
+                    return
+                }
+                n = n?.next
             }
         }
     }
