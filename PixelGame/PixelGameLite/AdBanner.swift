@@ -16,49 +16,13 @@ struct AdBanner: UIViewControllerRepresentable {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = uiViewController
-        bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
         view.addSubview(bannerView)
-//        view.addConstraints([
-//            NSLayoutConstraint(
-//                item: bannerView,
-//                attribute: .top,
-//                relatedBy: .equal,
-//                toItem: view,
-//                attribute: .top,
-//                multiplier: 1,
-//                constant: 0
-//            ),
-//            NSLayoutConstraint(
-//                item: bannerView,
-//                attribute: .bottom,
-//                relatedBy: .equal,
-//                toItem: view,
-//                attribute: .bottom,
-//                multiplier: 1,
-//                constant: 0
-//            ),
-//            NSLayoutConstraint(
-//                item: bannerView,
-//                attribute: .leading,
-//                relatedBy: .equal,
-//                toItem: view,
-//                attribute: .leading,
-//                multiplier: 1,
-//                constant: 0
-//            ),
-//            NSLayoutConstraint(
-//                item: bannerView,
-//                attribute: .trailing,
-//                relatedBy: .equal,
-//                toItem: view,
-//                attribute: .trailing,
-//                multiplier: 1,
-//                constant: 0
-//            )
-//        ])
         return uiViewController
     }
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        let adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
+        uiViewController.view.frame = CGRect(origin: .zero, size: adSize.size)
+        context.coordinator.bannerView.adSize = adSize
         context.coordinator.bannerView.load(GADRequest())
     }
     
