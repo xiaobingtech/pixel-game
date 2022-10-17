@@ -8,23 +8,30 @@
 import SwiftUI
 import GoogleMobileAds
 
-struct AdBanner: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let uiViewController = UIViewController()
-        let view = uiViewController.view!
-        let bannerView = context.coordinator.bannerView
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = uiViewController
-        view.addSubview(bannerView)
-        let adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
-        uiViewController.view.frame = CGRect(origin: .zero, size: adSize.size)
-        context.coordinator.bannerView.adSize = adSize
-        return uiViewController
+extension UIView {
+    func currentViewController() -> UIViewController? {
+        var n = next
+        while n != nil {
+            if n is UIViewController {
+                return n as? UIViewController
+            }
+            n = n?.next
+        }
+        return nil
     }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        
-        context.coordinator.bannerView.load(GADRequest())
+}
+
+struct AdBanner: UIViewRepresentable {
+    func makeUIView(context: Context) -> GADBannerView {
+        let uiView = GADBannerView()
+        uiView.translatesAutoresizingMaskIntoConstraints = false
+        uiView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        return uiView
+    }
+    func updateUIView(_ uiView: GADBannerView, context: Context) {
+        uiView.rootViewController = uiView.currentViewController()
+        uiView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
+        uiView.load(GADRequest())
     }
     
     func makeCoordinator() -> Coordinator {
@@ -32,8 +39,6 @@ struct AdBanner: UIViewControllerRepresentable {
     }
     class Coordinator: NSObject {
         private let parent: AdBanner
-        
-        lazy var bannerView = GADBannerView(adSize: GADAdSizeBanner)
         
         init(_ parent: AdBanner) {
             self.parent = parent
