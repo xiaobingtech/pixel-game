@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        DispatchQueue(label: "GAD").async {
+        DispatchQueue(label: "gad").async {
             GADMobileAds.sharedInstance().start(completionHandler: nil)
             AppOpenAdManager.shared.loadAd()
         }
