@@ -35,10 +35,9 @@ struct PixelGameLiteApp: App {
             switch newValue {
             case .active: // 进入前台
                 let rootViewController = UIApplication.keyWindow?.rootViewController
-                if let rootViewController = rootViewController {
-                    AppOpenAdManager.shared.showAdIfAvailable(viewController: rootViewController)
-                }
-                break
+//                if let rootViewController = rootViewController {
+//                    AppOpenAdManager.shared.showAdIfAvailable(viewController: rootViewController)
+//                }
             default:
                 break
             }
