@@ -23,7 +23,6 @@ struct PixelGameLiteApp: App {
                 AdBanner()
                     .frame(width: size.width, height: size.height)
             }
-            .background(MyView())
         }
         .onChange(of: scenePhase) { newValue in
             switch newValue {
@@ -36,23 +35,8 @@ struct PixelGameLiteApp: App {
                 break
             }
         }
-    }
-}
-
-struct MyView: UIViewRepresentable {
-    func makeUIView(context: Context) -> some UIView {
-        UIView()
-    }
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        if uiView.superview != nil {
-            var n = uiView.next
-            while n != nil {
-                if let n = n, n.isKind(of: UIViewController.self) {
-                    rootVC = n as? UIViewController
-                    return
-                }
-                n = n?.next
-            }
+        .onChange(of: appDelegate.window) { newValue in
+            
         }
     }
 }
