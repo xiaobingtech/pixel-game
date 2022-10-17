@@ -18,7 +18,9 @@ struct ContentView: View {
         }
         .padding()
         .onTapGesture {
-            color = .red
+            RewardedAdManager.shared.showAdIfAvailable {
+                color = .red
+            }
         }
     }
 }
