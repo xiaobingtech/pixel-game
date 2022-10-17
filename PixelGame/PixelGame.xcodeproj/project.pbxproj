@@ -129,12 +129,10 @@
 		AE6E1FB228FCF05B00F15F00 /* PixelGameLite */ = {
 			isa = PBXGroup;
 			children = (
+				AE6E1FCC28FD4E9D00F15F00 /* 广告 */,
 				AE6E1FBF28FCF29B00F15F00 /* Info.plist */,
 				AE6E1FB328FCF05B00F15F00 /* PixelGameLiteApp.swift */,
 				AE6E1FC028FCF4D100F15F00 /* AppDelegate.swift */,
-				AE6E1FC228FCF79B00F15F00 /* AppOpenAdManager.swift */,
-				AE6E1FCA28FD39C400F15F00 /* RewardedAdManager.swift */,
-				AE6E1FC428FD0A0700F15F00 /* AdBanner.swift */,
 				AE6E1FB528FCF05B00F15F00 /* ContentView.swift */,
 				AE6E1FB728FCF05D00F15F00 /* Assets.xcassets */,
 				AE6E1FB928FCF05D00F15F00 /* Preview Content */,
@@ -148,6 +146,16 @@
 				AE6E1FBA28FCF05D00F15F00 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AE6E1FCC28FD4E9D00F15F00 /* 广告 */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E1FC228FCF79B00F15F00 /* AppOpenAdManager.swift */,
+				AE6E1FCA28FD39C400F15F00 /* RewardedAdManager.swift */,
+				AE6E1FC428FD0A0700F15F00 /* AdBanner.swift */,
+			);
+			path = "广告";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
