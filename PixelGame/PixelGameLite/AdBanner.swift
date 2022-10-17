@@ -19,12 +19,13 @@ struct AdBanner: UIViewControllerRepresentable {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.adUnitID = adBannerKey
         bannerView.rootViewController = uiViewController
+        bannerView.isAutoloadEnabled = true
         uiViewController.view = bannerView
         return uiViewController
     }
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         context.coordinator.bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
-        context.coordinator.bannerView.load(GADRequest())
+//        context.coordinator.bannerView.load(GADRequest())
     }
     
     func makeCoordinator() -> Coordinator {
