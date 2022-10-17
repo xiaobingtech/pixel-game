@@ -17,12 +17,13 @@ struct AdBanner: UIViewControllerRepresentable {
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
 //        bannerView.rootViewController = uiViewController
         view.addSubview(bannerView)
-        return uiViewController
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         let adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
         uiViewController.view.frame = CGRect(origin: .zero, size: adSize.size)
         context.coordinator.bannerView.adSize = adSize
+        return uiViewController
+    }
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
         context.coordinator.bannerView.load(GADRequest())
     }
     
