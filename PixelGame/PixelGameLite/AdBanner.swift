@@ -15,12 +15,11 @@ struct AdBanner: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> some UIViewController {
         let uiViewController = UIViewController()
-        let view = uiViewController.view!
         let bannerView = context.coordinator.bannerView
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = uiViewController
-        view.addSubview(bannerView)
+        uiViewController.view = bannerView
         return uiViewController
     }
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {

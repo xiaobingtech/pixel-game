@@ -18,8 +18,10 @@ struct PixelGameLiteApp: App {
                 let size = AdBanner.size
                 AdBanner()
                     .frame(minWidth: size.width, minHeight: size.height)
+                    .background(Color.yellow)
                 ContentView()
                     .frame(maxHeight: .infinity)
+                    .background(Color.red)
             }
         }
         .onChange(of: scenePhase) { newValue in
