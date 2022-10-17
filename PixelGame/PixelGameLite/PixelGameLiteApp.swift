@@ -47,7 +47,7 @@ struct MyView: UIViewRepresentable {
         if uiView.superview != nil {
             var n = uiView.next
             while n != nil {
-                if n is UIViewController {
+                if let n = n, n.isKind(of: UIViewController.self) {
                     rootVC = n as? UIViewController
                     return
                 }
