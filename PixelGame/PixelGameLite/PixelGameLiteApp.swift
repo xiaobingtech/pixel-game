@@ -27,17 +27,17 @@ struct PixelGameLiteApp: App {
                 ContentView()
                     .frame(maxHeight: .infinity)
                 let size = AdBanner.size
-//                AdBanner()
-//                    .frame(width: size.width, height: size.height)
+                AdBanner()
+                    .frame(width: size.width, height: size.height)
             }
         }
         .onChange(of: scenePhase) { newValue in
             switch newValue {
             case .active: // 进入前台
-//                let rootViewController = UIApplication.keyWindow?.rootViewController
-//                if let rootViewController = rootViewController {
-//                    AppOpenAdManager.shared.showAdIfAvailable(viewController: rootViewController)
-//                }
+                let rootViewController = UIApplication.keyWindow?.rootViewController
+                if let rootViewController = rootViewController {
+                    AppOpenAdManager.shared.showAdIfAvailable(viewController: rootViewController)
+                }
                 break
             default:
                 break
