@@ -57,7 +57,7 @@ class AppOpenAdManager: NSObject {
         isLoadingAd = true
         debugPrint("Start loading app open ad.")
         GADAppOpenAd.load(
-            withAdUnitID: "ca-app-pub-3940256099942544/5662855259",
+            withAdUnitID: adOpenKey,
             request: GADRequest(),
             orientation: UIInterfaceOrientation.portrait
         ) { ad, error in

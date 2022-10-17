@@ -20,9 +20,6 @@ struct PixelGameLiteApp: App {
                 let size = AdBanner.size
                 AdBanner()
                     .frame(width: size.width, height: size.height)
-                    .onAppear {
-                        UIScrollView.appearance().bounces = false
-                    }
             }
         }
         .onChange(of: scenePhase) { newValue in
