@@ -13,7 +13,7 @@ let adBannerKey: String = "ca-app-pub-3940256099942544/2934735716"
 let adRewardedKey: String = "ca-app-pub-3940256099942544/1712485313"
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)

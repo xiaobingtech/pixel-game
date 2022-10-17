@@ -7,7 +7,14 @@
 
 import SwiftUI
 
-var rootVC: UIViewController?
+extension UIApplication {
+    static var keyWindow: UIWindow? {
+        (UIApplication.shared.connectedScenes
+            .filter { $0.activationState == .foregroundActive }
+            .first { $0 is UIWindowScene } as? UIWindowScene)?.windows
+            .first { $0.isKeyWindow }
+    }
+}
 
 @main
 struct PixelGameLiteApp: App {
@@ -27,16 +34,13 @@ struct PixelGameLiteApp: App {
         .onChange(of: scenePhase) { newValue in
             switch newValue {
             case .active: // 进入前台
-                let rootViewController = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController
+                let rootViewController = UIApplication.keyWindow?.rootViewController
                 if let rootViewController = rootViewController {
                     AppOpenAdManager.shared.showAdIfAvailable(viewController: rootViewController)
                 }
             default:
                 break
             }
-        }
-        .onChange(of: appDelegate.window) { newValue in
-            
         }
     }
 }
