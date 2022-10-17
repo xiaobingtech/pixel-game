@@ -15,13 +15,10 @@ struct PixelGameLiteApp: App {
     var body: some Scene {
         WindowGroup {
             VStack(spacing: 0) {
+                ContentView()
                 let size = AdBanner.size
                 AdBanner()
                     .frame(width: size.width, height: size.height)
-                    .background(Color.yellow)
-                ContentView()
-                    .frame(maxHeight: .infinity)
-                    .background(Color.red)
             }
         }
         .onChange(of: scenePhase) { newValue in
