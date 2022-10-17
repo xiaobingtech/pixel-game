@@ -30,6 +30,8 @@ class AppOpenAdManager: NSObject {
     
     static let shared = AppOpenAdManager()
     
+    var isFirst: Bool = true
+    
     private func wasLoadTimeLessThanNHoursAgo(timeoutInterval: TimeInterval) -> Bool {
         // Check if ad was loaded more than n hours ago.
         if let loadTime = loadTime {
@@ -73,6 +75,10 @@ class AppOpenAdManager: NSObject {
             self.appOpenAd?.fullScreenContentDelegate = self
             self.loadTime = Date()
             debugPrint("App open ad loaded successfully.")
+            if self.isFirst, let rootViewController = UIApplication.keyWindow?.rootViewController {
+                self.isFirst = false
+                self.showAdIfAvailable(viewController: rootViewController)
+            }
         }
     }
     
