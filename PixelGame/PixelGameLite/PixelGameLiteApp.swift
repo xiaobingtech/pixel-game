@@ -15,7 +15,9 @@ struct PixelGameLiteApp: App {
     var body: some Scene {
         WindowGroup {
             VStack(spacing: 0) {
+                let size = AdBanner.size
                 AdBanner()
+                    .frame(minWidth: size.width, minHeight: size.height)
                 ContentView()
                     .frame(maxHeight: .infinity)
             }
