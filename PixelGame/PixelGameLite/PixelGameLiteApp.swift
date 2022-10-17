@@ -34,10 +34,11 @@ struct PixelGameLiteApp: App {
         .onChange(of: scenePhase) { newValue in
             switch newValue {
             case .active: // 进入前台
-                let rootViewController = UIApplication.keyWindow?.rootViewController
-//                if let rootViewController = rootViewController {
-//                    AppOpenAdManager.shared.showAdIfAvailable(viewController: rootViewController)
-//                }
+                if let rootViewController = UIApplication.keyWindow?.rootViewController {
+                    DispatchQueue(label: "gad").async {
+                        AppOpenAdManager.shared.showAdIfAvailable(viewController: rootViewController)
+                    }
+                }
             default:
                 break
             }
