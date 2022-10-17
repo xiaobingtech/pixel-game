@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75B738E9E3C05AA4209C3F40 /* Pods_PixelGameLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9676B61537E412B035A385 /* Pods_PixelGameLite.framework */; };
+		AE6E1FA028FCEE9700F15F00 /* PixelGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1F9F28FCEE9700F15F00 /* PixelGameApp.swift */; };
+		AE6E1FA228FCEE9700F15F00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FA128FCEE9700F15F00 /* ContentView.swift */; };
+		AE6E1FA428FCEE9900F15F00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6E1FA328FCEE9900F15F00 /* Assets.xcassets */; };
+		AE6E1FA728FCEE9900F15F00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6E1FA628FCEE9900F15F00 /* Preview Assets.xcassets */; };
+		AE6E1FB428FCF05B00F15F00 /* PixelGameLiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FB328FCF05B00F15F00 /* PixelGameLiteApp.swift */; };
+		AE6E1FB628FCF05B00F15F00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FB528FCF05B00F15F00 /* ContentView.swift */; };
+		AE6E1FB828FCF05D00F15F00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6E1FB728FCF05D00F15F00 /* Assets.xcassets */; };
+		AE6E1FBB28FCF05D00F15F00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6E1FBA28FCF05D00F15F00 /* Preview Assets.xcassets */; };
+		AE6E1FC128FCF4D100F15F00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FC028FCF4D100F15F00 /* AppDelegate.swift */; };
+		AE6E1FC328FCF79B00F15F00 /* AppOpenAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FC228FCF79B00F15F00 /* AppOpenAdManager.swift */; };
+		AE6E1FC528FD0A0700F15F00 /* AdBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FC428FD0A0700F15F00 /* AdBanner.swift */; };
+		C4B5702BAA515C7392DBBF68 /* Pods_PixelGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9531B8DEAA4FADC6EAF807D0 /* Pods_PixelGame.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49E77D27935EC6C783CF3B8A /* Pods-PixelGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelGame.release.xcconfig"; path = "Target Support Files/Pods-PixelGame/Pods-PixelGame.release.xcconfig"; sourceTree = "<group>"; };
+		75C4F3B55BBAFE1B2BE7250B /* Pods-PixelGameLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelGameLite.debug.xcconfig"; path = "Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite.debug.xcconfig"; sourceTree = "<group>"; };
+		7E20D3E7DC77BEAACF5B3D84 /* Pods-PixelGameLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelGameLite.release.xcconfig"; path = "Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite.release.xcconfig"; sourceTree = "<group>"; };
+		9531B8DEAA4FADC6EAF807D0 /* Pods_PixelGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixelGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B9676B61537E412B035A385 /* Pods_PixelGameLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixelGameLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A497B1EA664207FDDA394481 /* Pods-PixelGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelGame.debug.xcconfig"; path = "Target Support Files/Pods-PixelGame/Pods-PixelGame.debug.xcconfig"; sourceTree = "<group>"; };
+		AE6E1F9C28FCEE9700F15F00 /* PixelGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6E1F9F28FCEE9700F15F00 /* PixelGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelGameApp.swift; sourceTree = "<group>"; };
+		AE6E1FA128FCEE9700F15F00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AE6E1FA328FCEE9900F15F00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE6E1FA628FCEE9900F15F00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AE6E1FB128FCF05B00F15F00 /* PixelGameLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelGameLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6E1FB328FCF05B00F15F00 /* PixelGameLiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelGameLiteApp.swift; sourceTree = "<group>"; };
+		AE6E1FB528FCF05B00F15F00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AE6E1FB728FCF05D00F15F00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE6E1FBA28FCF05D00F15F00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AE6E1FBF28FCF29B00F15F00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AE6E1FC028FCF4D100F15F00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AE6E1FC228FCF79B00F15F00 /* AppOpenAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdManager.swift; sourceTree = "<group>"; };
+		AE6E1FC428FD0A0700F15F00 /* AdBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBanner.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE6E1F9928FCEE9700F15F00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4B5702BAA515C7392DBBF68 /* Pods_PixelGame.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE6E1FAE28FCF05B00F15F00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75B738E9E3C05AA4209C3F40 /* Pods_PixelGameLite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E324DAE9E4C048AD1542555 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A497B1EA664207FDDA394481 /* Pods-PixelGame.debug.xcconfig */,
+				49E77D27935EC6C783CF3B8A /* Pods-PixelGame.release.xcconfig */,
+				75C4F3B55BBAFE1B2BE7250B /* Pods-PixelGameLite.debug.xcconfig */,
+				7E20D3E7DC77BEAACF5B3D84 /* Pods-PixelGameLite.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9A01FA6E93E5997ECAB9FE5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9531B8DEAA4FADC6EAF807D0 /* Pods_PixelGame.framework */,
+				9B9676B61537E412B035A385 /* Pods_PixelGameLite.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE6E1F9328FCEE9600F15F00 = {
+			isa = PBXGroup;
+			children = (
+				AE6E1F9E28FCEE9700F15F00 /* PixelGame */,
+				AE6E1FB228FCF05B00F15F00 /* PixelGameLite */,
+				AE6E1F9D28FCEE9700F15F00 /* Products */,
+				4E324DAE9E4C048AD1542555 /* Pods */,
+				9A01FA6E93E5997ECAB9FE5D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AE6E1F9D28FCEE9700F15F00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E1F9C28FCEE9700F15F00 /* PixelGame.app */,
+				AE6E1FB128FCF05B00F15F00 /* PixelGameLite.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE6E1F9E28FCEE9700F15F00 /* PixelGame */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E1F9F28FCEE9700F15F00 /* PixelGameApp.swift */,
+				AE6E1FA128FCEE9700F15F00 /* ContentView.swift */,
+				AE6E1FA328FCEE9900F15F00 /* Assets.xcassets */,
+				AE6E1FA528FCEE9900F15F00 /* Preview Content */,
+			);
+			path = PixelGame;
+			sourceTree = "<group>";
+		};
+		AE6E1FA528FCEE9900F15F00 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E1FA628FCEE9900F15F00 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AE6E1FB228FCF05B00F15F00 /* PixelGameLite */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E1FBF28FCF29B00F15F00 /* Info.plist */,
+				AE6E1FB328FCF05B00F15F00 /* PixelGameLiteApp.swift */,
+				AE6E1FC028FCF4D100F15F00 /* AppDelegate.swift */,
+				AE6E1FC228FCF79B00F15F00 /* AppOpenAdManager.swift */,
+				AE6E1FC428FD0A0700F15F00 /* AdBanner.swift */,
+				AE6E1FB528FCF05B00F15F00 /* ContentView.swift */,
+				AE6E1FB728FCF05D00F15F00 /* Assets.xcassets */,
+				AE6E1FB928FCF05D00F15F00 /* Preview Content */,
+			);
+			path = PixelGameLite;
+			sourceTree = "<group>";
+		};
+		AE6E1FB928FCF05D00F15F00 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E1FBA28FCF05D00F15F00 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE6E1F9B28FCEE9700F15F00 /* PixelGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE6E1FAA28FCEE9900F15F00 /* Build configuration list for PBXNativeTarget "PixelGame" */;
+			buildPhases = (
+				E96EAE1C7F9677CC544E8DBE /* [CP] Check Pods Manifest.lock */,
+				AE6E1F9828FCEE9700F15F00 /* Sources */,
+				AE6E1F9928FCEE9700F15F00 /* Frameworks */,
+				AE6E1F9A28FCEE9700F15F00 /* Resources */,
+				AE6E1FC628FD227800F15F00 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PixelGame;
+			productName = PixelGame;
+			productReference = AE6E1F9C28FCEE9700F15F00 /* PixelGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE6E1FB028FCF05B00F15F00 /* PixelGameLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE6E1FBE28FCF05D00F15F00 /* Build configuration list for PBXNativeTarget "PixelGameLite" */;
+			buildPhases = (
+				37D4940A6FB3934B7AC07E03 /* [CP] Check Pods Manifest.lock */,
+				AE6E1FAD28FCF05B00F15F00 /* Sources */,
+				AE6E1FAE28FCF05B00F15F00 /* Frameworks */,
+				AE6E1FAF28FCF05B00F15F00 /* Resources */,
+				8F69E0EADFCFFB6646DDE52F /* [CP] Embed Pods Frameworks */,
+				AE6E1FC728FD22AB00F15F00 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PixelGameLite;
+			productName = PixelGameLite;
+			productReference = AE6E1FB128FCF05B00F15F00 /* PixelGameLite.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE6E1F9428FCEE9600F15F00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					AE6E1F9B28FCEE9700F15F00 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					AE6E1FB028FCF05B00F15F00 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = AE6E1F9728FCEE9600F15F00 /* Build configuration list for PBXProject "PixelGame" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE6E1F9328FCEE9600F15F00;
+			productRefGroup = AE6E1F9D28FCEE9700F15F00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE6E1F9B28FCEE9700F15F00 /* PixelGame */,
+				AE6E1FB028FCF05B00F15F00 /* PixelGameLite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE6E1F9A28FCEE9700F15F00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6E1FA728FCEE9900F15F00 /* Preview Assets.xcassets in Resources */,
+				AE6E1FA428FCEE9900F15F00 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE6E1FAF28FCF05B00F15F00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6E1FBB28FCF05D00F15F00 /* Preview Assets.xcassets in Resources */,
+				AE6E1FB828FCF05D00F15F00 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37D4940A6FB3934B7AC07E03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PixelGameLite-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F69E0EADFCFFB6646DDE52F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE6E1FC628FD227800F15F00 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"begin run\"\nget_branch=`git symbolic-ref --short -q HEAD`\necho git branch is $get_branch\nif git add -A && git commit -a -m \"git auto commit $get_branch\"; then\n git pull && git push origin #&& git log -1 | mail -s \"git auto commit successfully!\" 646306561@qq.com\nfi\n";
+		};
+		AE6E1FC728FD22AB00F15F00 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"begin run\"\nget_branch=`git symbolic-ref --short -q HEAD`\necho git branch is $get_branch\nif git add -A && git commit -a -m \"git auto commit $get_branch\"; then\n git pull && git push origin #&& git log -1 | mail -s \"git auto commit successfully!\" 646306561@qq.com\nfi\n";
+		};
+		E96EAE1C7F9677CC544E8DBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PixelGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE6E1F9828FCEE9700F15F00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6E1FA228FCEE9700F15F00 /* ContentView.swift in Sources */,
+				AE6E1FA028FCEE9700F15F00 /* PixelGameApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE6E1FAD28FCF05B00F15F00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6E1FC328FCF79B00F15F00 /* AppOpenAdManager.swift in Sources */,
+				AE6E1FC128FCF4D100F15F00 /* AppDelegate.swift in Sources */,
+				AE6E1FC528FD0A0700F15F00 /* AdBanner.swift in Sources */,
+				AE6E1FB628FCF05B00F15F00 /* ContentView.swift in Sources */,
+				AE6E1FB428FCF05B00F15F00 /* PixelGameLiteApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AE6E1FA828FCEE9900F15F00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE6E1FA928FCEE9900F15F00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE6E1FAB28FCEE9900F15F00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A497B1EA664207FDDA394481 /* Pods-PixelGame.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PixelGame/Preview Content\"";
+				DEVELOPMENT_TEAM = 7SR32NNMT5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akron.PixelGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE6E1FAC28FCEE9900F15F00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49E77D27935EC6C783CF3B8A /* Pods-PixelGame.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PixelGame/Preview Content\"";
+				DEVELOPMENT_TEAM = 7SR32NNMT5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akron.PixelGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AE6E1FBC28FCF05D00F15F00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C4F3B55BBAFE1B2BE7250B /* Pods-PixelGameLite.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PixelGameLite/Preview Content\"";
+				DEVELOPMENT_TEAM = 7SR32NNMT5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PixelGameLite/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akron.PixelGameLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE6E1FBD28FCF05D00F15F00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E20D3E7DC77BEAACF5B3D84 /* Pods-PixelGameLite.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PixelGameLite/Preview Content\"";
+				DEVELOPMENT_TEAM = 7SR32NNMT5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PixelGameLite/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akron.PixelGameLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE6E1F9728FCEE9600F15F00 /* Build configuration list for PBXProject "PixelGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE6E1FA828FCEE9900F15F00 /* Debug */,
+				AE6E1FA928FCEE9900F15F00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE6E1FAA28FCEE9900F15F00 /* Build configuration list for PBXNativeTarget "PixelGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE6E1FAB28FCEE9900F15F00 /* Debug */,
+				AE6E1FAC28FCEE9900F15F00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE6E1FBE28FCF05D00F15F00 /* Build configuration list for PBXNativeTarget "PixelGameLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE6E1FBC28FCF05D00F15F00 /* Debug */,
+				AE6E1FBD28FCF05D00F15F00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE6E1F9428FCEE9600F15F00 /* Project object */;
+}

@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+install!'cocoapods',:deterministic_uuids=>false
+platform :ios, '15.0'
+inhibit_all_warnings!
+
+target 'PixelGame' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for PixelGame
+
+end
+
+target 'PixelGameLite' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for PixelGameLite
+  pod 'Google-Mobile-Ads-SDK'
+
+end
