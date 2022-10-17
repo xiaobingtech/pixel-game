@@ -33,7 +33,7 @@ struct AdBanner: UIViewControllerRepresentable {
     class Coordinator: NSObject {
         private let parent: AdBanner
         
-        lazy var bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        lazy var bannerView = GADBannerView()
         
         init(_ parent: AdBanner) {
             self.parent = parent
