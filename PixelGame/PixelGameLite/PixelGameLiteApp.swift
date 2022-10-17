@@ -23,12 +23,13 @@ struct PixelGameLiteApp: App {
     
     var body: some Scene {
         WindowGroup {
-            VStack(spacing: 0) {
-                ContentView()
-                    .frame(maxHeight: .infinity)
-                let size = AdBanner.size
-                AdBanner()
-                    .frame(width: size.width, height: size.height)
+            XS_Hud {
+                VStack(spacing: 0) {
+                    XS_Root()
+                    let size = AdBanner.size
+                    AdBanner()
+                        .frame(width: size.width, height: size.height)
+                }
             }
         }
         .onChange(of: scenePhase) { newValue in

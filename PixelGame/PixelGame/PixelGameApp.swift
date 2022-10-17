@@ -11,7 +11,9 @@ import SwiftUI
 struct PixelGameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            XS_Hud {
+                XS_Root()
+            }
         }
     }
 }
