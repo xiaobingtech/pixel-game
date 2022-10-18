@@ -13,7 +13,11 @@ struct XS_Grid: View {
     @Binding var options: XS_Options
     
     private var content: some View {
-        VStack
+        VStack {
+            HStack {
+                
+            }
+        }
     }
     
     var body: some View {
