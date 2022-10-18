@@ -11,7 +11,7 @@ struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
     
     @State private var isPreview: Bool = false
-    @State private var points: [[XS_Point]] = []
+    @State private var points: [[XS_Point]] = [[]]
     @State private var options: XS_Options = .init()
     @State private var color: CGColor = UIColor.black.cgColor
     
