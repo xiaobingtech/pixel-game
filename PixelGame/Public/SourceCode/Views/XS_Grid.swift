@@ -48,9 +48,32 @@ struct XS_Grid: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 ZStack {
                     let size = proxy.size.width/Double(options.count)
-                    
-                    
-                    
+                    if points.count > options.current {
+                        let arr = points[options.current]
+                        ForEach(0..<arr.count, id: \.self) { index in
+                            let point = arr[index]
+                            Color(point.color)
+                                .frame(width: size, height: size)
+                                .position(x: (point.position.x + 0.5)*size, y: (point.position.y + 0.5)*size)
+                        }
+                        .frame(width: proxy.size.width, height: proxy.size.height)
+                    }
+                    VStack(spacing: 0) {
+                        ForEach(0..<options.count+1, id: \.self) { index in
+                            Divider().frame(height: size)
+                        }
+                    }
+                    HStack(spacing: 0) {
+                        ForEach(0..<options.count+1, id: \.self) { index in
+                            Divider().frame(width: size)
+                        }
+                    }
+                }
+                .frame(width: proxy.size.width, height: proxy.size.height)
+                .mask {
+                    Color.black
+                        .shadow(radius: 10)
+////                        .padding(20)
                 }
             }
         }
