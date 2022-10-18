@@ -20,8 +20,8 @@ struct XS_Root: View {
                     Image(systemName: "ellipsis.circle")
                 }
             }
-            .foregroundColor(Color("labelColor"))
             .font(.title2)
+            .foregroundColor(Color(uiColor: .label))
             .padding()
             Group {
                 Text("123")

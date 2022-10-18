@@ -16,8 +16,8 @@ struct XS_Hud<Content: View>: View {
             content()
                 .environment(\.xs_hud, xs_hud)
             
-            let bgColor = Color("hud_bg")
-            let fgColor = Color("hud_fg")
+            let bgColor = Color(uiColor: .label)
+            let fgColor = Color(uiColor: .systemBackground)
             if xs_hud.isActivity {
                 bgColor.opacity(0.1)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
