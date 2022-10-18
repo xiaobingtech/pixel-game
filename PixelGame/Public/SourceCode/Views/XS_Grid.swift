@@ -19,6 +19,9 @@ struct XS_Grid: View {
     @Binding var points: [[XS_Point]]
     @Binding var options: XS_Options
     
+    private func onDrag() {
+        
+    }
     private func offsetBtn(_ direction: DirectionType) -> some View {
         Button {
             let offset = CGFloat(options.count/2)
