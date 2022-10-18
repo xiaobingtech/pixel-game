@@ -73,7 +73,7 @@ struct XS_Point: Equatable {
 struct XS_Options: Equatable {
     var current: Int = 0
     var count: Int = 10
-    var off
+    var offset: Int = 0
 }
 
 struct XS_Root_Previews: PreviewProvider {
