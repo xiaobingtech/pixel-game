@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct XS_Grid: View {
+    enum ChevronType: String {
+        case up
+        case down
+        case left
+        case right
+    }
+    
     let color: CGColor
     @Binding var points: [[XS_Point]]
     @Binding var options: XS_Options
@@ -23,8 +30,9 @@ struct XS_Grid: View {
     var body: some View {
         GeometryReader { proxy in
             let size = min(proxy.size.width, proxy.size.height)
-
-            
+            content
+                .frame(width: size, height: size)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
