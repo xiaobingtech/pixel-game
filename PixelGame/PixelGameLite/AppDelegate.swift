@@ -13,7 +13,7 @@ let adOpenKey: String = "ca-app-pub-3940256099942544/5662855259"
 let adBannerKey: String = "ca-app-pub-3940256099942544/2934735716"
 let adRewardedKey: String = "ca-app-pub-3940256099942544/1712485313"
 #else
-let adOpenKey: String = "ca-app-pub-3940256099942544/5662855259"
+let adOpenKey: String = "ca-app-pub-4004775535101264/7725948447"
 let adBannerKey: String = "ca-app-pub-3940256099942544/2934735716"
 let adRewardedKey: String = "ca-app-pub-3940256099942544/1712485313"
 #endif
