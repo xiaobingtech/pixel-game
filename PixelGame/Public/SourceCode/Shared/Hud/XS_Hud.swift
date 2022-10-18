@@ -17,14 +17,14 @@ struct XS_Hud<Content: View>: View {
                 .environment(\.xs_hud, xs_hud)
             
             if xs_hud.isActivity {
-                Color.black.opacity(0.1)
+                Color("hud_bg").opacity(0.1)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .edgesIgnoringSafeArea(.all)
                     .transition(.opacity.animation(.easeInOut))
                 ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color("hud_fg")))
                     .frame(width: 80, height: 80)
-                    .background(Color.black.opacity(0.4))
+                    .background(Color("hud_bg").opacity(0.4))
                     .cornerRadius(10)
                     .transition(
                         .scale(scale: 0.5)
@@ -38,9 +38,9 @@ struct XS_Hud<Content: View>: View {
                     Spacer()
                     Text(toast)
                         .font(.subheadline)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("hud_fg"))
                         .padding()
-                        .background(Color.black.opacity(0.6))
+                        .background(Color("hud_bg").opacity(0.6))
                         .cornerRadius(8)
                         .padding()
                 }
