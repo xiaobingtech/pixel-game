@@ -19,6 +19,8 @@ struct XS_Root: View {
 
 struct XS_Root_Previews: PreviewProvider {
     static var previews: some View {
-        XS_Root()
+        XS_Hud {
+            XS_Root()
+        }
     }
 }
