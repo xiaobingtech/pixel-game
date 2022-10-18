@@ -21,6 +21,29 @@ struct XS_Hud<Content: View>: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .edgesIgnoringSafeArea(.all)
                     .transition(.opacity.animation(.easeInOut))
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                    .frame(width: 80, height: 80)
+                    .background(Color.black.opacity(0.4))
+                    .cornerRadius(10)
+                    .transition(
+                        .scale(scale: 0.5)
+                        .combined(with: .opacity)
+                        .animation(.spring())
+                    )
+            }
+            
+            if let toast = xs_hud.toast, !toast.isEmpty {
+                VStack {
+                    Spacer()
+                    Text(toast)
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.black.opacity(0.6))
+                        .cornerRadius(8)
+                        .padding()
+                }
             }
         }
     }
