@@ -24,6 +24,8 @@
 		AE6E1FD528FD54D700F15F00 /* XS_Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FD328FD54D700F15F00 /* XS_Root.swift */; };
 		AE6E1FDA28FD586700F15F00 /* XS_Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FD928FD586700F15F00 /* XS_Hud.swift */; };
 		AE6E1FDB28FD586700F15F00 /* XS_Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FD928FD586700F15F00 /* XS_Hud.swift */; };
+		AE92A7E328FE483A00151A7F /* XS_Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E228FE483A00151A7F /* XS_Preview.swift */; };
+		AE92A7E428FE483A00151A7F /* XS_Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E228FE483A00151A7F /* XS_Preview.swift */; };
 		C4B5702BAA515C7392DBBF68 /* Pods_PixelGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9531B8DEAA4FADC6EAF807D0 /* Pods_PixelGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,7 @@
 		AE6E1FD028FD54A100F15F00 /* PublicAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PublicAssets.xcassets; sourceTree = "<group>"; };
 		AE6E1FD328FD54D700F15F00 /* XS_Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Root.swift; sourceTree = "<group>"; };
 		AE6E1FD928FD586700F15F00 /* XS_Hud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Hud.swift; sourceTree = "<group>"; };
+		AE92A7E228FE483A00151A7F /* XS_Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Preview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				AE6E1FD328FD54D700F15F00 /* XS_Root.swift */,
+				AE92A7E228FE483A00151A7F /* XS_Preview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,6 +424,7 @@
 				AE6E1FD428FD54D700F15F00 /* XS_Root.swift in Sources */,
 				AE6E1FDA28FD586700F15F00 /* XS_Hud.swift in Sources */,
 				AE6E1FA028FCEE9700F15F00 /* PixelGameApp.swift in Sources */,
+				AE92A7E328FE483A00151A7F /* XS_Preview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +439,7 @@
 				AE6E1FC528FD0A0700F15F00 /* AdBanner.swift in Sources */,
 				AE6E1FD528FD54D700F15F00 /* XS_Root.swift in Sources */,
 				AE6E1FB428FCF05B00F15F00 /* PixelGameLiteApp.swift in Sources */,
+				AE92A7E428FE483A00151A7F /* XS_Preview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
