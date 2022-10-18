@@ -60,21 +60,31 @@ struct XS_Grid: View {
                     }
                     VStack(spacing: 0) {
                         ForEach(0..<options.count+1, id: \.self) { index in
-                            Divider().frame(height: size)
+                            Divider()
+                                .overlay {
+                                    Color(uiColor: .label).opacity(0.5)
+                                }
+                                .frame(height: size)
                         }
                     }
                     HStack(spacing: 0) {
                         ForEach(0..<options.count+1, id: \.self) { index in
-                            Divider().frame(width: size)
+                            Divider()
+                                .overlay {
+                                    Color(uiColor: .label).opacity(0.5)
+                                }
+                                .frame(width: size)
                         }
                     }
+                    
                 }
                 .frame(width: proxy.size.width, height: proxy.size.height)
                 .mask {
                     Color.black
-                        .shadow(radius: 10)
-////                        .padding(20)
+                        .shadow(color: .black, radius: 30)
+                        .padding(30)
                 }
+                
             }
         }
     }
