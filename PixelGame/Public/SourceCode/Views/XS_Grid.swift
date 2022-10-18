@@ -19,6 +19,6 @@ struct XS_Grid: View {
 
 struct XS_Grid_Previews: PreviewProvider {
     static var previews: some View {
-        XS_Grid(co)
+        XS_Grid(color: UIColor.black.cgColor, points: .constant([]), options: .constant(.init()))
     }
 }
