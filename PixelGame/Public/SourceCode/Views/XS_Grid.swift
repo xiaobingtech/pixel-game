@@ -10,7 +10,7 @@ import SwiftUI
 struct XS_Grid: View {
     let color: CGColor
     @Binding var points: [[XS_Point]]
-    @Binding var
+    @Binding var options: XS_Options
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
@@ -19,6 +19,6 @@ struct XS_Grid: View {
 
 struct XS_Grid_Previews: PreviewProvider {
     static var previews: some View {
-        XS_Grid()
+        XS_Grid(co)
     }
 }
