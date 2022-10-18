@@ -13,6 +13,10 @@ struct XS_Root: View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .onTapGesture {
                 xs_hud.showToast("Hellow")
+                xs_hud.isActivity = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                    xs_hud.isActivity = false
+                }
             }
     }
 }
