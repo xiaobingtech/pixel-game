@@ -22,7 +22,9 @@ struct XS_Grid: View {
     private func offsetBtn(_ direction: DirectionType) -> some View {
         Button {
             
-        } la
+        } label: {
+            Image(systemName: <#T##String#>)
+        }
     }
     private var content: some View {
         VStack {
