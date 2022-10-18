@@ -10,6 +10,7 @@ import SwiftUI
 struct XS_Grid: View {
     let color: CGColor
     @Binding var points: [[XS_Point]]
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
