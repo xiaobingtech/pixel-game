@@ -84,7 +84,9 @@ struct XS_Grid: View {
                         .shadow(color: .black, radius: 30)
                         .padding(30)
                 }
-                
+                .gesture(
+                    DragGesture(minimumDistance: 0)
+                )
             }
         }
     }
