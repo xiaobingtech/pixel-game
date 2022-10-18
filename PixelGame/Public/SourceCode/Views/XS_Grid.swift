@@ -16,9 +16,3 @@ struct XS_Grid: View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
-
-struct XS_Grid_Previews: PreviewProvider {
-    static var previews: some View {
-        XS_Grid(color: UIColor.black.cgColor, points: .constant([]), options: .constant(.init()))
-    }
-}
