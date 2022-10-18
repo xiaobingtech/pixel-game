@@ -9,13 +9,16 @@ import SwiftUI
 
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
+    
+    
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Image(systemName: "play.circle")
                 Button {
-                    
+                    xs_hud.showToast("1234")
                 } label: {
                     Image(systemName: "ellipsis.circle")
                 }
@@ -38,6 +41,8 @@ struct XS_Point: Equatable {
 
 struct XS_Root_Previews: PreviewProvider {
     static var previews: some View {
-        XS_Root()
+        XS_Hud {
+            XS_Root()
+        }
     }
 }
