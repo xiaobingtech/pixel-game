@@ -11,20 +11,16 @@ struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .onTapGesture {
-                xs_hud.showToast("DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3))")
-                xs_hud.isActivity = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-                    xs_hud.isActivity = false
-                }
-            }
     }
+}
+
+struct XS_Point: Equatable {
+    let position: CGPoint
+    var color: CGColor
 }
 
 struct XS_Root_Previews: PreviewProvider {
     static var previews: some View {
-        XS_Hud {
-            XS_Root()
-        }
+        XS_Root()
     }
 }
