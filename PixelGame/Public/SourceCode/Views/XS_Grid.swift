@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct XS_Grid: View {
-    enum ChevronType: String {
+    enum DirectionType: String {
         case up
         case down
         case left
