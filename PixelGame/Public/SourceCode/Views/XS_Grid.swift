@@ -51,7 +51,6 @@ struct XS_Grid: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 let size = proxy.size.width/Double(options.count)
                 ZStack {
-                    
                     if points.count > options.current {
                         let arr = points[options.current]
                         ForEach(0..<arr.count, id: \.self) { index in
@@ -90,8 +89,8 @@ struct XS_Grid: View {
                 }
                 .gesture(
                     DragGesture(minimumDistance: 0)
-                        .onChanged{ onDrag($0, size: size)}
-                        .onEnded(onDrag(_:))
+                        .onChanged { onDrag($0, size: size) }
+                        .onEnded { onDrag($0, size: size) }
                 )
             }
         }
