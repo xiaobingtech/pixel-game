@@ -14,12 +14,13 @@ struct XS_Root: View {
             HStack {
                 Spacer()
                 Image(systemName: "play.circle")
-                ZStack(alignment: .bottomTrailing) {
+                Button {
+                    
+                } label: {
                     Image(systemName: "ellipsis.circle")
-                    Image(systemName: "play.circle.")
-                        .font(.footnote)
                 }
             }
+            .foregroundColor(Color(".s"))
             .font(.title2)
             .padding()
             Group {
