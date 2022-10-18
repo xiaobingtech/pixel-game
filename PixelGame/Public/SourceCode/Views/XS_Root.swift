@@ -14,7 +14,8 @@ struct XS_Root: View {
             HStack {
                 Spacer()
                 Image(systemName: "play.circle")
-                Image(systemName: "ellipsis.circle.o")
+                
+                Image(systemName: "ellipsis.circle")
             }
             .font(.title2)
             .padding()
