@@ -12,7 +12,7 @@ struct XS_Root: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .onTapGesture {
-                xs_hud.isActivity.toggle()
+                xs_hud.showToast("Hellow")
             }
     }
 }
