@@ -26,6 +26,8 @@
 		AE6E1FDB28FD586700F15F00 /* XS_Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1FD928FD586700F15F00 /* XS_Hud.swift */; };
 		AE92A7E328FE483A00151A7F /* XS_Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E228FE483A00151A7F /* XS_Preview.swift */; };
 		AE92A7E428FE483A00151A7F /* XS_Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E228FE483A00151A7F /* XS_Preview.swift */; };
+		AE92A7E628FE535A00151A7F /* XS_Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E528FE535A00151A7F /* XS_Grid.swift */; };
+		AE92A7E728FE535A00151A7F /* XS_Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E528FE535A00151A7F /* XS_Grid.swift */; };
 		C4B5702BAA515C7392DBBF68 /* Pods_PixelGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9531B8DEAA4FADC6EAF807D0 /* Pods_PixelGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,7 @@
 		AE6E1FD328FD54D700F15F00 /* XS_Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Root.swift; sourceTree = "<group>"; };
 		AE6E1FD928FD586700F15F00 /* XS_Hud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Hud.swift; sourceTree = "<group>"; };
 		AE92A7E228FE483A00151A7F /* XS_Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Preview.swift; sourceTree = "<group>"; };
+		AE92A7E528FE535A00151A7F /* XS_Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,7 @@
 			children = (
 				AE6E1FD328FD54D700F15F00 /* XS_Root.swift */,
 				AE92A7E228FE483A00151A7F /* XS_Preview.swift */,
+				AE92A7E528FE535A00151A7F /* XS_Grid.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +428,7 @@
 				AE6E1FD428FD54D700F15F00 /* XS_Root.swift in Sources */,
 				AE6E1FDA28FD586700F15F00 /* XS_Hud.swift in Sources */,
 				AE6E1FA028FCEE9700F15F00 /* PixelGameApp.swift in Sources */,
+				AE92A7E628FE535A00151A7F /* XS_Grid.swift in Sources */,
 				AE92A7E328FE483A00151A7F /* XS_Preview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE6E1FCB28FD39C400F15F00 /* RewardedAdManager.swift in Sources */,
+				AE92A7E728FE535A00151A7F /* XS_Grid.swift in Sources */,
 				AE6E1FC328FCF79B00F15F00 /* AppOpenAdManager.swift in Sources */,
 				AE6E1FDB28FD586700F15F00 /* XS_Hud.swift in Sources */,
 				AE6E1FC128FCF4D100F15F00 /* AppDelegate.swift in Sources */,
