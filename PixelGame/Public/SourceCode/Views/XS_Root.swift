@@ -49,7 +49,11 @@ struct XS_Root: View {
         VStack {
             menu
             Group {
-                Text("123")
+                if isPreview {
+                    XS_Preview(points: points)
+                } else {
+                    Text("123")
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
