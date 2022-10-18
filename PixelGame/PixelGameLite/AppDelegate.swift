@@ -15,7 +15,7 @@ let adRewardedKey: String = "ca-app-pub-3940256099942544/1712485313"
 #else
 let adOpenKey: String = "ca-app-pub-4004775535101264/7725948447"
 let adBannerKey: String = "ca-app-pub-4004775535101264/4020268032"
-let adRewardedKey: String = "ca-app-pub-3940256099942544/1712485313"
+let adRewardedKey: String = "ca-app-pub-4004775535101264/7461653749"
 #endif
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
