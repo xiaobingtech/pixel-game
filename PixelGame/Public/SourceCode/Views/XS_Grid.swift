@@ -19,6 +19,7 @@ struct XS_Grid: View {
     @Binding var points: [[XS_Point]]
     @Binding var options: XS_Options
     
+    
     private var content: some View {
         VStack {
             HStack {
