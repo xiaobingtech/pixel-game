@@ -12,9 +12,13 @@ struct XS_Root: View {
     
     @State private var isPreview: Bool = false
     @State private var points: [[XS_Point]] = []
+    @State private var options: XS_Options = .init()
+    @State private var color: CGColor = UIColor.black.cgColor
     
     private var menu: some View {
         HStack {
+            ColorPicker("", selection: $color, supportsOpacity: true)
+                .labelsHidden()
             Spacer()
             Button {
                 isPreview.toggle()
@@ -43,7 +47,7 @@ struct XS_Root: View {
         .font(.title2)
         .foregroundColor(Color(uiColor: .label))
         .padding(.horizontal)
-        .padding(.top, 5)
+        .padding(.vertical, 5)
     }
     
     var body: some View {
