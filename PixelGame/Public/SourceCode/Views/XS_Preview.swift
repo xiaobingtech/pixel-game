@@ -16,6 +16,6 @@ struct XS_Preview: View {
 
 struct XS_Preview_Previews: PreviewProvider {
     static var previews: some View {
-        XS_Preview()
+        XS_Preview(points: [])
     }
 }
