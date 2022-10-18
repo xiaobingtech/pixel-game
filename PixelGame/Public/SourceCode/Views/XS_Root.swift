@@ -11,23 +11,23 @@ struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
     
     private var menu: some View {
-        
+        HStack {
+            Spacer()
+            Image(systemName: "play.circle")
+            Button {
+                xs_hud.showToast("1234")
+            } label: {
+                Image(systemName: "ellipsis.circle")
+            }
+        }
+        .font(.title2)
+        .foregroundColor(Color(uiColor: .label))
+        .padding()
     }
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Image(systemName: "play.circle")
-                Button {
-                    xs_hud.showToast("1234")
-                } label: {
-                    Image(systemName: "ellipsis.circle")
-                }
-            }
-            .font(.title2)
-            .foregroundColor(Color(uiColor: .label))
-            .padding()
+            
             Group {
                 Text("123")
             }
