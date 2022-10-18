@@ -23,7 +23,7 @@ struct XS_Grid: View {
         Button {
             
         } label: {
-            Image(systemName: <#T##String#>)
+            Image(systemName: "chevron.up.circle")
         }
     }
     private var content: some View {
