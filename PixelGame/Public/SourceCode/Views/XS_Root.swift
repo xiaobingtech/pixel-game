@@ -16,8 +16,8 @@ struct XS_Root: View {
                 Image(systemName: "play.circle")
                 ZStack(alignment: .bottomTrailing) {
                     Image(systemName: "ellipsis.circle")
-                    Image(systemName: "play")
-                    
+                    Image(systemName: "play.circle.")
+                        .font(.footnote)
                 }
             }
             .font(.title2)
