@@ -89,7 +89,7 @@ struct XS_Grid: View {
                 }
                 .gesture(
                     DragGesture(minimumDistance: 0)
-                        .onChanged(onDrag(_:))
+                        .onChanged{ onDrag($0, size: s)}
                         .onEnded(onDrag(_:))
                 )
             }
