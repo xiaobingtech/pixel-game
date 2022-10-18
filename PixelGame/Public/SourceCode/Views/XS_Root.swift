@@ -20,7 +20,7 @@ struct XS_Root: View {
                     Image(systemName: "ellipsis.circle")
                 }
             }
-            .foregroundColor(Color(".s"))
+            .foregroundColor(Color("labelColor"))
             .font(.title2)
             .padding()
             Group {
