@@ -10,7 +10,9 @@ import SwiftUI
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
     
-    private var menu
+    private var menu: some View {
+        
+    }
     
     var body: some View {
         VStack {
