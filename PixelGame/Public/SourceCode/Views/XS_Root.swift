@@ -10,12 +10,18 @@ import SwiftUI
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
     
+    @State private var isPreview: Bool = false
+    
     private var menu: some View {
         HStack {
             Spacer()
-            Image(systemName: "play.circle")
             Button {
-                xs_hud.showToast("1234")
+                
+            } label: {
+                Image(systemName: "play.circle")
+            }
+            Button {
+                
             } label: {
                 Image(systemName: "ellipsis.circle")
             }
@@ -27,7 +33,7 @@ struct XS_Root: View {
     
     var body: some View {
         VStack {
-            
+            menu
             Group {
                 Text("123")
             }
