@@ -19,7 +19,7 @@ struct XS_Grid: View {
     @Binding var points: [[XS_Point]]
     @Binding var options: XS_Options
     
-    private func offsetBtn(_ type) -> some View {
+    private func offsetBtn(_ irection: DirectionType) -> some View {
         
     }
     private var content: some View {
