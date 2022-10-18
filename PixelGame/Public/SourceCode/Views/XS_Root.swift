@@ -57,7 +57,7 @@ struct XS_Root: View {
                 if isPreview {
                     XS_Preview(points: points)
                 } else {
-                    Text("123")
+                    XS_Grid(color: color, points: $points, options: $options)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -71,6 +71,8 @@ struct XS_Point: Equatable {
 }
 
 struct XS_Options: Equatable {
+    var current: Int = 0
+    var total
 }
 
 struct XS_Root_Previews: PreviewProvider {
