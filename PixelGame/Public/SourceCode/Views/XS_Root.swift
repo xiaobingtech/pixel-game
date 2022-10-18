@@ -42,7 +42,8 @@ struct XS_Root: View {
         }
         .font(.title2)
         .foregroundColor(Color(uiColor: .label))
-        .padding()
+        .padding(.horizontal)
+        .padding(.top, 5)
     }
     
     var body: some View {
