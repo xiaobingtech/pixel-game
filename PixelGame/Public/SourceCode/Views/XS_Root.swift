@@ -11,20 +11,33 @@ struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
     
     @State private var isPreview: Bool = false
-    
+    @State private var points: [[XS_Point]] = [[]]
     private var menu: some View {
         HStack {
             Spacer()
             Button {
-                
+                isPreview.toggle()
             } label: {
-                Image(systemName: "play.circle")
+                Image(
+                    systemName: isPreview
+                    ? "arrow.uturn.backward.circle"
+                    : "play.circle"
+                )
             }
-            Button {
-                
+            Menu {
+                Text("123")
+                    .onTapGesture {
+                        
+                    }
+                Button {
+                    
+                } label: {
+                    Text("456")
+                }
             } label: {
                 Image(systemName: "ellipsis.circle")
             }
+
         }
         .font(.title2)
         .foregroundColor(Color(uiColor: .label))
