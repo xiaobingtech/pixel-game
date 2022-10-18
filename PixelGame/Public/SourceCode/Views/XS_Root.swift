@@ -14,7 +14,7 @@ struct XS_Root: View {
             HStack {
                 Spacer()
                 Image(systemName: "play.circle")
-                Image(systemName: "ellipsis.circle.trianglebadge.exclamationmark")
+                Image(systemName: "ellipsis.circle.o")
             }
             .font(.title2)
             .padding()
