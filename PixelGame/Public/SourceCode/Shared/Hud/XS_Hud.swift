@@ -9,7 +9,7 @@ import SwiftUI
 
 struct XS_Hud<Content: View>: View {
     let content: () -> Content
-    @ObservedObject private var xs_hud: XS_HudModel = .init()
+    @Environment(\.xs_hud) private var xs_hud
     
     var body: some View {
         ZStack {
