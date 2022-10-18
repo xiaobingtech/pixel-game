@@ -12,12 +12,15 @@ struct XS_Grid: View {
     @Binding var points: [[XS_Point]]
     @Binding var options: XS_Options
     
+    private var content: some View {
+        VStack
+    }
+    
     var body: some View {
-#if isLite
-        Text("Lite")
-#else
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-#endif
-        
+        GeometryReader { proxy in
+            let size = min(proxy.size.width, proxy.size.height)
+
+            
+        }
     }
 }
