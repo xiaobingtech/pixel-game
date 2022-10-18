@@ -19,7 +19,7 @@ struct XS_Grid: View {
     @Binding var points: [[XS_Point]]
     @Binding var options: XS_Options
     
-    private func onDrag() {
+    private func onDrag(_ value: DragGesture.Value) {
         
     }
     private func offsetBtn(_ direction: DirectionType) -> some View {
