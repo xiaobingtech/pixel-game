@@ -12,9 +12,11 @@ struct XS_Root: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "ellipsis.circle")
-                Image(systemName: "ellipsis.circle")
+                Spacer()
+                Image(systemName: "play.circle")
+                Image(systemName: "ellipsis.circle.trianglebadge.exclamationmark")
             }
+            .font(.title2)
             .padding()
             Group {
                 Text("123")
