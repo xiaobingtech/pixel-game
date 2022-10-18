@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SceneKit
 
 struct XS_Preview: View {
     let points: [[XS_Point]]
