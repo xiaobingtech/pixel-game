@@ -61,6 +61,9 @@ struct XS_Point: Equatable {
     var color: CGColor
 }
 
+struct XS_Options: Equatable {
+}
+
 struct XS_Root_Previews: PreviewProvider {
     static var previews: some View {
         XS_Hud {

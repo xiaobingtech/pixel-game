@@ -19,7 +19,11 @@ struct XS_Preview: View {
                 let box = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
                 box.firstMaterial?.diffuse.contents = point.color
                 let node = SCNNode(geometry: box)
-                node.position = SCNVector3(x: Float(point.position.x), y: Float(index), z: Float(point.position.y))
+                node.position = SCNVector3(
+                    x: Float(point.position.x),
+                    y: Float(index),
+                    z: Float(point.position.y)
+                )
                 scene.rootNode.addChildNode(node)
             }
         }
@@ -28,7 +32,8 @@ struct XS_Preview: View {
     }
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        SceneView(scene: theScene, options: [.autoenablesDefaultLighting, .allowsCameraControl])
+            .ignoresSafeArea()
     }
 }
 
