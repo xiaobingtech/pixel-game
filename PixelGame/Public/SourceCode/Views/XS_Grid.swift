@@ -13,6 +13,11 @@ struct XS_Grid: View {
     @Binding var options: XS_Options
     
     var body: some View {
+#if isLite
+        Text("Lite")
+#else
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+#endif
+        
     }
 }
