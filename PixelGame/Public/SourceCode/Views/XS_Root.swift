@@ -10,7 +10,17 @@ import SwiftUI
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Image(systemName: "ellipsis.circle")
+                Image(systemName: "ellipsis.circle")
+            }
+            .padding()
+            Group {
+                Text("123")
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
     }
 }
 
