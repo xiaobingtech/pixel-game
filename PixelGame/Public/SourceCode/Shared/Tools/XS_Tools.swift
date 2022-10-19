@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CommonCrypto
 
 extension UIApplication {
     static var keyWindow: UIWindow? {
@@ -14,4 +15,8 @@ extension UIApplication {
             .first { $0 is UIWindowScene } as? UIWindowScene)?.windows
             .first { $0.isKeyWindow }
     }
+}
+
+extension String {
+    
 }
