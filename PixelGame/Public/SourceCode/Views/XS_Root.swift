@@ -13,7 +13,7 @@ struct XS_Root: View {
     @State private var isPreview: Bool = false
     @State private var points: [[XS_Point]] = [[]]
     @State private var options: XS_Options = .init()
-    @State private var color: CGColor = UIColor.black.cgColor
+    @State private var color: CGColor = UIColor.systemBackground.cgColor
     @State private var bgColor: CGColor = UIColor.systemBackground.cgColor
     
     private var open: some View {
@@ -84,8 +84,9 @@ struct XS_Root: View {
                 )
             }
             Menu {
-                save
                 share
+                save
+                open
                 delete
                 about
             } label: {
@@ -106,7 +107,7 @@ struct XS_Root: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             VStack {
-                menu.shadow(radius: 3)
+                menu.shadow(color: Color(uiColor: .systemBackground), radius: 1)
                 if !isPreview {
                     XS_Grid(color: color, points: $points, options: $options)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
