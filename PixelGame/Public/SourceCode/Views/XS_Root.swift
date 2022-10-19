@@ -14,7 +14,7 @@ struct XS_Root: View {
     @State private var points: [[XS_Point]] = [[]]
     @State private var options: XS_Options = .init()
     @State private var color: CGColor = UIColor.black.cgColor
-    @State private var bgColor: CGColor?
+    @State private var bgColor: CGColor!
     
     private var open: some View {
         Button {
@@ -59,7 +59,7 @@ struct XS_Root: View {
     
     private var menu: some View {
         HStack {
-            ColorPicker("", selection: isPreview ? $bgColor! : $color, supportsOpacity: true)
+            ColorPicker("", selection: isPreview ? $bgColor : $color, supportsOpacity: true)
                 .labelsHidden()
             if !isPreview {
                 Button {
