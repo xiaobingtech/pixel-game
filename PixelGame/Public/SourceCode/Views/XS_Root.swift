@@ -8,6 +8,8 @@
 import SwiftUI
 import SwiftHash
 
+let topicFilePath = NSHomeDirectory() + "/Library/Caches/topic"
+
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
     @Environment(\.colorScheme) private var colorScheme
@@ -20,7 +22,7 @@ struct XS_Root: View {
     
     private var open: some View {
         Button {
-            
+            xs_hud.showToast(MD5("Open"))
         } label: {
             Text("Open")
             Image(systemName: "folder.circle.fill")
