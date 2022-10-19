@@ -31,6 +31,14 @@ struct XS_Root: View {
             Image(systemName: "trash.circle.fill")
         }
     }
+    private var save: some View {
+        Button {
+            
+        } label: {
+            Text("Delete")
+            Image(systemName: "trash.circle.fill")
+        }
+    }
     
     private var menu: some View {
         HStack {
