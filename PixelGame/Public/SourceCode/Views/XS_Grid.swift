@@ -49,13 +49,13 @@ struct XS_Grid: View {
             case .right: options.offset.x += offset
             }
         } label: {
-            Image(systemName: "chevron." + direction.rawValue + ".circle")
+            Image(systemName: "arrowtriangle." + direction.rawValue + ".fill")
                 .font(.largeTitle)
                 .foregroundColor(Color(uiColor: .label))
                 .opacity(0.4)
         }
     }
-    private func currentBtn(_ direction: DirectionType) -> some View {
+    private func currentBtnoffsetBtn(_ direction: DirectionType) -> some View {
         Button {
             let offset = CGFloat(options.count)
             switch direction {
