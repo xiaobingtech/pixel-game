@@ -14,11 +14,7 @@ struct XS_Root: View {
     @State private var points: [[XS_Point]] = [[]]
     @State private var options: XS_Options = .init()
     @State private var color: CGColor = UIColor.black.cgColor
-    @State private var bgColor: CGColor!
-    
-    init() {
-        _bgColor = UIColor.systemBackground.cgColor
-    }
+    @State private var bgColor: CGColor?
     
     private var open: some View {
         Button {
