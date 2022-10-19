@@ -11,9 +11,11 @@ import SceneKit
 struct XS_Preview: View {
     let points: [[XS_Point]]
     
+    @e
+    
     private var theScene: SCNScene {
         let scene = SCNScene()
-        scene.background
+        scene.background.contents = UIColor.label
         
         for (index, arr) in points.enumerated() {
             for point in arr {
