@@ -28,6 +28,8 @@
 		AE92A7E428FE483A00151A7F /* XS_Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E228FE483A00151A7F /* XS_Preview.swift */; };
 		AE92A7E628FE535A00151A7F /* XS_Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E528FE535A00151A7F /* XS_Grid.swift */; };
 		AE92A7E728FE535A00151A7F /* XS_Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E528FE535A00151A7F /* XS_Grid.swift */; };
+		AEAFEE6928FFE389008FA5A5 /* XS_Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */; };
+		AEAFEE6A28FFE389008FA5A5 /* XS_Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */; };
 		C4B5702BAA515C7392DBBF68 /* Pods_PixelGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9531B8DEAA4FADC6EAF807D0 /* Pods_PixelGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,7 @@
 		AE6E1FD928FD586700F15F00 /* XS_Hud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Hud.swift; sourceTree = "<group>"; };
 		AE92A7E228FE483A00151A7F /* XS_Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Preview.swift; sourceTree = "<group>"; };
 		AE92A7E528FE535A00151A7F /* XS_Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Grid.swift; sourceTree = "<group>"; };
+		AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +227,7 @@
 		AEAFEE6728FFE347008FA5A5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -437,6 +441,7 @@
 				AE6E1FDA28FD586700F15F00 /* XS_Hud.swift in Sources */,
 				AE6E1FA028FCEE9700F15F00 /* PixelGameApp.swift in Sources */,
 				AE92A7E628FE535A00151A7F /* XS_Grid.swift in Sources */,
+				AEAFEE6928FFE389008FA5A5 /* XS_Tools.swift in Sources */,
 				AE92A7E328FE483A00151A7F /* XS_Preview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEAFEE6A28FFE389008FA5A5 /* XS_Tools.swift in Sources */,
 				AE6E1FCB28FD39C400F15F00 /* RewardedAdManager.swift in Sources */,
 				AE92A7E728FE535A00151A7F /* XS_Grid.swift in Sources */,
 				AE6E1FC328FCF79B00F15F00 /* AppOpenAdManager.swift in Sources */,
