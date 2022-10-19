@@ -60,7 +60,7 @@ struct XS_Grid: View {
             ForEach(0..<arr.count, id: \.self) { index in
                 let point = arr[index]
                 Color(point.color)
-                    .frame(width: size, height: size)
+//                    .frame(width: size, height: size)
 //                    .position(pointPosition(point.position, size: size))
             }
     }
@@ -80,6 +80,7 @@ struct XS_Grid: View {
                 let size = proxy.size.width/Double(count)
                 ZStack {
                     Group {
+                        Color.red
                         if let oldCurrent = oldCurrent, points.count > oldCurrent {
                             contentPoints(oldCurrent, size: size)
                                 .opacity(0.2)
@@ -87,6 +88,7 @@ struct XS_Grid: View {
                         if points.count > options.current {
                             contentPoints(options.current, size: size)
                         }
+//                        Color.red
                     }
                     .frame(width: proxy.size.width, height: proxy.size.height)
                     
