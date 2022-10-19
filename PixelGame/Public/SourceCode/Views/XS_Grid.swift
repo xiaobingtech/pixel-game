@@ -61,7 +61,7 @@ struct XS_Grid: View {
                 let point = arr[index]
                 Color(point.color)
                     .frame(width: size, height: size)
-                    .position(pointPosition(point.position, size: size))
+//                    .position(pointPosition(point.position, size: size))
             }
     }
     private var content: some View {
