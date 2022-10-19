@@ -16,6 +16,10 @@ struct XS_Root: View {
     @State private var color: CGColor = UIColor.black.cgColor
     @State private var bgColor: CGColor = UIColor.systemBackground.cgColor
     
+    init() {
+        
+    }
+    
     private var open: some View {
         Button {
             
