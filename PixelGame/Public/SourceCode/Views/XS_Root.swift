@@ -102,7 +102,7 @@ struct XS_Root: View {
     
     var body: some View {
         if bgColor == nil {
-            bgColor = UICo
+            bgColor = UIColor.systemBackground.cgColor
         }
         return ZStack(alignment: .top) {
             if isPreview {
