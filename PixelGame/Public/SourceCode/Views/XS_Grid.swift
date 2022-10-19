@@ -68,6 +68,7 @@ struct XS_Grid: View {
                     VStack(spacing: 0) {
                         ForEach(0..<count+1, id: \.self) { index in
                             Divider()
+                                .frame(height: 1)
                                 .overlay {
                                     Color(uiColor: .label).opacity(0.5)
                                 }
@@ -77,6 +78,7 @@ struct XS_Grid: View {
                     HStack(spacing: 0) {
                         ForEach(0..<count+1, id: \.self) { index in
                             Divider()
+                                .frame(width: 1)
                                 .overlay {
                                     Color(uiColor: .label).opacity(0.5)
                                 }
