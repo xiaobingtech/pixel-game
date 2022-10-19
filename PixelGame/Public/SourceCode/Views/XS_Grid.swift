@@ -52,7 +52,9 @@ struct XS_Grid: View {
                 let size = proxy.size.width/Double(options.count)
                 ZStack {
                     if points.count > options.current {
-                        let arr = points[options.current]
+                        let arr = points[options.current].filter { point in
+                            return true
+                        }
                         ForEach(0..<arr.count, id: \.self) { index in
                             let point = arr[index]
                             Color(point.color)
