@@ -19,6 +19,8 @@ struct XS_Grid: View {
     @Binding var points: [[XS_Point]]
     @Binding var options: XS_Options
     
+    @State private var oldCurrent: Int?
+    
     private func onDrag(_ value: DragGesture.Value, size: Double) {
         
     }
@@ -38,6 +40,32 @@ struct XS_Grid: View {
                 .opacity(0.4)
         }
     }
+    private func pointPosition(_ position: CGPoint, size: Double) -> CGPoint {
+        let count = Double(options.count)
+        let x = position.x + count - options.offset.x
+        let y = position.y + count - options.offset.y
+        return CGPoint(x: x*size, y: y*size)
+    }
+    private func filter(point: XS_Point) -> Bool {
+        let oCount = Double(options.count)
+        guard point.position.x >= options.offset.x - oCount,
+              point.position.x <= options.offset.x + oCount,
+              point.position.y >= options.offset.y - oCount,
+              point.position.y <= options.offset.y + oCount else { return false }
+        return true
+    }
+    private func contentPoints(_ num: Int, size: Double) -> some View {
+        let arr = points[num].filter(filter(point:))
+        return ZStack {
+            ForEach(0..<arr.count, id: \.self) { index in
+                let point = arr[index]
+                Color(point.color)
+                    .frame(width: size, height: size)
+                    .position(pointPosition(point.position, size: size))
+            }
+        }
+        .padding(size/2)
+    }
     private var content: some View {
         GeometryReader { proxy in
             ZStack {
@@ -53,18 +81,17 @@ struct XS_Grid: View {
                 let count = options.count*2+1
                 let size = proxy.size.width/Double(count)
                 ZStack {
-                    if points.count > options.current {
-                        let arr = points[options.current].filter { point in
-                            return true
+                    Group {
+                        if let oldCurrent = oldCurrent, points.count > oldCurrent {
+                            contentPoints(oldCurrent, size: size)
+                                .opacity(0.2)
                         }
-                        ForEach(0..<arr.count, id: \.self) { index in
-                            let point = arr[index]
-                            Color(point.color)
-                                .frame(width: size, height: size)
-                                .position(x: (point.position.x + 0.5)*size, y: (point.position.y + 0.5)*size)
+                        if points.count > options.current {
+                            contentPoints(options.current, size: size)
                         }
-                        .frame(width: proxy.size.width, height: proxy.size.height)
                     }
+                    .frame(width: proxy.size.width, height: proxy.size.height)
+                    
                     VStack(spacing: 0) {
                         ForEach(0..<count+1, id: \.self) { index in
                             Divider()
