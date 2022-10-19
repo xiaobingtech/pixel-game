@@ -113,7 +113,9 @@ struct XS_Root: View {
                 }
             }
         }
-        
+        .onAppear {
+            bgColor =  UIColor.systemBackground.cgColor
+        }
     }
 }
 
