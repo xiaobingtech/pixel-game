@@ -92,7 +92,6 @@ struct XS_Root: View {
             } label: {
                 Image(systemName: "ellipsis.circle")
             }
-
         }
         .font(.title2)
         .foregroundColor(Color(uiColor: .label))
