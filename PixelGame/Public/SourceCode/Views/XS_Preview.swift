@@ -13,6 +13,7 @@ struct XS_Preview: View {
     
     private var theScene: SCNScene {
         let scene = SCNScene()
+        scene.background
         
         for (index, arr) in points.enumerated() {
             for point in arr {
