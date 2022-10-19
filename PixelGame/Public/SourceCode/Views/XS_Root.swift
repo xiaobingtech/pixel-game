@@ -103,7 +103,7 @@ struct XS_Root: View {
     var body: some View {
         ZStack(alignment: .top) {
             if isPreview {
-                XS_Preview(color: bgColor, points: points)
+                XS_Preview(color: bgColor!, points: points)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             VStack {
