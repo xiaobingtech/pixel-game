@@ -19,16 +19,24 @@ struct XS_Root: View {
         Button {
             
         } label: {
-            Text("Delete")
-            Image(systemName: "trash.circle.fill")
+            Text("Save")
+            Image(systemName: "arrow.down.to.line.circle.fill")
+        }
+    }
+    private var save: some View {
+        Button {
+            
+        } label: {
+            Text("Save")
+            Image(systemName: "arrow.down.to.line.circle.fill")
         }
     }
     private var share: some View {
         Button {
             
         } label: {
-            Text("Delete")
-            Image(systemName: "trash.circle.fill")
+            Text("Share")
+            Image(systemName: "paperplane.circle.fill")
         }
     }
     private var delete: some View {
@@ -43,8 +51,8 @@ struct XS_Root: View {
         Button {
             
         } label: {
-            Text("Delete")
-            Image(systemName: "trash.circle.fill")
+            Text("About us")
+            Image(systemName: "exclamationmark.circle.fill")
         }
     }
     
@@ -76,16 +84,10 @@ struct XS_Root: View {
                 )
             }
             Menu {
-                //paperplane
-                //exclamationmark.circle
-                // tray.and.arrow.down.fill
-                //arrow.down.to.line.circle
-                Button {
-                    
-                } label: {
-                    Text("Delete")
-                    Image(systemName: "trash.circle.fill")
-                }
+                save
+                share
+                delete
+                about
             } label: {
                 Image(systemName: "ellipsis.circle")
             }
