@@ -39,7 +39,7 @@ struct XS_Grid: View {
             points[options.current].append(point)
         }
     }
-    private func offsetBtn(_ direction: DirectionType) -> some View {
+    private func currentBtn(_ direction: DirectionType) -> some View {
         Button {
             let offset = CGFloat(options.count)
             switch direction {
@@ -55,7 +55,7 @@ struct XS_Grid: View {
                 .opacity(0.4)
         }
     }
-    private func currentBtnoffsetBtn(_ direction: DirectionType) -> some View {
+    private func offsetBtn(_ direction: DirectionType) -> some View {
         Button {
             let offset = CGFloat(options.count)
             switch direction {
