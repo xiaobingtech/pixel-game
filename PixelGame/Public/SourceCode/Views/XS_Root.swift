@@ -72,7 +72,7 @@ struct XS_Point: Equatable {
 
 struct XS_Options: Equatable {
     var current: Int = 0
-    var count: Int = 8
+    var count: Int = 10
     var offset: CGPoint = .zero
 }
 
