@@ -15,7 +15,9 @@ struct XS_Preview: View {
     
     private var theScene: SCNScene {
         let scene = SCNScene()
-        scene.background.contents = UIColor.label
+        scene.background.contents = colorScheme == .dark
+        ? UIColor.black
+        : UIColor.white
         
         for (index, arr) in points.enumerated() {
             for point in arr {

@@ -111,9 +111,14 @@ struct XS_Grid: View {
         return
             ForEach(0..<arr.count, id: \.self) { index in
                 let point = arr[index]
-                Color(point.color)
-                    .frame(width: size, height: size)
-                    .position(pointPosition(point.position, size: size))
+                ZStack {
+                    Color(point.color)
+                    Image(systemName: "xmark")
+                        .resizable()
+                        .opacity(0.5)
+                }
+                .frame(width: size, height: size)
+                .position(pointPosition(point.position, size: size))
             }
             .padding(size/2)
     }
