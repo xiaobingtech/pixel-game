@@ -47,7 +47,6 @@ struct XS_Grid: View {
         return CGPoint(x: x*size, y: y*size)
     }
     private func filter(point: XS_Point) -> Bool {
-        return true
         let count = Double(options.count)
         guard point.position.x >= options.offset.x - count,
               point.position.x <= options.offset.x + count,
