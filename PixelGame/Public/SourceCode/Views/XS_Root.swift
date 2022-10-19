@@ -108,7 +108,7 @@ struct XS_Root: View {
             VStack {
                 menu.shadow(color: Color(uiColor: .systemBackground), radius: 1)
                 if !isPreview {
-                    XS_Grid(color: color!, points: $points, options: $options)
+                    XS_Grid(color: color, points: $points, options: $options)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
