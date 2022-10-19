@@ -20,12 +20,12 @@ struct XS_Root: View {
             ColorPicker("", selection: $color, supportsOpacity: true)
                 .labelsHidden()
             Button {
-                isPreview.toggle()
+                options.isClear.toggle()
             } label: {
                 Image(
-                    systemName: isPreview
-                    ? "pencil"
-                    : "pencil.slash"
+                    systemName: options.isClear
+                    ? "pencil.slash"
+                    : "pencil.circle"
                 )
             }
             Spacer()
