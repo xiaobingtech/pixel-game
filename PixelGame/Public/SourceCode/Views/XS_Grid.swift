@@ -42,8 +42,8 @@ struct XS_Grid: View {
     }
     private func pointPosition(_ position: CGPoint, size: Double) -> CGPoint {
         let count = Double(options.count)
-        let x = position.x + count // - options.offset.x
-        let y = position.y + count // - options.offset.y
+        let x = position.x + count - options.offset.x
+        let y = position.y + count + options.offset.y
         return CGPoint(x: x*size, y: y*size)
     }
     private func filter(point: XS_Point) -> Bool {
@@ -60,27 +60,18 @@ struct XS_Grid: View {
             ForEach(0..<arr.count, id: \.self) { index in
                 let point = arr[index]
                 Color(point.color)
-//                    .frame(width: size, height: size)
-//                    .position(pointPosition(point.position, size: size))
+                    .frame(width: size, height: size)
+                    .position(pointPosition(point.position, size: size))
             }
+            .padding(size/2)
     }
     private var content: some View {
         GeometryReader { proxy in
             ZStack {
-                offsetBtn(.up)
-                    .frame(maxHeight: .infinity, alignment: .top)
-                offsetBtn(.down)
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-                offsetBtn(.left)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                offsetBtn(.right)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                
                 let count = options.count*2+1
                 let size = proxy.size.width/Double(count)
                 ZStack {
                     Group {
-                        Color.red
                         if let oldCurrent = oldCurrent, points.count > oldCurrent {
                             contentPoints(oldCurrent, size: size)
                                 .opacity(0.2)
@@ -88,7 +79,6 @@ struct XS_Grid: View {
                         if points.count > options.current {
                             contentPoints(options.current, size: size)
                         }
-//                        Color.red
                     }
                     .frame(width: proxy.size.width, height: proxy.size.height)
                     
@@ -124,6 +114,15 @@ struct XS_Grid: View {
                         .onChanged { onDrag($0, size: size) }
                         .onEnded { onDrag($0, size: size) }
                 )
+                
+                offsetBtn(.up)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                offsetBtn(.down)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                offsetBtn(.left)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                offsetBtn(.right)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
     }
