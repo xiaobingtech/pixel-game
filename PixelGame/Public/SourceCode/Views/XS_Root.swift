@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import sw
+import SwiftHash
 
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
