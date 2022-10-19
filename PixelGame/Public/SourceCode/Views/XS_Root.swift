@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftHash
 
+
 let filePath = NSHomeDirectory() + "/Library/XSSaves"
 
 struct XS_Root: View {
