@@ -59,7 +59,7 @@ struct XS_Root: View {
     
     private var menu: some View {
         HStack {
-            ColorPicker("", selection: isPreview ? $bgColor : $color, supportsOpacity: true)
+            ColorPicker("", selection: isPreview ? $bgColor! : $color, supportsOpacity: true)
                 .labelsHidden()
             if !isPreview {
                 Button {
