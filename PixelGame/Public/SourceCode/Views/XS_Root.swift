@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftHash
 
-let filePath = NSHomeDirectory() + "/Library/XS/topic"
+let filePath = NSHomeDirectory() + "/Library/XSSaves/topic"
 
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
