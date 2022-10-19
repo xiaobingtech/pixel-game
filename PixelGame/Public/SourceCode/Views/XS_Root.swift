@@ -23,7 +23,7 @@ struct XS_Root: View {
     
     private var open: some View {
         Button {
-            xs_hud.showToast(MD5("Open"))
+            
         } label: {
             Text("Open")
             Image(systemName: "folder.circle.fill")
