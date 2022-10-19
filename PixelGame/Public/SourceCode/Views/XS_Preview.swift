@@ -11,7 +11,7 @@ import SceneKit
 struct XS_Preview: View {
     let points: [[XS_Point]]
     
-    @e
+    @Environment(\.colorScheme) private var colorScheme
     
     private var theScene: SCNScene {
         let scene = SCNScene()
