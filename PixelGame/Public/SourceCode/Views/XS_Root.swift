@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftHash
-import Co
+import CryptoKit
 
 let filePath = NSHomeDirectory() + "/Library/XSSaves"
 
