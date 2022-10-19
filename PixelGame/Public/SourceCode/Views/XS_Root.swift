@@ -17,6 +17,10 @@ struct XS_Root: View {
     
     private var save: some View {
         Button {
+            
+        } label: {
+            
+        }
     }
     
     private var menu: some View {
