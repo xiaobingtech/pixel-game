@@ -16,7 +16,8 @@ struct XS_Preview: View {
     
     private var theScene: SCNScene {
         let scene = SCNScene()
-        scene.background.contents = colorScheme == .dark
+        scene.background.contents = color
+        colorScheme == .dark
         ? UIColor.black
         : UIColor.white
         
