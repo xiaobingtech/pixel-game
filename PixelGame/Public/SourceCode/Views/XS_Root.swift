@@ -9,6 +9,7 @@ import SwiftUI
 
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
+    @Environment(\.colorScheme) private var colorScheme
     
     @State private var isPreview: Bool = false
     @State private var points: [[XS_Point]] = [[]]
