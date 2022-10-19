@@ -49,7 +49,9 @@ struct XS_Grid: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 offsetBtn(.right)
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                let size = proxy.size.width/Double(options.count)
+                
+                let count = options.count*2+1
+                let size = proxy.size.width/Double(count)
                 ZStack {
                     if points.count > options.current {
                         let arr = points[options.current].filter { point in
@@ -64,7 +66,7 @@ struct XS_Grid: View {
                         .frame(width: proxy.size.width, height: proxy.size.height)
                     }
                     VStack(spacing: 0) {
-                        ForEach(0..<options.count+1, id: \.self) { index in
+                        ForEach(0..<count+1, id: \.self) { index in
                             Divider()
                                 .overlay {
                                     Color(uiColor: .label).opacity(0.5)
@@ -73,7 +75,7 @@ struct XS_Grid: View {
                         }
                     }
                     HStack(spacing: 0) {
-                        ForEach(0..<options.count+1, id: \.self) { index in
+                        ForEach(0..<count+1, id: \.self) { index in
                             Divider()
                                 .overlay {
                                     Color(uiColor: .label).opacity(0.5)
@@ -81,7 +83,6 @@ struct XS_Grid: View {
                                 .frame(width: size)
                         }
                     }
-                    
                 }
                 .frame(width: proxy.size.width, height: proxy.size.height)
                 .mask {
