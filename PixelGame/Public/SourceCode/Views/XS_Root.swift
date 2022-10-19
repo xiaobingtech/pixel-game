@@ -19,8 +19,8 @@ struct XS_Root: View {
         Button {
             
         } label: {
-            Text("Save")
-            Image(systemName: "arrow.down.to.line.circle.fill")
+            Text("Open")
+            Image(systemName: "folder.circle.fill")
         }
     }
     private var save: some View {
@@ -113,6 +113,7 @@ struct XS_Root: View {
                 }
             }
         }
+        
     }
 }
 
