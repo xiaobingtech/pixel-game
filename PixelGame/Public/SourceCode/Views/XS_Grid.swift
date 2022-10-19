@@ -32,7 +32,9 @@ struct XS_Grid: View {
             x: x - options.count + Int(options.offset.x),
             y: y - options.count + Int(options.offset.y)
         )
-        if let index = points[options.current].firstIndex(where: { $0.position == position }) {
+        if options.isClear {
+            points[options.current].removeAll { $0.position == position }
+        } else if let index = points[options.current].firstIndex(where: { $0.position == position }) {
             points[options.current][index].color = color
         } else {
             let point = XS_Point(position: position, color: color)

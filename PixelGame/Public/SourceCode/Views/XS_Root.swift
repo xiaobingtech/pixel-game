@@ -15,19 +15,25 @@ struct XS_Root: View {
     @State private var options: XS_Options = .init()
     @State private var color: CGColor = UIColor.black.cgColor
     
+    
+    
     private var menu: some View {
         HStack {
-            ColorPicker("", selection: $color, supportsOpacity: true)
-                .labelsHidden()
-            Button {
-                options.isClear.toggle()
-            } label: {
-                Image(
-                    systemName: options.isClear
-                    ? "pencil.slash"
-                    : "pencil.circle"
-                )
+            Group {
+                ColorPicker("", selection: $color, supportsOpacity: true)
+                    .labelsHidden()
+                Button {
+                    options.isClear.toggle()
+                } label: {
+                    Image(
+                        systemName: options.isClear
+                        ? "pencil.slash"
+                        : "pencil.circle"
+                    )
+                }
             }
+            .opacity(isPreview ? 0 : 1)
+            
             Spacer()
             Button {
                 isPreview.toggle()
@@ -39,14 +45,15 @@ struct XS_Root: View {
                 )
             }
             Menu {
-                Text("123")
-                    .onTapGesture {
-                        
-                    }
+                //paperplane
+                //exclamationmark.circle
+                // tray.and.arrow.down.fill
+                //arrow.down.to.line.circle
                 Button {
                     
                 } label: {
-                    Text("456")
+                    Text("Delete")
+                    Image(systemName: "trash.circle.fill")
                 }
             } label: {
                 Image(systemName: "ellipsis.circle")
@@ -60,16 +67,18 @@ struct XS_Root: View {
     }
     
     var body: some View {
-        VStack {
-            menu
-            Group {
-                if isPreview {
-                    XS_Preview(points: points)
-                } else {
+        ZStack(alignment: .top) {
+            if isPreview {
+                XS_Preview(points: points)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            VStack {
+                menu
+                if !isPreview {
                     XS_Grid(color: color, points: $points, options: $options)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
