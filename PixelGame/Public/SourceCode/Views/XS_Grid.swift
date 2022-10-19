@@ -42,29 +42,28 @@ struct XS_Grid: View {
     }
     private func pointPosition(_ position: CGPoint, size: Double) -> CGPoint {
         let count = Double(options.count)
-        let x = position.x + count - options.offset.x
-        let y = position.y + count - options.offset.y
+        let x = position.x + count // - options.offset.x
+        let y = position.y + count // - options.offset.y
         return CGPoint(x: x*size, y: y*size)
     }
     private func filter(point: XS_Point) -> Bool {
-        let oCount = Double(options.count)
-        guard point.position.x >= options.offset.x - oCount,
-              point.position.x <= options.offset.x + oCount,
-              point.position.y >= options.offset.y - oCount,
-              point.position.y <= options.offset.y + oCount else { return false }
+        return true
+        let count = Double(options.count)
+        guard point.position.x >= options.offset.x - count,
+              point.position.x <= options.offset.x + count,
+              point.position.y >= options.offset.y - count,
+              point.position.y <= options.offset.y + count else { return false }
         return true
     }
     private func contentPoints(_ num: Int, size: Double) -> some View {
         let arr = points[num].filter(filter(point:))
-        return ZStack {
+        return
             ForEach(0..<arr.count, id: \.self) { index in
                 let point = arr[index]
                 Color(point.color)
                     .frame(width: size, height: size)
                     .position(pointPosition(point.position, size: size))
             }
-        }
-        .padding(size/2)
     }
     private var content: some View {
         GeometryReader { proxy in
