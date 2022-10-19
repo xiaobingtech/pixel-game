@@ -59,9 +59,9 @@ struct XS_Root: View {
     
     private var menu: some View {
         HStack {
-            Group {
-                ColorPicker("", selection: isPreview ? $bgColor : $color, supportsOpacity: true)
-                    .labelsHidden()
+            ColorPicker("", selection: isPreview ? $bgColor : $color, supportsOpacity: true)
+                .labelsHidden()
+            if !isPreview {
                 Button {
                     options.isClear.toggle()
                 } label: {
@@ -72,7 +72,6 @@ struct XS_Root: View {
                     )
                 }
             }
-            .opacity(isPreview ? 0 : 1)
             
             Spacer()
             Button {
@@ -107,7 +106,7 @@ struct XS_Root: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             VStack {
-                menu
+                menu.shadow(radius: 3)
                 if !isPreview {
                     XS_Grid(color: color, points: $points, options: $options)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
