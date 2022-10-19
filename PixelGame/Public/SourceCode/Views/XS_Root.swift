@@ -15,7 +15,7 @@ struct XS_Root: View {
     @State private var options: XS_Options = .init()
     @State private var color: CGColor = UIColor.black.cgColor
     
-    private var save: some View {
+    private var open: some View {
         Button {
             
         } label: {
