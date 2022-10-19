@@ -24,7 +24,7 @@ struct XS_Grid: View {
     }
     private func offsetBtn(_ direction: DirectionType) -> some View {
         Button {
-            let offset = CGFloat(options.count/2)
+            let offset = CGFloat(options.count)
             switch direction {
             case .up: options.offset.y += offset
             case .down: options.offset.y -= offset
