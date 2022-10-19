@@ -19,6 +19,15 @@ struct XS_Root: View {
         HStack {
             ColorPicker("", selection: $color, supportsOpacity: true)
                 .labelsHidden()
+            Button {
+                isPreview.toggle()
+            } label: {
+                Image(
+                    systemName: isPreview
+                    ? "pencil"
+                    : "pencil.slash"
+                )
+            }
             Spacer()
             Button {
                 isPreview.toggle()
@@ -74,6 +83,7 @@ struct XS_Options: Equatable {
     var current: Int = 0
     var count: Int = 10
     var offset: CGPoint = .zero
+    var isClear: Bool = false
 }
 
 struct XS_Root_Previews: PreviewProvider {

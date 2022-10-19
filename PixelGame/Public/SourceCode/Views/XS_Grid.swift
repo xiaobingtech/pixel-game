@@ -41,18 +41,38 @@ struct XS_Grid: View {
     }
     private func currentBtn(_ direction: DirectionType) -> some View {
         Button {
-            let offset = CGFloat(options.count)
+            guard points.contains(where: { !$0.isEmpty }) else { return }
             switch direction {
-            case .up: options.offset.y -= offset
-            case .down: options.offset.y += offset
-            case .left: options.offset.x -= offset
-            case .right: options.offset.x += offset
+            case .left:
+                if let item = points.last, item.isEmpty {
+                    points.removeLast()
+                    oldCurrent = nil
+                    options.current = points.count - 1
+                } else {
+                    if options.current > 0 {
+                        options.current -= 1
+                    } else {
+                        points.insert([], at: 0)
+                    }
+                    oldCurrent = options.current + 1
+                }
+            case .right:
+                if let item = points.first, item.isEmpty {
+                    points.removeFirst()
+                    oldCurrent = nil
+                    options.current = 0
+                } else {
+                    if points.count <= options.current + 1 {
+                        points.append([])
+                    }
+                    options.current += 1
+                    oldCurrent = options.current - 1
+                }
+            default: break
             }
         } label: {
             Image(systemName: "arrowtriangle." + direction.rawValue + ".fill")
-                .font(.largeTitle)
                 .foregroundColor(Color(uiColor: .label))
-                .opacity(0.4)
         }
     }
     private func offsetBtn(_ direction: DirectionType) -> some View {
@@ -67,8 +87,7 @@ struct XS_Grid: View {
         } label: {
             Image(systemName: "chevron." + direction.rawValue + ".circle")
                 .font(.largeTitle)
-                .foregroundColor(Color(uiColor: .label))
-                .opacity(0.4)
+                .foregroundColor(Color(uiColor: .label).opacity(0.4))
         }
     }
     private func pointPosition(_ position: CGPoint, size: Double) -> CGPoint {
@@ -163,8 +182,10 @@ struct XS_Grid: View {
             let size = min(proxy.size.width, proxy.size.height)
             VStack {
                 HStack {
+                    currentBtn(.left)
                     Text("\(options.current+1)/\(points.count)")
                         .font(.title)
+                    currentBtn(.right)
                 }
                 content
                     .padding()
