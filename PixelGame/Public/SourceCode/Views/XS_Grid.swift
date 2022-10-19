@@ -131,7 +131,7 @@ struct XS_Grid: View {
                     Group {
                         if let oldCurrent = oldCurrent, points.count > oldCurrent {
                             contentPoints(oldCurrent, size: size)
-                                .opacity(0.2)
+                                .opacity(0.4)
                         }
                         if points.count > options.current {
                             contentPoints(options.current, size: size)

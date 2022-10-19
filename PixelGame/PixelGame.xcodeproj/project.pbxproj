@@ -207,6 +207,7 @@
 		AE6E1FD728FD570300F15F00 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AEAFEE6728FFE347008FA5A5 /* New Group */,
 				AE6E1FD828FD571700F15F00 /* Hud */,
 			);
 			path = Shared;
@@ -218,6 +219,13 @@
 				AE6E1FD928FD586700F15F00 /* XS_Hud.swift */,
 			);
 			path = Hud;
+			sourceTree = "<group>";
+		};
+		AEAFEE6728FFE347008FA5A5 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
