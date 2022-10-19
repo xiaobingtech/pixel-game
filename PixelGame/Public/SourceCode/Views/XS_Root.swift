@@ -101,6 +101,9 @@ struct XS_Root: View {
     }
     
     var body: some View {
+        if bgColor == nil {
+            bgColor = UICo
+        }
         return ZStack(alignment: .top) {
             if isPreview {
                 XS_Preview(color: bgColor, points: points)
