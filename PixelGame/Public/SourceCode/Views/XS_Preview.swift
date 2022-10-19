@@ -9,6 +9,7 @@ import SwiftUI
 import SceneKit
 
 struct XS_Preview: View {
+    let color: CGColor
     let points: [[XS_Point]]
     
     @Environment(\.colorScheme) private var colorScheme
