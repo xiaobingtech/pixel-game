@@ -17,7 +17,7 @@ struct XS_Root: View {
     @State private var bgColor: CGColor!
     
     init() {
-        UIColor.systemBackground.cgColor
+        bgColor = UIColor.systemBackground.cgColor
     }
     
     private var open: some View {
