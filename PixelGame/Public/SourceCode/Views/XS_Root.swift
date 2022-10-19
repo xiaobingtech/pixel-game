@@ -100,12 +100,9 @@ struct XS_Root: View {
     }
     
     var body: some View {
-        if bgColor == nil {
-            bgColor = UIColor.systemBackground.cgColor
-        }
-        return ZStack(alignment: .top) {
+        ZStack(alignment: .top) {
             if isPreview {
-                XS_Preview(color: bgColor ?? UIColor.systemBackground.cgColor, points: points)
+                XS_Preview(color: bgColor ?? , points: points)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             VStack {
