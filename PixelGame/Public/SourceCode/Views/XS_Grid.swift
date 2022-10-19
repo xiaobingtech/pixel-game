@@ -22,14 +22,29 @@ struct XS_Grid: View {
     @State private var oldCurrent: Int?
     
     private func onDrag(_ value: DragGesture.Value, size: Double) {
-        
+        guard points.count > options.current else { return }
+        let count = options.count*2 + 1
+        let x = Int(value.location.x/size)
+        guard x >= 0, x < count  else { return }
+        let y = Int(value.location.y/size)
+        guard y >= 0, y < count else { return }
+        let position = CGPoint(
+            x: x - options.count + Int(options.offset.x),
+            y: y - options.count + Int(options.offset.y)
+        )
+        if let index = points[options.current].firstIndex(where: { $0.position == position }) {
+            points[options.current][index].color = color
+        } else {
+            let point = XS_Point(position: position, color: color)
+            points[options.current].append(point)
+        }
     }
     private func offsetBtn(_ direction: DirectionType) -> some View {
         Button {
             let offset = CGFloat(options.count)
             switch direction {
-            case .up: options.offset.y += offset
-            case .down: options.offset.y -= offset
+            case .up: options.offset.y -= offset
+            case .down: options.offset.y += offset
             case .left: options.offset.x -= offset
             case .right: options.offset.x += offset
             }
@@ -43,7 +58,7 @@ struct XS_Grid: View {
     private func pointPosition(_ position: CGPoint, size: Double) -> CGPoint {
         let count = Double(options.count)
         let x = position.x + count - options.offset.x
-        let y = position.y + count + options.offset.y
+        let y = position.y + count - options.offset.y
         return CGPoint(x: x*size, y: y*size)
     }
     private func filter(point: XS_Point) -> Bool {
@@ -130,10 +145,14 @@ struct XS_Grid: View {
     var body: some View {
         GeometryReader { proxy in
             let size = min(proxy.size.width, proxy.size.height)
-            content
-                .padding()
-                .frame(width: size, height: size)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            ZStack(alignment: .top) {
+                content
+                    .padding()
+                    .frame(width: size, height: size)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                Text("\(options.current+1)/\(points.count)")
+                    .font(.title)
+            }
         }
     }
 }
