@@ -32,9 +32,10 @@ struct XS_Tools {
         }
         do {
             let data = try JSONEncoder().encode(points)
-            let str = String(data: data, encoding: .utf8)!
+            guard let str = String(data: data, encoding: .utf8) else { throw NSError() }
             var s: String?
-            let ss = s!
+            guard let ss = s else { throw NSError() }
+            
             debugPrint(str)
             let md5 = MD5(str)
             debugPrint(md5)
