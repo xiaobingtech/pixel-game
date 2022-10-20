@@ -39,8 +39,7 @@ struct XS_Tools {
             let data = try JSONEncoder().encode(points)
             let str = try safe(String(data: data, encoding: .utf8))
             let md5 = MD5(str)
-            var myData = Data()
-            myData.count = 256
+            var myData = Data(repeating: 0, count: 256)
             let key = SymmetricKey(data: myData)
             
             
