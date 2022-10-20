@@ -31,7 +31,7 @@ struct XS_Root: View {
     }
     private var save: some View {
         Button {
-            
+            XS_Tools.save(points)
         } label: {
             Text("Save")
             Image(systemName: "arrow.down.to.line.circle.fill")
