@@ -44,8 +44,9 @@ struct XS_Tools {
             debugPrint(encryptedContent)
             
             
+            let newKey = try SymmetricKey(data: SHA256.hash(data: safe((email + md5).data(using: .utf8))))
             let sealedBox = try ChaChaPoly.SealedBox(combined: encryptedContent)
-            let decryptedContent = try ChaChaPoly.open(sealedBox, using: key)
+            let decryptedContent = try ChaChaPoly.open(sealedBox, using: newKey)
             debugPrint(String(data: decryptedContent, encoding: .utf8))
             // SealedBox的3个属性
             let nonce = sealedBox.nonce
