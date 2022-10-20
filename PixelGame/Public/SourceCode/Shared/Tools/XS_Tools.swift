@@ -39,9 +39,7 @@ struct XS_Tools {
             let data = try JSONEncoder().encode(points)
             let str = try safe(String(data: data, encoding: .utf8))
             let md5 = MD5(str)
-            let keyData = SHA256.hash(data: data)
-            let key = SymmetricKey(data: keyData)
-            
+            let key = try SymmetricKey(data: SHA256.hash(data: safe((email + md5).data(using: .utf8))))
             let encryptedContent = try ChaChaPoly.seal(data, using: key).combined
             debugPrint(encryptedContent)
             
