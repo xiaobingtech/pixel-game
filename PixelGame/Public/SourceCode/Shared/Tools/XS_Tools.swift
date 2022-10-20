@@ -55,7 +55,8 @@ struct XS_Tools {
             debugPrint(sealedBox.combined == nonce + ciphertext + tag)
                     
 
-        } catch {
+        } catch let error {
+            debugPrint(error.localizedDescription)
             handle(false)
         }
     }
