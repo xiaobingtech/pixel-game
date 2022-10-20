@@ -19,8 +19,8 @@ extension UIApplication {
 struct XS_Tools {
     static func save(_ points: [[XS_Point]]) {
         print(points)
-        let points = points.map { $0.sorted { $0.position.x > $1.position.x && $0.position.y > $1.position.y } }
-        print(points)
+        let new = points.map { $0.sorted { $0.position.x > $1.position.x && $0.position.y > $1.position.y } }
+        print(new)
     }
 }
 //产生公/私钥
