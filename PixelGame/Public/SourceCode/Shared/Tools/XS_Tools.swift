@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftHash
+import CryptoKit
 
 extension UIApplication {
     static var keyWindow: UIWindow? {
@@ -17,6 +19,7 @@ extension UIApplication {
 }
 
 struct XS_Tools {
+    static let filePath = NSHomeDirectory() + "/Library/XSSaves"
     static func save(_ points: [[XS_Point]], handle: (Bool) -> Void) {
         let points = points.map {
             $0.sorted {
@@ -29,8 +32,12 @@ struct XS_Tools {
         }
         do {
             let data = try JSONEncoder().encode(points)
-            let str = String(data: data, encoding: .utf8)
+            let str = String(data: data, encoding: .utf8)!
+            var s: String?
+            let ss = s!
             debugPrint(str)
+            let md5 = MD5(str)
+            debugPrint(md5)
             
         } catch {
             handle(false)

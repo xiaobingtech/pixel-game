@@ -6,10 +6,6 @@
 //
 
 import SwiftUI
-import SwiftHash
-import CryptoKit
-
-let filePath = NSHomeDirectory() + "/Library/XSSaves"
 
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
