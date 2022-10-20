@@ -39,13 +39,16 @@ struct XS_Tools {
             let data = try JSONEncoder().encode(points)
             let str = try safe(String(data: data, encoding: .utf8))
             let md5 = MD5(str)
-            let key = SymmetricKey(size: .bits256)
+            var myData = data
+            myData.count = 256
+            let key = SymmetricKey(data: myData)
+            
             let encryptedContent = try ChaChaPoly.seal(data, using: key).combined
             debugPrint(encryptedContent)
             
             
             let sealedBox = try ChaChaPoly.SealedBox(combined: encryptedContent)
-            let decryptedContent = try ChaChaPoly.open(sealedBox, using: SymmetricKey(size: .bits256))
+            let decryptedContent = try ChaChaPoly.open(sealedBox, using: key)
             debugPrint(String(data: decryptedContent, encoding: .utf8))
             // SealedBox的3个属性
             let nonce = sealedBox.nonce
