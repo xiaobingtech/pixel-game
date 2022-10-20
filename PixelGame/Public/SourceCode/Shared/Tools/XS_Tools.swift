@@ -20,6 +20,11 @@ extension UIApplication {
 
 struct XS_Tools {
     static let filePath = NSHomeDirectory() + "/Library/XSSaves"
+    static let email = "hanyzjob@163.com"
+    static func safe<T>(_ data: T?) throws -> T {
+        guard let data = data else { throw NSError() }
+        return data
+    }
     static func save(_ points: [[XS_Point]], handle: (Bool) -> Void) {
         let points = points.map {
             $0.sorted {
@@ -32,11 +37,24 @@ struct XS_Tools {
         }
         do {
             let data = try JSONEncoder().encode(points)
-            guard let str = String(data: data, encoding: .utf8) else { throw NSError() }
-            debugPrint(str)
+            let str = try safe(String(data: data, encoding: .utf8))
             let md5 = MD5(str)
-            debugPrint(md5)
+            let key = try SymmetricKey(data: safe((email + md5).data(using:.utf8)))
+            let encryptedContent = try ChaChaPoly.seal(data, using: key).combined
+            debugPrint(encryptedContent)
             
+            
+            let sealedBox = try ChaChaPoly.SealedBox(combined: encryptedContent)
+            let decryptedContent = try ChaChaPoly.open(sealedBox, using: key)
+            debugPrint(String(data: decryptedContent, encoding: .utf8))
+            // SealedBox的3个属性
+            let nonce = sealedBox.nonce
+            let ciphertext = sealedBox.ciphertext
+            let tag = sealedBox.tag
+            
+            debugPrint(sealedBox.combined == nonce + ciphertext + tag)
+                    
+
         } catch {
             handle(false)
         }
