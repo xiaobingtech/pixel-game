@@ -17,9 +17,8 @@ extension UIApplication {
 }
 
 struct XS_Tools {
-    static func save(_ points: [[XS_Point]]) {
-        print(points)
-        let new = points.map {
+    static func save(_ points: [[XS_Point]], handle: (Bool) -> Void) {
+        let points = points.map {
             $0.sorted {
                 if $0.position.x == $1.position.x {
                     return $0.position.y < $1.position.y
@@ -28,7 +27,14 @@ struct XS_Tools {
                 }
             }
         }
-        print(new)
+        do {
+            let data = try JSONEncoder().encode(points)
+            let str = String(data: data, encoding: .utf8)
+            debugPrint(str)
+            
+        } catch {
+            handle(false)
+        }
     }
 }
 //产生公/私钥

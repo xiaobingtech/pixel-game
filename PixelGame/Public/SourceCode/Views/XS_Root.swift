@@ -31,7 +31,13 @@ struct XS_Root: View {
     }
     private var save: some View {
         Button {
-            XS_Tools.save(points)
+            XS_Tools.save(points) { success in
+                if success {
+                    xs_hud.showToast("保存成功!")
+                } else {
+                    xs_hud.showToast("保存失败!")
+                }
+            }
         } label: {
             Text("Save")
             Image(systemName: "arrow.down.to.line.circle.fill")
@@ -121,9 +127,30 @@ struct XS_Root: View {
     }
 }
 
-struct XS_Point: Equatable {
+struct XS_Point: Equatable, Codable {
     let position: CGPoint
     var color: CGColor
+    
+    init(position: CGPoint, color: CGColor) {
+        self.position = position
+        self.color = color
+    }
+    
+    enum CodingKeys: String, CodingKey {
+    case position, color
+    }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        position = try container.decode(CGPoint.self, forKey: .position)
+        let colorData = try container.decode(Data.self, forKey: .color)
+        color = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)!.cgColor
+    }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(position, forKey: .position)
+        let colorData = try NSKeyedArchiver.archivedData(withRootObject: UIColor(cgColor: color), requiringSecureCoding: false)
+        try container.encode(colorData, forKey: .color)
+    }
 }
 
 struct XS_Options: Equatable {
