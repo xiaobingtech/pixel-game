@@ -10,24 +10,25 @@ import SwiftUI
 struct XS_Open: View {
     @Binding var isOpen: Bool
     @Binding var points: [[XS_Point]]
+    
+    private func cell(_ item: XS_File) -> some View {
+        Button {
+            points = item.points
+            isOpen = false
+        } label: {
+            XS_Preview(color: CGColor.init(gray: 0, alpha: 0), points: item.points)
+                .frame(width: 100, height: 100)
+        }
+    }
+    
     var body: some View {
         ZStack(alignment: .topTrailing) {
             if let files = XS_Tools.getFiles {
-                ScrollView(.vertical, showsIndicators: false) {
-                    GeometryReader { proxy in
-                        VStack {
-                            ForEach(files, id: \.md5) { file in
-                                Button {
-                                    points = file.points
-                                    isOpen = false
-                                } label: {
-                                    XS_Preview(color: CGColor.init(gray: 0, alpha: 0), points: file.points)
-                                        .frame(width: 100, height: 100)
-                                }
-                            }
-                        }
+                GeometryReader { proxy in
+                    ScrollView(.vertical, showsIndicators: false) {
+                        XS_WrappedLayout(data: files, gWidth: proxy.size.width - 30, itemSpacing: 20, lineSpacing: 20, content: cell(_:))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             } else {
                 Text("加载失败!")

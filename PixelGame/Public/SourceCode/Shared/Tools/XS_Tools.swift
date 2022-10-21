@@ -106,9 +106,13 @@ struct XS_Tools {
     }
 }
 
-struct XS_File: Equatable, Codable {
+struct XS_File: Equatable, Codable, Hashable {
     let points: [[XS_Point]]
     let md5: String
     let name: String
     let date: Date
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(md5)
+        hasher.combine(name)
+    }
 }

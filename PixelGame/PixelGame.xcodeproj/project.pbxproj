@@ -31,6 +31,8 @@
 		AEAFEE6928FFE389008FA5A5 /* XS_Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */; };
 		AEAFEE6A28FFE389008FA5A5 /* XS_Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */; };
 		AEAFEE6D28FFE89F008FA5A5 /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEAFEE6C28FFE89F008FA5A5 /* SwiftHash */; };
+		AEBEA665290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
+		AEBEA666290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
 		AEC5066829026FA5003EC22C /* XS_Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC5066729026FA5003EC22C /* XS_Open.swift */; };
 		AEC5066929026FA5003EC22C /* XS_Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC5066729026FA5003EC22C /* XS_Open.swift */; };
 		C4B5702BAA515C7392DBBF68 /* Pods_PixelGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9531B8DEAA4FADC6EAF807D0 /* Pods_PixelGame.framework */; };
@@ -62,6 +64,7 @@
 		AE92A7E228FE483A00151A7F /* XS_Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Preview.swift; sourceTree = "<group>"; };
 		AE92A7E528FE535A00151A7F /* XS_Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Grid.swift; sourceTree = "<group>"; };
 		AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Tools.swift; sourceTree = "<group>"; };
+		AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XS_WrappedLayout.swift; sourceTree = "<group>"; };
 		AEC5066729026FA5003EC22C /* XS_Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Open.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */,
+				AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -453,6 +457,7 @@
 				AEC5066829026FA5003EC22C /* XS_Open.swift in Sources */,
 				AE6E1FDA28FD586700F15F00 /* XS_Hud.swift in Sources */,
 				AE6E1FA028FCEE9700F15F00 /* PixelGameApp.swift in Sources */,
+				AEBEA665290281FD005E9190 /* XS_WrappedLayout.swift in Sources */,
 				AE92A7E628FE535A00151A7F /* XS_Grid.swift in Sources */,
 				AEAFEE6928FFE389008FA5A5 /* XS_Tools.swift in Sources */,
 				AE92A7E328FE483A00151A7F /* XS_Preview.swift in Sources */,
@@ -463,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEBEA666290281FD005E9190 /* XS_WrappedLayout.swift in Sources */,
 				AEAFEE6A28FFE389008FA5A5 /* XS_Tools.swift in Sources */,
 				AEC5066929026FA5003EC22C /* XS_Open.swift in Sources */,
 				AE6E1FCB28FD39C400F15F00 /* RewardedAdManager.swift in Sources */,
