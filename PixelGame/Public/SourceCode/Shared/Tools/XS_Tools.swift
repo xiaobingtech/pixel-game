@@ -74,7 +74,7 @@ struct XS_Tools {
             let decoder = JSONDecoder()
             let encoder = JSONEncoder()
             return arr.compactMap { str in
-                guard str.hasSuffix("." + suffix), let encryptedContent = fm.contents(atPath: str) else { return nil }
+                guard str.hasSuffix("." + suffix), let encryptedContent = fm.contents(atPath: filePath + "/" + str) else { return nil }
                 do {
                     let sealedBox = try ChaChaPoly.SealedBox(combined: encryptedContent)
                     let decryptedContent = try ChaChaPoly.open(sealedBox, using: key)
