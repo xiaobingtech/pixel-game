@@ -12,6 +12,8 @@ struct XS_Preview: View {
     let color: CGColor
     let points: [[XS_Point]]
     
+    @Environment(\.isEnabled) private var isEnabled
+    
     private var theScene: SCNScene {
         let scene = SCNScene()
         scene.background.contents = color
@@ -34,7 +36,7 @@ struct XS_Preview: View {
     }
     
     var body: some View {
-        SceneView(scene: theScene, options: [.autoenablesDefaultLighting, .allowsCameraControl])
+        SceneView(scene: theScene, options: isEnabled ? [.autoenablesDefaultLighting, .allowsCameraControl] : [.autoenablesDefaultLighting])
             .ignoresSafeArea()
     }
 }

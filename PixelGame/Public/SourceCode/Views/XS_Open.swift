@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct XS_Open: View {
+    let color: CGColor
     @Binding var isOpen: Bool
     @Binding var points: [[XS_Point]]
     
@@ -20,6 +21,7 @@ struct XS_Open: View {
                 XS_Preview(color: UIColor.white.cgColor, points: item.points)
                     .frame(width: 150, height: 150)
                     .cornerRadius(5)
+                    .disabled(true)
                 Text(item.name)
                     .font(.body)
             }
