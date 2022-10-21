@@ -93,17 +93,6 @@ struct XS_Tools {
             return nil
         }
     }
-    
-//    let newKey = try SymmetricKey(data: SHA256.hash(data: safe((email + md5).data(using: .utf8))))
-//    let sealedBox = try ChaChaPoly.SealedBox(combined: encryptedContent)
-//    let decryptedContent = try ChaChaPoly.open(sealedBox, using: newKey)
-//    debugPrint(String(data: decryptedContent, encoding: .utf8))
-//    // SealedBox的3个属性
-//    let nonce = sealedBox.nonce
-//    let ciphertext = sealedBox.ciphertext
-//    let tag = sealedBox.tag
-//
-//    debugPrint(sealedBox.combined == nonce + ciphertext + tag)
 }
 
 struct XS_File: Equatable, Codable {
@@ -112,30 +101,3 @@ struct XS_File: Equatable, Codable {
     let name: String
     let date: Date
 }
-
-
-
-
-//产生公/私钥
-//
-//// 私钥
-//let privateKey = Curve25519.Signing.PrivateKey()
-//// 公钥
-//let publicKey = privateKey.publicKey
-//// 发布公钥
-//let publicKeyData = publicKey.rawRepresentation
-//
-//私钥签名
-//
-//let str = "Hello CryptoKit"
-//let data = str.data(using: .utf8)!
-//
-//let signature = try? privateKey.signature(for: data)
-//
-//公钥验证
-//
-//if let signature = signature {
-//    if publicKey.isValidSignature(NSData(data: signature) , for: data) {
-//        print("签名有效")
-//    }
-//}
