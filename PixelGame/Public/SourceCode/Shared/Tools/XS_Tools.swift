@@ -119,8 +119,7 @@ struct XS_Tools {
         let fileName = md5 + "." + suffix
         let fileURL = URL(fileURLWithPath: filePath).appendingPathComponent(fileName)
         guard FileManager.default.fileExists(atPath: fileURL.path) else { return false }
-        let title = "分享像素模型"
-        let activityVC = UIActivityViewController(activityItems: [title, fileURL], applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
         UIApplication.keyWindow?.rootViewController?.present(activityVC, animated: true)
         return true
     }
