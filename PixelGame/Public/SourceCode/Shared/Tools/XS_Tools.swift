@@ -46,17 +46,24 @@ struct XS_Tools {
             let data = try encoder.encode(points)
             let str = try safe(String(data: data, encoding: .utf8))
             let md5 = MD5(str+email)
-            let file = XS_File(points: points, md5: md5, name: name, date: Date())
-            let fileData = try encoder.encode(file)
-            let encryptedContent = try ChaChaPoly.seal(fileData, using: key()).combined
-            debugPrint(encryptedContent)
             
             let fileURL = URL(fileURLWithPath: filePath)
+            let fileName = md5 + "." + suffix
             let fm = FileManager.default
             if !fm.fileExists(atPath: filePath) {
                 try fm.createDirectory(at: fileURL, withIntermediateDirectories: true)
             }
-            try encryptedContent.write(to: fileURL.appendingPathComponent(md5 + "." + suffix))
+            
+            let arr = try fm.contentsOfDirectory(atPath: filePath)
+            if arr.contains(fileName) {
+                return true
+            }
+            
+            let file = XS_File(points: points, md5: md5, name: name, date: Date())
+            let fileData = try encoder.encode(file)
+            let encryptedContent = try ChaChaPoly.seal(fileData, using: key()).combined
+            debugPrint(encryptedContent)
+            try encryptedContent.write(to: fileURL.appendingPathComponent(fileName))
             return true
         } catch let error {
             debugPrint(error.localizedDescription)

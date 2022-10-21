@@ -30,8 +30,5 @@ struct XS_Open: View {
                 Text("加载失败")
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
-        .transition(.opacity.animation(.easeInOut))
     }
 }
