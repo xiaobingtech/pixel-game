@@ -42,15 +42,18 @@ struct XS_Open: View {
                 } label: {
                     Image(systemName: "trash.circle.fill")
                         .foregroundColor(Color.red)
+                        .background(Color.white)
+                        .clipShape(Circle())
                 }
                 Button {
                     
                 } label: {
                     Image(systemName: "pencil.circle.fill")
                         .foregroundColor(Color.blue)
+                        .background(Color.white)
                 }
             }
-            .font(.title)
+            .font(.title2)
             .padding(5)
         }
     }
