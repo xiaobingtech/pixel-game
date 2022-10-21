@@ -18,7 +18,7 @@ struct XS_Open: View {
         } label: {
             VStack {
                 XS_Preview(color: UIColor.white.cgColor, points: item.points)
-                    .frame(width: 100, height: 100)
+                    .frame(width: 150, height: 150)
                     .cornerRadius(5)
                 Text(item.name)
                     .font(.body)
