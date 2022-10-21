@@ -75,6 +75,7 @@ struct XS_Open: View {
                     ScrollView(.vertical, showsIndicators: false) {
                         XS_WrappedLayout(data: files, gWidth: proxy.size.width - 30, itemSpacing: 20, lineSpacing: 20, content: cell(_:))
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                            .padding(.vertical, 20)
                     }
                 }
             } else {
