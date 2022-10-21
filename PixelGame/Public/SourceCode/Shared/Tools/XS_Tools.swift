@@ -62,7 +62,7 @@ struct XS_Tools {
     static var getFiles: [XS_File]? {
         do {
             let fm = FileManager.default
-            if fm.fileExists(atPath: filePath) {
+            if !fm.fileExists(atPath: filePath) {
                 try fm.createDirectory(at: URL(fileURLWithPath: filePath), withIntermediateDirectories: true)
             }
             let arr = try fm.contentsOfDirectory(atPath: filePath)
