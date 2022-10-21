@@ -8,10 +8,10 @@
 			<key>CFBundleTypeName</key>
 			<string>AllFiles</string>
 			<key>LSHandlerRank</key>
-			<string>Owner</string>
+			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>public.xspg</string>
+				<string>public.data</string>
 			</array>
 		</dict>
 	</array>
