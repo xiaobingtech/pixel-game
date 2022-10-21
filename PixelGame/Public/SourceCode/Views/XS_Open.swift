@@ -26,20 +26,18 @@ struct XS_Open: View {
                         .cornerRadius(5)
                         .disabled(true)
                 }
-                HStack {
-                    Text(item.name)
-                        .minimumScaleFactor(0.5)
-                        .lineLimit(1)
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "pencil.circle.fill")
-                            .background(Color.white)
-                            .clipShape(Circle())
+                Button {
+                    
+                } label: {
+                    HStack {
+                        Text(item.name)
+                            .minimumScaleFactor(0.5)
+                            .lineLimit(1)
+                        Image(systemName: "highlighter")
                     }
+                    .font(.body)
+                    .foregroundColor(Color(uiColor: .label))
                 }
-                .font(.body)
-                .foregroundColor(Color(uiColor: .label))
                 .frame(width: 150)
             }
             .padding(10)
