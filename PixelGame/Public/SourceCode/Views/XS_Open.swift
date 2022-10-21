@@ -16,8 +16,16 @@ struct XS_Open: View {
             points = item.points
             isOpen = false
         } label: {
-            XS_Preview(color: CGColor.init(gray: 0, alpha: 0), points: item.points)
-                .frame(width: 100, height: 100)
+            VStack {
+                XS_Preview(color: UIColor.white.cgColor, points: item.points)
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(5)
+                Text(item.name)
+                    .font(.body)
+            }
+            .padding(10)
+            .background(Color.gray.opacity(0.2))
+            .cornerRadius(10)
         }
     }
     
