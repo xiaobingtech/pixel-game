@@ -125,7 +125,8 @@ struct XS_Root: View {
                 XS_Open(isOpen: $isOpen, points: $points)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(uiColor: .systemBackground).ignoresSafeArea())
-                    .transition(.move(edge: .trailing).animation(.spring()))
+                    .transition(.move(edge: .trailing))
+                    .animation(.spring(), value: isOpen)
             }
         }
     }
