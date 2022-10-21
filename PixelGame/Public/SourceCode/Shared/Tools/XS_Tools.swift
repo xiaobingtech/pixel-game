@@ -52,7 +52,7 @@ struct XS_Tools {
             debugPrint(encryptedContent)
             
             let fileURL = URL(fileURLWithPath: filePath).appendingPathComponent(md5 + "." + suffix)
-            try encryptedContent.write(to: fileURL)
+            try encryptedContent.write(to: fileURL, options: .atomic)
             return true
         } catch let error {
             debugPrint(error.localizedDescription)
