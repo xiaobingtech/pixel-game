@@ -28,32 +28,42 @@ struct XS_Open: View {
                 }
                 HStack {
                     Text(item.name)
-                        .foregroundColor(Color(uiColor: .label))
                         .minimumScaleFactor(0.5)
                         .lineLimit(1)
                     Button {
                         
                     } label: {
                         Image(systemName: "pencil.circle.fill")
-                            .foregroundColor(Color.blue)
                             .background(Color.white)
                             .clipShape(Circle())
                     }
                 }
                 .font(.body)
+                .foregroundColor(Color(uiColor: .label))
                 .frame(width: 150)
             }
             .padding(10)
             .background(Color.gray.opacity(0.2))
             .cornerRadius(10)
-            Button {
-                
-            } label: {
-                Image(systemName: "trash.circle.fill")
-                    .font(.title2)
-                    .foregroundColor(Color.red)
-                    .background(Color.white)
-                    .clipShape(Circle())
+            HStack {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "trash.circle.fill")
+                        .font(.title2)
+                        .foregroundColor(Color.red)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                }
+                Button {
+                    
+                } label: {
+                    Image(systemName: "paperplane.circle.fill")
+                        .font(.title2)
+                        .foregroundColor(Color.blue)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                }
             }
             .padding(5)
         }
