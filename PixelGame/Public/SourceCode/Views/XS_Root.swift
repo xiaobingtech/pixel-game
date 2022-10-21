@@ -29,9 +29,7 @@ struct XS_Root: View {
     }
     private var save: some View {
         Button {
-            let df = DateFormatter()
-            df.dateFormat = "yyyy-MM-dd HH:mm"
-            if XS_Tools.save(points, name: df.string(from: Date())) {
+            if let _ = XS_Tools.save(points) {
                 xs_hud.showToast("保存成功!")
             } else {
                 xs_hud.showToast("保存失败!")
@@ -127,6 +125,11 @@ struct XS_Root: View {
                     .background(Color(uiColor: .systemBackground).ignoresSafeArea())
                     .transition(.opacity.animation(.easeInOut))
             }
+        }
+        .onOpenURL { url in
+            debugPrint(url)
+            
+            
         }
     }
 }

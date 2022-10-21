@@ -65,6 +65,7 @@
 		AE92A7E528FE535A00151A7F /* XS_Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Grid.swift; sourceTree = "<group>"; };
 		AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Tools.swift; sourceTree = "<group>"; };
 		AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XS_WrappedLayout.swift; sourceTree = "<group>"; };
+		AEBEA66729029885005E9190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AEC5066729026FA5003EC22C /* XS_Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Open.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +134,7 @@
 		AE6E1F9E28FCEE9700F15F00 /* PixelGame */ = {
 			isa = PBXGroup;
 			children = (
+				AEBEA66729029885005E9190 /* Info.plist */,
 				AE6E1F9F28FCEE9700F15F00 /* PixelGameApp.swift */,
 				AE6E1FA328FCEE9900F15F00 /* Assets.xcassets */,
 				AE6E1FA528FCEE9900F15F00 /* Preview Content */,
@@ -614,6 +616,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F9N98X7P4L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PixelGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -649,6 +652,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F9N98X7P4L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PixelGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

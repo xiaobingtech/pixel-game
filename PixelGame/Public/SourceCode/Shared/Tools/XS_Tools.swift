@@ -31,7 +31,7 @@ struct XS_Tools {
         let hash = SHA256.hash(data: data)
         return SymmetricKey(data: hash)
     }
-    static func save(_ points: [[XS_Point]], name: String) -> Bool {
+    static func save(_ points: [[XS_Point]]) -> String? {
         let points = points.map {
             $0.sorted {
                 if $0.position.x == $1.position.x {
@@ -56,18 +56,21 @@ struct XS_Tools {
             
             let arr = try fm.contentsOfDirectory(atPath: filePath)
             if arr.contains(fileName) {
-                return true
+                return md5
             }
             
+            let df = DateFormatter()
+            df.dateFormat = "yyyy-MM-dd HH:mm"
+            let name = df.string(from: Date())
             let file = XS_File(points: points, md5: md5, name: name, date: Date())
             let fileData = try encoder.encode(file)
             let encryptedContent = try ChaChaPoly.seal(fileData, using: key()).combined
             debugPrint(encryptedContent)
             try encryptedContent.write(to: fileURL.appendingPathComponent(fileName))
-            return true
+            return md5
         } catch let error {
             debugPrint(error.localizedDescription)
-            return false
+            return nil
         }
     }
     static var getFiles: [XS_File]? {
@@ -103,6 +106,23 @@ struct XS_Tools {
             debugPrint(error.localizedDescription)
             return nil
         }
+    }
+    
+    static func share(_ points: [[XS_Point]]) -> Bool {
+        if let md5 = save(points) {
+            return share(md5: md5)
+        } else {
+            return false
+        }
+    }
+    static func share(md5: String) -> Bool  {
+        let fileName = md5 + "." + suffix
+        let fileURL = URL(fileURLWithPath: filePath).appendingPathComponent(fileName)
+        guard FileManager.default.fileExists(atPath: fileURL.path) else { return false }
+        let title = "分享像素模型"
+        let activityVC = UIActivityViewController(activityItems: [title, fileURL], applicationActivities: nil)
+        UIApplication.keyWindow?.rootViewController?.present(activityVC, animated: true)
+        return true
     }
 }
 
