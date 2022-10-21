@@ -32,7 +32,7 @@ struct XS_Open: View {
                     (
                         Text(item.name)
                         +
-                        Text(Image(systemName: "highlighter").symbolRenderingMode(.multicolor))
+                        Text(Image(systemName: "highlighter"))
                     )
                     .font(.body)
                     .foregroundColor(Color(uiColor: .label))
