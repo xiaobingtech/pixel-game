@@ -29,14 +29,15 @@ struct XS_Open: View {
                 Button {
                     
                 } label: {
-                    HStack {
+                    (
                         Text(item.name)
-                            .minimumScaleFactor(0.5)
-                            .lineLimit(1)
-                        Image(systemName: "highlighter")
-                    }
+                        +
+                        Text(Image(systemName: "highlighter").symbolRenderingMode(.multicolor))
+                    )
                     .font(.body)
                     .foregroundColor(Color(uiColor: .label))
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
                 }
                 .frame(width: 150)
             }
