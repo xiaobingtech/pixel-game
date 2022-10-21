@@ -25,33 +25,40 @@ struct XS_Open: View {
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
                         .disabled(true)
-                    Text(item.name)
-                        .font(.body)
-                        .foregroundColor(Color(uiColor: .label))
-                        .minimumScaleFactor(0.5)
-                        .lineLimit(1)
-                        .frame(width: 150)
+                    HStack {
+                        Text(item.name)
+                            .foregroundColor(Color(uiColor: .label))
+                            .minimumScaleFactor(0.5)
+                            .lineLimit(1)
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "pencil.circle.fill")
+                                .foregroundColor(Color.blue)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                        }
+                    }
+                    .font(.body)
+                    .frame(width: 150)
                 }
                 .padding(10)
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
             }
+            Button {
+                
+            } label: {
+                Image(systemName: "trash.circle.fill")
+                    .font(.title2)
+                    .foregroundColor(Color.red)
+                    .background(Color.white)
+                    .clipShape(Circle())
+            }
+            .padding(5)
             HStack {
-                Button {
-                    
-                } label: {
-                    Image(systemName: "trash.circle.fill")
-                        .foregroundColor(Color.red)
-                        .background(Color.white)
-                        .clipShape(Circle())
-                }
-                Button {
-                    
-                } label: {
-                    Image(systemName: "pencil.circle.fill")
-                        .foregroundColor(Color.blue)
-                        .background(Color.white)
-                }
+                
+                
             }
             .font(.title2)
             .padding(5)
