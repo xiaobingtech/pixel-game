@@ -41,7 +41,11 @@ struct XS_Root: View {
     }
     private var share: some View {
         Button {
-            
+            if XS_Tools.share(points) {
+                
+            } else {
+                xs_hud.showToast("分享失败!")
+            }
         } label: {
             Text("Share")
             Image(systemName: "paperplane.circle.fill")
