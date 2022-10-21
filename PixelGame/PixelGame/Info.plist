@@ -5,13 +5,11 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string></string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>xspg</string>
+				<string>public.xspg</string>
 			</array>
 		</dict>
 	</array>
