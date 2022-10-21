@@ -41,10 +41,16 @@ struct XS_Open: View {
                     
                 } label: {
                     Image(systemName: "trash.circle.fill")
-                        .font(.title)
                         .foregroundColor(Color.red)
                 }
+                Button {
+                    
+                } label: {
+                    Image(systemName: "pencil.circle.fill")
+                        .foregroundColor(Color.blue)
+                }
             }
+            .font(.title)
             .padding(5)
         }
     }
