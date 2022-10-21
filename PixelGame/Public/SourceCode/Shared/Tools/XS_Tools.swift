@@ -120,6 +120,9 @@ struct XS_Tools {
         let fileURL = URL(fileURLWithPath: filePath).appendingPathComponent(fileName)
         guard FileManager.default.fileExists(atPath: fileURL.path) else { return false }
         let activityVC = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+        activityVC.completionWithItemsHandler = { [weak activityVC] type, completed, item, error in
+            activityVC?.dismiss(animated: true)
+        }
         UIApplication.keyWindow?.rootViewController?.present(activityVC, animated: true)
         return true
     }
