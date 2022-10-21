@@ -13,23 +13,32 @@ struct XS_Open: View {
     var body: some View {
         ZStack(alignment: .topTrailing) {
             if let files = XS_Tools.getFiles {
-                ForEach(files, id: \.md5) { file in
-                    Button {
-                        points = file.points
-                        isOpen = false
-                    } label: {
-                        Text(file.name)
+                ScrollView(.vertical, showsIndicators: false) {
+                    GeometryReader { proxy in
+                        VStack {
+                            ForEach(files, id: \.md5) { file in
+                                Button {
+                                    points = file.points
+                                    isOpen = false
+                                } label: {
+                                    Text(file.name)
+                                }
+                            }
+                        }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             } else {
                 Text("加载失败!")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             Button {
                 isOpen = false
             } label: {
                 Image(systemName: "xmark.circle.fill")
                     .font(.largeTitle)
-                    .opacity(0.8)
+                    .foregroundColor(Color(uiColor: .label))
+                    .opacity(0.6)
             }
         }
     }
