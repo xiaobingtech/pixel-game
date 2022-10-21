@@ -123,9 +123,6 @@ struct XS_Root: View {
             }
             if isOpen {
                 XS_Open(isOpen: $isOpen, points: $points)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(uiColor: .systemBackground).ignoresSafeArea())
-                    .transition(.opacity.animation(.easeInOut))
             }
         }
     }
