@@ -21,7 +21,7 @@ struct XS_Open: View {
                 isOpen = false
             } label: {
                 VStack {
-                    XS_Preview(color: UIColor.white.cgColor, points: item.points)
+                    XS_Preview(color: color, points: item.points)
                         .frame(width: 150, height: 150)
                         .cornerRadius(5)
                         .disabled(true)
@@ -41,7 +41,7 @@ struct XS_Open: View {
                     
                 } label: {
                     Image(systemName: "trash.circle.fill")
-                        .font(.body)
+                        .font(.title)
                         .foregroundColor(Color.red)
                 }
             }
