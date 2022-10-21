@@ -8,7 +8,7 @@
 			<key>CFBundleTypeName</key>
 			<string></string>
 			<key>LSHandlerRank</key>
-			<string>Owner</string>
+			<string>None</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>.xspg</string>
