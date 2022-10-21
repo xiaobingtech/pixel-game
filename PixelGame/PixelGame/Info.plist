@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string></string>
+			<string>AllFiles</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
