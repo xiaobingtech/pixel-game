@@ -16,35 +16,34 @@ struct XS_Open: View {
     
     private func cell(_ item: XS_File) -> some View {
         ZStack(alignment: .topLeading) {
-            Button {
+            VStack {
+                XS_Preview(color: color, points: item.points)
+                    .frame(width: 150, height: 150)
+                    .cornerRadius(5)
+                    .disabled(true)
+                HStack {
+                    Text(item.name)
+                        .foregroundColor(Color(uiColor: .label))
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "pencil.circle.fill")
+                            .foregroundColor(Color.blue)
+                            .background(Color.white)
+                            .clipShape(Circle())
+                    }
+                }
+                .font(.body)
+                .frame(width: 150)
+            }
+            .padding(10)
+            .background(Color.gray.opacity(0.2))
+            .cornerRadius(10)
+            .onTapGesture {
                 points = item.points
                 isOpen = false
-            } label: {
-                VStack {
-                    XS_Preview(color: color, points: item.points)
-                        .frame(width: 150, height: 150)
-                        .cornerRadius(5)
-                        .disabled(true)
-                    HStack {
-                        Text(item.name)
-                            .foregroundColor(Color(uiColor: .label))
-                            .minimumScaleFactor(0.5)
-                            .lineLimit(1)
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "pencil.circle.fill")
-                                .foregroundColor(Color.blue)
-                                .background(Color.white)
-                                .clipShape(Circle())
-                        }
-                    }
-                    .font(.body)
-                    .frame(width: 150)
-                }
-                .padding(10)
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
             }
             Button {
                 
@@ -55,12 +54,6 @@ struct XS_Open: View {
                     .background(Color.white)
                     .clipShape(Circle())
             }
-            .padding(5)
-            HStack {
-                
-                
-            }
-            .font(.title2)
             .padding(5)
         }
     }
