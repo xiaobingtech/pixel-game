@@ -51,8 +51,12 @@ struct XS_Tools {
             let encryptedContent = try ChaChaPoly.seal(fileData, using: key()).combined
             debugPrint(encryptedContent)
             
-            let fileURL = URL(fileURLWithPath: filePath).appendingPathComponent(md5 + "." + suffix)
-            try encryptedContent.write(to: fileURL, options: .atomic)
+            let fileURL = URL(fileURLWithPath: filePath)
+            let fm = FileManager.default
+            if !fm.fileExists(atPath: filePath) {
+                try fm.createDirectory(at: fileURL, withIntermediateDirectories: true)
+            }
+            try encryptedContent.write(to: fileURL.appendingPathComponent(md5 + "." + suffix))
             return true
         } catch let error {
             debugPrint(error.localizedDescription)
