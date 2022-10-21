@@ -60,8 +60,11 @@ struct XS_Tools {
         }
     }
     static var getFiles: [XS_File]? {
-        let fm = FileManager.default
         do {
+            let fm = FileManager.default
+            if fm.fileExists(atPath: filePath) {
+                try fm.createDirectory(at: URL(fileURLWithPath: filePath), withIntermediateDirectories: true)
+            }
             let arr = try fm.contentsOfDirectory(atPath: filePath)
             let key = try key()
             let decoder = JSONDecoder()
