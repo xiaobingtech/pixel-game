@@ -17,9 +17,11 @@ struct XS_Root: View {
     @State private var color: CGColor = UIColor.black.cgColor
     @State private var bgColor: CGColor = UIColor.white.cgColor
     
+    @State private var isOpen: Bool = false
+    
     private var open: some View {
         Button {
-            
+            isOpen = true
         } label: {
             Text("Open")
             Image(systemName: "folder.circle.fill")
@@ -27,12 +29,12 @@ struct XS_Root: View {
     }
     private var save: some View {
         Button {
-            XS_Tools.save(points) { success in
-                if success {
-                    xs_hud.showToast("保存成功!")
-                } else {
-                    xs_hud.showToast("保存失败!")
-                }
+            let df = DateFormatter()
+            df.dateFormat = "yyyy-MM-dd HH:mm"
+            if XS_Tools.save(points, name: df.string(from: Date())) {
+                xs_hud.showToast("保存成功!")
+            } else {
+                xs_hud.showToast("保存失败!")
             }
         } label: {
             Text("Save")
@@ -118,6 +120,12 @@ struct XS_Root: View {
                     XS_Grid(color: color, points: $points, options: $options)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+            }
+            if isOpen {
+                XS_Open(isOpen: $isOpen, points: $points)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color(uiColor: .systemBackground).ignoresSafeArea())
+                    .transition(.move(edge: .trailing).animation(.spring()))
             }
         }
     }
