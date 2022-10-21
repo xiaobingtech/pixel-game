@@ -24,6 +24,10 @@ struct XS_Open: View {
                     .disabled(true)
                 Text(item.name)
                     .font(.body)
+                    .foregroundColor(Color(uiColor: .label))
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
+                    .frame(width: 150)
             }
             .padding(10)
             .background(Color.gray.opacity(0.2))
