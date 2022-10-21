@@ -21,7 +21,8 @@ struct XS_Open: View {
                                     points = file.points
                                     isOpen = false
                                 } label: {
-                                    Text(file.name)
+                                    XS_Preview(color: CGColor.init(gray: 0, alpha: 0), points: file.points)
+                                        .frame(width: 100, height: 100)
                                 }
                             }
                         }
@@ -38,6 +39,7 @@ struct XS_Open: View {
                 Image(systemName: "xmark.circle.fill")
                     .font(.largeTitle)
                     .foregroundColor(Color(uiColor: .label))
+                    .padding()
                     .opacity(0.6)
             }
         }
