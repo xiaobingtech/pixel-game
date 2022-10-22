@@ -174,6 +174,7 @@ struct XS_Tools {
                         toast(save(file.points, name: file.name))
                     }
                 )
+                UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)
                 return true
             } else {
                 return false
