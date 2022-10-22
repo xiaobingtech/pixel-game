@@ -40,7 +40,7 @@ struct XS_Preview: View {
         
         // 调节视角
         camera.fieldOfView = 20
-        camera.focalLength = 20
+//        camera.focalLength = 20
         
         return scene
     }
