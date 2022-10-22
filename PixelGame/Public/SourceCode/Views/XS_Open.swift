@@ -33,15 +33,15 @@ struct XS_Open: View {
                         files = XS_Tools.getFiles
                     }
                 } label: {
-                    (
+                    HStack {
                         Text(item.name)
-                        +
-                        Text(Image(systemName: "highlighter"))
-                    )
+                            .minimumScaleFactor(0.5)
+                            .lineLimit(1)
+                        Image(systemName: "highlighter")
+                    }
                     .font(.body)
                     .foregroundColor(Color(uiColor: .label))
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
+                    
                 }
                 .frame(width: 150)
             }
