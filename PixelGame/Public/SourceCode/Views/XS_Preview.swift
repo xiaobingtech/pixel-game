@@ -17,7 +17,12 @@ struct XS_Preview: View {
     private var theScene: SCNScene {
         let scene = SCNScene()
         scene.background.contents = color
+        if points.isEmpty {
+            return scene
+        }
         
+        var minPoint: CGPoint!
+        var maxPoint: CGPoint!
         for (index, arr) in points.enumerated() {
             for point in arr {
                 let box = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0)
@@ -29,18 +34,34 @@ struct XS_Preview: View {
                     z: Float(point.position.y)
                 )
                 scene.rootNode.addChildNode(node)
+                
+                if minPoint == nil {
+                    minPoint = point.position
+                } else {
+                    minPoint.x = min(minPoint.x, point.position.x)
+                    minPoint.y = min(minPoint.y, point.position.y)
+                }
+                if maxPoint == nil {
+                    maxPoint = point.position
+                } else {
+                    maxPoint.x = max(maxPoint.x, point.position.x)
+                    maxPoint.y = max(maxPoint.y, point.position.y)
+                }
             }
         }
         
         let camera = SCNCamera()
         let cameraNode = SCNNode()
         cameraNode.camera = camera
-        cameraNode.position = SCNVector3(0, 0, 50)
+        cameraNode.position = SCNVector3(
+            x: Float(minPoint.x + maxPoint.x)/2,
+            y: Float(points.count)/2,
+            z: 50
+        )
         scene.rootNode.addChildNode(cameraNode)
         
-        // 调节视角
-        camera.fieldOfView = 20
-//        camera.focalLength = 20
+        camera.zFar
+        camera.zNear
         
         return scene
     }
