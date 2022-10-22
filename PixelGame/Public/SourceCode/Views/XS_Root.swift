@@ -55,6 +55,8 @@ struct XS_Root: View {
             XS_Tools.delete {
                 points = [[]]
                 options.current = 0
+                options.offset = .zero
+                options.isClear = false
             } current: {
                 if points.count > options.current {
                     points[options.current] = []
