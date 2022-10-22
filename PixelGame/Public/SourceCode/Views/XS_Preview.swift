@@ -17,7 +17,9 @@ struct XS_Preview: View {
     private var theScene: SCNScene {
         let scene = SCNScene()
         scene.background.contents = color
-        scene.rootNode.camera?.automaticallyAdjustsZRange = true
+        let camera = SCNCamera()
+        camera.automaticallyAdjustsZRange = true
+        scene.rootNode.camera = camera
         
         for (index, arr) in points.enumerated() {
             for point in arr {
