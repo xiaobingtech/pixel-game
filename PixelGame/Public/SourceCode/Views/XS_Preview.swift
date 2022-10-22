@@ -60,6 +60,11 @@ struct XS_Preview: View {
             z: Float(minPoint.y + maxPoint.y)/2 + maxL/2 + 20
         )
         scene.rootNode.addChildNode(cameraNode)
+        scene.rootNode.position = SCNVector3(
+            x: -Float(minPoint.x + maxPoint.x)/2,
+            y: -Float(points.count - 1)/2,
+            z: -Float(minPoint.y + maxPoint.y)/2
+        )
         
         camera.zFar = 25 + Double(maxL)
         camera.zNear = 1
