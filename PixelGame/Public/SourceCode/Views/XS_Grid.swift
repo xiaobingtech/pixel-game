@@ -19,6 +19,8 @@ struct XS_Grid: View {
     @Binding var points: [[XS_Point]]
     @Binding var options: XS_Options
     
+    @Environment(\.xs_hud) private var xs_hud
+    
     @State private var oldCurrent: Int?
     
     private func onDrag(_ value: DragGesture.Value, size: Double) {
@@ -43,7 +45,10 @@ struct XS_Grid: View {
     }
     private func currentBtn(_ direction: DirectionType) -> some View {
         Button {
-            guard points.contains(where: { !$0.isEmpty }) else { return }
+            guard points.contains(where: { !$0.isEmpty }) else {
+                xs_hud.showToast("当前没有内容!")
+                return
+            }
             switch direction {
             case .left:
                 if let item = points.last, item.isEmpty {
