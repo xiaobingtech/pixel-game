@@ -80,6 +80,7 @@ struct XS_Root: View {
         HStack {
             ColorPicker("", selection: isPreview ? $bgColor : $color, supportsOpacity: true)
                 .labelsHidden()
+                .scaleEffect(1.2)
             if !isPreview {
                 Button {
                     options.isClear.toggle()

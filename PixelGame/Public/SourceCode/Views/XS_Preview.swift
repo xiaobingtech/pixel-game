@@ -17,7 +17,7 @@ struct XS_Preview: View {
     private var theScene: SCNScene {
         let scene = SCNScene()
         scene.background.contents = color
-        if points.isEmpty {
+        if points.first(where: { !$0.isEmpty }) == nil {
             return scene
         }
         
