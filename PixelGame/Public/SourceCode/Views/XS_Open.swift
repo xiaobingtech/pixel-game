@@ -37,6 +37,7 @@ struct XS_Open: View {
                         Text(item.name)
                             .minimumScaleFactor(0.7)
                             .lineLimit(1)
+                            .frame(maxWidth: .infinity)
                         Image(systemName: "highlighter")
                             .scaleEffect(0.8)
                     }
