@@ -35,8 +35,10 @@ struct XS_Open: View {
                 } label: {
                     HStack {
                         Text(item.name)
+                            .minimumScaleFactor(0.7)
                             .lineLimit(1)
                         Image(systemName: "highlighter")
+                            .scaleEffect(0.8)
                     }
                     .font(.body)
                     .foregroundColor(Color(uiColor: .label))
