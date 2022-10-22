@@ -32,6 +32,7 @@ struct XS_Tools {
         return SymmetricKey(data: hash)
     }
     static func save(_ points: [[XS_Point]], name: String? = nil) -> String? {
+        if points.first(where: { !$0.isEmpty }) == nil { return nil }
         let points = points.map {
             $0.sorted {
                 if $0.position.x == $1.position.x {
@@ -211,6 +212,24 @@ struct XS_Tools {
                     debugPrint(encryptedContent)
                     try encryptedContent.write(to: fileURL.appendingPathComponent(fileName))
                     
+                    finish()
+                } catch let error {
+                    debugPrint(error.localizedDescription)
+                }
+            }
+        )
+        UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)
+    }
+    static func delete(file: XS_File, finish: @escaping () -> Void) {
+        let vc = UIAlertController(title: "删除模型", message: "删除后将无法恢复!", preferredStyle: .alert)
+        
+        vc.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        vc.addAction(
+            UIAlertAction(title: "Delete", style: .destructive) { action in
+                do {
+                    let fileURL = URL(fileURLWithPath: filePath)
+                    let fileName = file.md5 + "." + suffix
+                    try FileManager.default.removeItem(at: fileURL.appendingPathComponent(fileName))
                     finish()
                 } catch let error {
                     debugPrint(error.localizedDescription)

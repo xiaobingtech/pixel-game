@@ -37,13 +37,12 @@ struct XS_Open: View {
                         Text(item.name)
                             .minimumScaleFactor(0.7)
                             .lineLimit(1)
-                            .frame(maxWidth: .infinity)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         Image(systemName: "highlighter")
                             .scaleEffect(0.8)
                     }
                     .font(.body)
                     .foregroundColor(Color(uiColor: .label))
-                    
                 }
                 .frame(width: 150)
             }
@@ -52,7 +51,9 @@ struct XS_Open: View {
             .cornerRadius(10)
             HStack {
                 Button {
-                    
+                    XS_Tools.delete(file: item) {
+                        files = XS_Tools.getFiles
+                    }
                 } label: {
                     Image(systemName: "trash.circle.fill")
                         .font(.title2)
