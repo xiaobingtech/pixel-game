@@ -9,7 +9,6 @@ import SwiftUI
 
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
-    @Environment(\.colorScheme) private var colorScheme
     
     @State private var isPreview: Bool = false
     @State private var points: [[XS_Point]] = [[]]
@@ -132,8 +131,25 @@ struct XS_Root: View {
         }
         .onOpenURL { url in
             debugPrint(url)
-            
-            
+            if let vc = UIApplication.keyWindow?.rootViewController?.presentedViewController, vc is UIActivityViewController {
+                vc.dismiss(animated: true) {
+                    showShareFile(url)
+                }
+            } else {
+                showShareFile(url)
+            }
+        }
+    }
+    private func showShareFile(_ url: URL) {
+        let set = XS_Tools.showShareFile(url) { md5 in
+            if let _ = md5 {
+                xs_hud.showToast("保存成功!")
+            } else {
+                xs_hud.showToast("保存失败!")
+            }
+        }
+        if !set {
+            xs_hud.showToast("文件无法识别!")
         }
     }
 }

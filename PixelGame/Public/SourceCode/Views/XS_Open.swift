@@ -12,6 +12,8 @@ struct XS_Open: View {
     @Binding var isOpen: Bool
     @Binding var points: [[XS_Point]]
     
+    @Environment(\.xs_hud) private var xs_hud
+    
     @State private var files: [XS_File]? = XS_Tools.getFiles
     
     private func cell(_ item: XS_File) -> some View {
@@ -55,7 +57,11 @@ struct XS_Open: View {
                         .clipShape(Circle())
                 }
                 Button {
-                    
+                    if XS_Tools.share(file: item) {
+                        
+                    } else {
+                        xs_hud.showToast("分享失败!")
+                    }
                 } label: {
                     Image(systemName: "paperplane.circle.fill")
                         .font(.title2)
