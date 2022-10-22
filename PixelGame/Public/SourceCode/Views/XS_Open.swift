@@ -35,7 +35,6 @@ struct XS_Open: View {
                 } label: {
                     HStack {
                         Text(item.name)
-                            .minimumScaleFactor(0.5)
                             .lineLimit(1)
                         Image(systemName: "highlighter")
                     }
