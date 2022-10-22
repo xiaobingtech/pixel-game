@@ -56,7 +56,7 @@ struct XS_Open: View {
                     }
                 } label: {
                     Image(systemName: "trash.circle.fill")
-                        .font(.title2)
+                        .font(.title)
                         .foregroundColor(Color.red)
                         .background(Color.white)
                         .clipShape(Circle())

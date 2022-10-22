@@ -191,9 +191,9 @@ struct XS_Grid: View {
                 HStack {
                     currentBtn(.left)
                     Text("\(options.current+1)/\(points.count)")
-                        .font(.title)
                     currentBtn(.right)
                 }
+                .font(.title)
                 content
                     .padding()
                     .frame(width: size, height: size)
