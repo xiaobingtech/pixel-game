@@ -167,10 +167,10 @@ struct XS_Tools {
             let str = try safe(String(data: data, encoding: .utf8))
             let md5 = MD5(str+email)
             if md5 == file.md5 {
-                let vc = UIAlertController(title: "保存像素模型文件", message: "接收到来自分享的「\(file.name), 是否保存」", preferredStyle: .alert)
+                let vc = UIAlertController(title: "保存像素模型", message: "来自分享的「\(file.name)」, 是否保存", preferredStyle: .alert)
                 vc.addAction(UIAlertAction(title: "Cancel", style: .cancel))
                 vc.addAction(
-                    UIAlertAction(title: "Save", style: .default) { action in
+                    UIAlertAction(title: "Save", style: .destructive) { action in
                         toast(save(file.points, name: file.name))
                     }
                 )
