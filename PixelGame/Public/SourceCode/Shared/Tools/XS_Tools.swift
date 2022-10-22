@@ -220,6 +220,7 @@ struct XS_Tools {
         )
         UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)
     }
+    
     static func delete(file: XS_File, finish: @escaping () -> Void) {
         let vc = UIAlertController(title: "删除模型", message: "删除后将无法恢复!", preferredStyle: .alert)
         
@@ -234,6 +235,22 @@ struct XS_Tools {
                 } catch let error {
                     debugPrint(error.localizedDescription)
                 }
+            }
+        )
+        UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)
+    }
+    static func delete(all: @escaping () -> Void, current: @escaping () -> Void) {
+        let vc = UIAlertController(title: "清除", message: "「All」清除全部\n「Current」清除当前层", preferredStyle: .alert)
+        
+        vc.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        vc.addAction(
+            UIAlertAction(title: "All", style: .destructive) { action in
+                all()
+            }
+        )
+        vc.addAction(
+            UIAlertAction(title: "Current", style: .destructive) { action in
+                current()
             }
         )
         UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)

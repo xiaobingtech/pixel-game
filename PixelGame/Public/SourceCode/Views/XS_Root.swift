@@ -52,7 +52,13 @@ struct XS_Root: View {
     }
     private var delete: some View {
         Button {
-            
+            XS_Tools.delete {
+                points = [[]]
+            } current: {
+                if points.count > options.current {
+                    points[options.current] = []
+                }
+            }
         } label: {
             Text("Delete")
             Image(systemName: "trash.circle.fill")
@@ -98,7 +104,7 @@ struct XS_Root: View {
                 save
                 open
                 delete
-                about
+//                about
             } label: {
                 Image(systemName: "ellipsis.circle")
             }
