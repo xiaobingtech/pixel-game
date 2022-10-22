@@ -12,7 +12,7 @@ import CryptoKit
 extension UIApplication {
     static var keyWindow: UIWindow? {
         (UIApplication.shared.connectedScenes
-            .filter { $0.activationState == .foregroundActive }
+//            .filter { $0.activationState == .foregroundActive }
             .first { $0 is UIWindowScene } as? UIWindowScene)?.windows
             .first { $0.isKeyWindow }
     }
