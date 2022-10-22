@@ -33,8 +33,10 @@ struct XS_Preview: View {
         }
         
         let camera = SCNCamera()
-        camera.automaticallyAdjustsZRange = true
-        scene.rootNode.camera = camera
+        let cameraNode = SCNNode()
+        cameraNode.camera = camera
+        cameraNode.position = SCNVector3(0, 0, 50)
+        scene.rootNode.addChildNode(cameraNode)
         
         return scene
     }
