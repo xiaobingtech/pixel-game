@@ -92,14 +92,14 @@ struct XS_Tools {
                     let sealedBox = try ChaChaPoly.SealedBox(combined: encryptedContent)
                     let decryptedContent = try ChaChaPoly.open(sealedBox, using: key)
                     let file = try decoder.decode(XS_File.self, from: decryptedContent)
-                    let data = try encoder.encode(file.points)
-                    let str = try safe(String(data: data, encoding: .utf8))
-                    let md5 = MD5(str+email)
-                    if md5 == file.md5 {
+//                    let data = try encoder.encode(file.points)
+//                    let str = try safe(String(data: data, encoding: .utf8))
+//                    let md5 = MD5(str+email)
+//                    if md5 == file.md5 {
                         return file
-                    } else {
-                        return nil
-                    }
+//                    } else {
+//                        return nil
+//                    }
                 } catch let error {
                     debugPrint(error.localizedDescription)
                     return nil

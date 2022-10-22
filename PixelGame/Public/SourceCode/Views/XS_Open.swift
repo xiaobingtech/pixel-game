@@ -19,15 +19,15 @@ struct XS_Open: View {
     private func cell(_ item: XS_File) -> some View {
         ZStack(alignment: .topLeading) {
             VStack {
-//                Button {
-//                    points = item.points
-//                    isOpen = false
-//                } label: {
-//                    XS_Preview(color: color, points: item.points)
-//                        .frame(width: 150, height: 150)
-//                        .cornerRadius(5)
-//                        .disabled(true)
-//                }
+                Button {
+                    points = item.points
+                    isOpen = false
+                } label: {
+                    XS_Preview(color: color, points: item.points)
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(5)
+                        .disabled(true)
+                }
                 Button {
                     XS_Tools.editName(item) {
                         files = XS_Tools.getFiles
