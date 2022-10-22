@@ -69,7 +69,7 @@ struct XS_Open: View {
                     }
                 } label: {
                     Image(systemName: "paperplane.circle.fill")
-                        .font(.title2)
+                        .font(.title)
                         .foregroundColor(Color.blue)
                         .background(Color.white)
                         .clipShape(Circle())
