@@ -112,7 +112,7 @@ struct XS_Root: View {
                 Image(systemName: "ellipsis.circle")
             }
         }
-        .font(.title)
+        .font(.largeTitle)
         .foregroundColor(Color(uiColor: .label))
         .padding(.horizontal)
         .padding(.vertical, 5)
