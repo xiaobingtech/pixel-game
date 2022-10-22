@@ -39,8 +39,8 @@ struct XS_Preview: View {
         scene.rootNode.addChildNode(cameraNode)
         
         // 调节视角
-        camera.xFov = 20
-        camera.yFov = 20
+        camera.fieldOfView = 20
+        camera.focalLength = 20
         
         return scene
     }
