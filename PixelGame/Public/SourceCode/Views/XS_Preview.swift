@@ -38,6 +38,10 @@ struct XS_Preview: View {
         cameraNode.position = SCNVector3(0, 0, 50)
         scene.rootNode.addChildNode(cameraNode)
         
+        // 调节视角
+        camera.xFov = 20
+        camera.yFov = 20
+        
         return scene
     }
     
