@@ -63,6 +63,7 @@ struct XS_Preview: View {
         
         camera.zFar = 25 + Double(maxL)
         camera.zNear = 1
+        camera.automaticallyAdjustsZRange = true
         
         return scene
     }
