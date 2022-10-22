@@ -29,7 +29,9 @@ struct XS_Open: View {
                         .disabled(true)
                 }
                 Button {
-                    
+                    XS_Tools.editName(item) {
+                        files = XS_Tools.getFiles
+                    }
                 } label: {
                     (
                         Text(item.name)

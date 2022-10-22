@@ -62,7 +62,7 @@ struct XS_Root: View {
         Button {
             
         } label: {
-            Text("About us")
+            Text("Others")
             Image(systemName: "exclamationmark.circle.fill")
         }
     }

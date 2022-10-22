@@ -184,12 +184,47 @@ struct XS_Tools {
             return false
         }
     }
+    
+    static func editName(_ file: XS_File, finish: @escaping () -> Void) {
+        let vc = UIAlertController(title: "编辑名称", message: nil, preferredStyle: .alert)
+        
+        vc.addTextField { textField in
+            textField.placeholder = file.name
+        }
+        vc.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        vc.addAction(
+            UIAlertAction(title: "Save", style: .destructive) { [weak vc] action in
+                guard let name = vc?.textFields?.first?.text, !name.isEmpty else { return }
+                var file = file
+                file.name = name
+                
+                do {
+                    let fileURL = URL(fileURLWithPath: filePath)
+                    let fileName = file.md5 + "." + suffix
+                    let fm = FileManager.default
+                    if !fm.fileExists(atPath: filePath) {
+                        try fm.createDirectory(at: fileURL, withIntermediateDirectories: true)
+                    }
+                    
+                    let fileData = try JSONEncoder().encode(file)
+                    let encryptedContent = try ChaChaPoly.seal(fileData, using: key()).combined
+                    debugPrint(encryptedContent)
+                    try encryptedContent.write(to: fileURL.appendingPathComponent(fileName))
+                    
+                    finish()
+                } catch let error {
+                    debugPrint(error.localizedDescription)
+                }
+            }
+        )
+        UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)
+    }
 }
 
 struct XS_File: Equatable, Codable, Hashable {
     let points: [[XS_Point]]
     let md5: String
-    let name: String
+    var name: String
     let date: Date
     func hash(into hasher: inout Hasher) {
         hasher.combine(md5)
