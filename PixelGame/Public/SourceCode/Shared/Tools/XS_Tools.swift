@@ -158,7 +158,7 @@ struct XS_Tools {
             return false
         }
     }
-    static func showShareFile(_ url: URL, toast: @escaping (String?) -> Void) -> Bool {
+    static func openShareFile(_ url: URL, handle: @escaping (XS_File) -> Void) -> Bool {
         guard url.lastPathComponent.hasSuffix("." + suffix), let encryptedContent = FileManager.default.contents(atPath: url.path) else { return false }
         do {
             let sealedBox = try ChaChaPoly.SealedBox(combined: encryptedContent)
@@ -168,11 +168,11 @@ struct XS_Tools {
             let str = try safe(String(data: data, encoding: .utf8))
             let md5 = MD5(str+email)
             if md5 == file.md5 {
-                let vc = UIAlertController(title: "保存像素模型", message: "来自分享的「\(file.name)」, 是否保存", preferredStyle: .alert)
+                let vc = UIAlertController(title: "来自分享", message: "是否打开「\(file.name)」", preferredStyle: .alert)
                 vc.addAction(UIAlertAction(title: "Cancel", style: .cancel))
                 vc.addAction(
-                    UIAlertAction(title: "Save", style: .destructive) { action in
-                        toast(save(file.points, name: file.name))
+                    UIAlertAction(title: "Open", style: .destructive) { action in
+                        handle(file)
                     }
                 )
                 UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)

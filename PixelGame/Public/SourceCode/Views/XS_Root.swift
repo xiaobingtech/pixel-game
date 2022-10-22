@@ -142,20 +142,16 @@ struct XS_Root: View {
             debugPrint(url)
             if let vc = UIApplication.keyWindow?.rootViewController?.presentedViewController, vc is UIActivityViewController {
                 vc.dismiss(animated: true) {
-                    showShareFile(url)
+                    openShareFile(url)
                 }
             } else {
-                showShareFile(url)
+                openShareFile(url)
             }
         }
     }
-    private func showShareFile(_ url: URL) {
-        let set = XS_Tools.showShareFile(url) { md5 in
-            if let _ = md5 {
-                xs_hud.showToast("保存成功!")
-            } else {
-                xs_hud.showToast("保存失败!")
-            }
+    private func openShareFile(_ url: URL) {
+        let set = XS_Tools.openShareFile(url) { file in
+            points = file.points
         }
         if !set {
             xs_hud.showToast("文件无法识别!")
