@@ -122,7 +122,7 @@ struct XS_Root: View {
         ZStack(alignment: .top) {
             if isPreview {
                 XS_Preview(color: bgColor, points: points)
-                    .frame(maxWidth: 300, maxHeight: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             VStack {
                 menu.shadow(color: Color(uiColor: .systemBackground), radius: 1)

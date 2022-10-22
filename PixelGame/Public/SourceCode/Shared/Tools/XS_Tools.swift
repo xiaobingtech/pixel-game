@@ -85,18 +85,19 @@ struct XS_Tools {
             let arr = try fm.contentsOfDirectory(atPath: filePath)
             let key = try key()
             let decoder = JSONDecoder()
-            let encoder = JSONEncoder()
+//            let encoder = JSONEncoder()
             return arr.compactMap { str in
                 guard str.hasSuffix("." + suffix), let encryptedContent = fm.contents(atPath: filePath + "/" + str) else { return nil }
                 do {
                     let sealedBox = try ChaChaPoly.SealedBox(combined: encryptedContent)
                     let decryptedContent = try ChaChaPoly.open(sealedBox, using: key)
                     let file = try decoder.decode(XS_File.self, from: decryptedContent)
+                    return file
 //                    let data = try encoder.encode(file.points)
 //                    let str = try safe(String(data: data, encoding: .utf8))
 //                    let md5 = MD5(str+email)
 //                    if md5 == file.md5 {
-                        return file
+//                        return file
 //                    } else {
 //                        return nil
 //                    }
