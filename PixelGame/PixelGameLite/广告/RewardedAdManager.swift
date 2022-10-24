@@ -9,8 +9,8 @@ import GoogleMobileAds
 
 class RewardedAdManager: NSObject {
     var rewardedAd: GADRewardedAd?
-    var handler: (() -> Void)?
-    var canShare: (() -> Void)?
+    var handler: ((Bool) -> Void)?
+    var canShare: ((Bool) -> Void)?
     
     let timeoutInterval: TimeInterval = 4 * 3_600
     var isLoadingAd = false
@@ -48,6 +48,10 @@ class RewardedAdManager: NSObject {
                 self.rewardedAd = nil
                 self.loadTime = nil
                 debugPrint("Rewarded ad failed to load with error: \(error.localizedDescription)")
+                if let handler = self.handler {
+                    self.handler = nil
+                    handler(false)
+                }
                 return
             }
             debugPrint("Loading Succeeded")
@@ -61,7 +65,7 @@ class RewardedAdManager: NSObject {
         }
     }
     
-    func showAdIfAvailable(_ handler: @escaping () -> Void) {
+    func showAdIfAvailable(_ handler: @escaping (Bool) -> Void) {
         // If the app open ad is already showing, do not show the ad again.
         if isShowingAd {
             debugPrint("App open ad is already showing.")
@@ -99,7 +103,7 @@ extension RewardedAdManager: GADFullScreenContentDelegate {
         if let handler = canShare {
             canShare = nil
             DispatchQueue.main.async {
-                handler()
+                handler(true)
             }
         }
     }

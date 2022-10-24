@@ -36,13 +36,17 @@ struct XS_Root: View {
                     xs_hud.showToast("保存失败!")
                 }
             } else {
-                RewardedAdManager.shared.showAdIfAvailable {
-                    if let _ = XS_Tools.save(points) {
-                        canSave = false
-                        xs_hud.showToast("保存成功!")
+                RewardedAdManager.shared.showAdIfAvailable { success in
+                    if success {
+                        if let _ = XS_Tools.save(points) {
+                            canSave = false
+                            xs_hud.showToast("保存成功!")
+                        } else {
+                            canSave = true
+                            xs_hud.showToast("保存失败!")
+                        }
                     } else {
-                        canSave = true
-                        xs_hud.showToast("保存失败!")
+                        xs_hud.showToast("调取错误!")
                     }
                 }
             }
@@ -64,10 +68,14 @@ struct XS_Root: View {
                     xs_hud.showToast("分享失败!")
                 }
             } else {
-                RewardedAdManager.shared.showAdIfAvailable {
-                    if !XS_Tools.share(points) {
-                        canSave = true
-                        xs_hud.showToast("分享失败!")
+                RewardedAdManager.shared.showAdIfAvailable { success in
+                    if success {
+                        if !XS_Tools.share(points) {
+                            canSave = true
+                            xs_hud.showToast("分享失败!")
+                        }
+                    } else {
+                        xs_hud.showToast("调取错误!")
                     }
                 }
             }

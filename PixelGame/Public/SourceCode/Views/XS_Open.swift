@@ -63,9 +63,13 @@ struct XS_Open: View {
                 }
                 Button {
 #if isLite
-                    RewardedAdManager.shared.showAdIfAvailable {
-                        if !XS_Tools.share(file: item) {
-                            xs_hud.showToast("分享失败!")
+                    RewardedAdManager.shared.showAdIfAvailable { success in
+                        if success {
+                            if !XS_Tools.share(file: item) {
+                                xs_hud.showToast("分享失败!")
+                            }
+                        } else {
+                            xs_hud.showToast("调取错误!")
                         }
                     }
 #else
