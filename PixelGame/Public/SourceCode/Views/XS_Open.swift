@@ -62,11 +62,17 @@ struct XS_Open: View {
                         .clipShape(Circle())
                 }
                 Button {
-                    if XS_Tools.share(file: item) {
-                        
-                    } else {
+#if isLite
+                    RewardedAdManager.shared.showAdIfAvailable {
+                        if !XS_Tools.share(file: item) {
+                            xs_hud.showToast("分享失败!")
+                        }
+                    }
+#else
+                    if !XS_Tools.share(file: item) {
                         xs_hud.showToast("分享失败!")
                     }
+#endif
                 } label: {
                     Image(systemName: "paperplane.circle.fill")
                         .font(.title)
