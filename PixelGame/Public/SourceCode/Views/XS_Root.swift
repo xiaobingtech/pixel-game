@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import UIColorHexSwift
+import DynamicColor
 
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
@@ -185,7 +185,8 @@ struct XS_Point: Equatable, Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(position, forKey: .position)
-        try container.encode(UIColor(cgColor: color).hexString(), forKey: .color)
+        try container.encode(UIColor(cgColor: color).toHex(), forKey: .color)
+    
 //        let colorData = try NSKeyedArchiver.archivedData(withRootObject: UIColor(cgColor: color), requiringSecureCoding: false)
 //        try container.encode(colorData, forKey: .color)
     }
