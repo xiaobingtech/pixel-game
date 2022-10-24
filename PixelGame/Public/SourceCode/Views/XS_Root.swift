@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import DynamicColor
 
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
@@ -19,14 +18,58 @@ struct XS_Root: View {
     
     @State private var isOpen: Bool = false
     
-    private var open: some View {
+#if Lite
+    @State private var canSave: Bool = false
+    @State private var canShare: Bool = false
+    
+    private var save: some View {
         Button {
-            isOpen = true
+            if canSave {
+                if let _ = XS_Tools.save(points) {
+                    canSave = false
+                    xs_hud.showToast("保存成功!")
+                } else {
+                    xs_hud.showToast("保存失败!")
+                }
+            } else {
+                RewardedAdManager.shared.showAdIfAvailable {
+                    if let _ = XS_Tools.save(points) {
+                        canSave = false
+                        xs_hud.showToast("保存成功!")
+                    } else {
+                        canSave = true
+                        xs_hud.showToast("保存失败!")
+                    }
+                }
+            }
         } label: {
-            Text("Open")
-            Image(systemName: "folder.circle.fill")
+            Text(canSave ? "Save" : "Save (AD)")
+            Image(systemName: "arrow.down.to.line.circle.fill")
         }
     }
+    private var share: some View {
+        Button {
+            if canShare {
+                if XS_Tools.share(points) {
+                    canShare = false
+                } else {
+                    xs_hud.showToast("分享失败!")
+                }
+            } else {
+                RewardedAdManager.shared.showAdIfAvailable {
+                    if !XS_Tools.share(points) {
+                        canSave = true
+                        xs_hud.showToast("分享失败!")
+                    }
+                }
+            }
+            
+        } label: {
+            Text(canShare ? "Share": "Share (AD)")
+            Image(systemName: "paperplane.circle.fill")
+        }
+    }
+#else
     private var save: some View {
         Button {
             if let _ = XS_Tools.save(points) {
@@ -49,6 +92,16 @@ struct XS_Root: View {
         } label: {
             Text("Share")
             Image(systemName: "paperplane.circle.fill")
+        }
+    }
+#endif
+    
+    private var open: some View {
+        Button {
+            isOpen = true
+        } label: {
+            Text("Open")
+            Image(systemName: "folder.circle.fill")
         }
     }
     private var delete: some View {
@@ -134,7 +187,7 @@ struct XS_Root: View {
                 }
             }
             if isOpen {
-                XS_Open(color: bgColor, isOpen: $isOpen, points: $points)
+                XS_Open(color: bgColor, isOpen: $isOpen, handle: openFile(_:))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(uiColor: .systemBackground).ignoresSafeArea())
                     .transition(.opacity.animation(.easeInOut))
@@ -152,12 +205,15 @@ struct XS_Root: View {
         }
     }
     private func openShareFile(_ url: URL) {
-        let set = XS_Tools.openShareFile(url) { file in
-            points = file.points
-        }
-        if !set {
+        if !XS_Tools.openShareFile(url, handle: openFile(_:)) {
             xs_hud.showToast("文件无法识别!")
         }
+    }
+    private func openFile(_ file: XS_File) {
+        points = file.points
+        options.current = 0
+        options.offset = .zero
+        options.isClear = false
     }
 }
 
@@ -177,18 +233,15 @@ struct XS_Point: Equatable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         position = try container.decode(CGPoint.self, forKey: .position)
         
-        let hex = try container.decode(UInt64.self, forKey: .color)
-        color = DynamicColor(hex: hex, useAlpha: true).cgColor
-//        let colorData = try container.decode(Data.self, forKey: .color)
-//        color = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)!.cgColor
+        let colorData = try container.decode(Data.self, forKey: .color)
+        color = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)!.cgColor
     }
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(position, forKey: .position)
-        try container.encode(UIColor(cgColor: color).toRGBA(), forKey: .color)
     
-//        let colorData = try NSKeyedArchiver.archivedData(withRootObject: UIColor(cgColor: color), requiringSecureCoding: false)
-//        try container.encode(colorData, forKey: .color)
+        let colorData = try NSKeyedArchiver.archivedData(withRootObject: UIColor(cgColor: color), requiringSecureCoding: false)
+        try container.encode(colorData, forKey: .color)
     }
 }
 

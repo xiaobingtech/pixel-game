@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         AppOpenAdManager.shared.loadAd()
+        RewardedAdManager.shared.loadAd()
         
         return true
     }

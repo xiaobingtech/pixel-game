@@ -10,7 +10,7 @@ import SwiftUI
 struct XS_Open: View {
     let color: CGColor
     @Binding var isOpen: Bool
-    @Binding var points: [[XS_Point]]
+    let handle: (XS_File) -> Void
     
     @Environment(\.xs_hud) private var xs_hud
     
@@ -20,7 +20,7 @@ struct XS_Open: View {
         ZStack(alignment: .topLeading) {
             VStack {
                 Button {
-                    points = item.points
+                    handle(item)
                     isOpen = false
                 } label: {
                     XS_Preview(color: color, points: item.points)

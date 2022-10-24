@@ -32,23 +32,8 @@ struct XS_Tools {
         return SymmetricKey(data: hash)
     }
     static private func sorted(points: [[XS_Point]]) -> [[XS_Point]] {
-        let position = points.reduce(CGPoint.zero) { result, points in
-            let point = points.reduce(CGPoint.zero) { result, point in
-                CGPoint(x: min(result.x, point.position.x), y: min(result.y, point.position.y))
-            }
-            return CGPoint(x: min(result.x, point.x), y: min(result.y, point.y))
-        }
-        return points.map {
-            $0.map { point in
-                XS_Point(
-                    position: CGPoint(
-                        x: point.position.x - position.x,
-                        y: point.position.y - position.y
-                    ),
-                    color: point.color
-                )
-            }
-            .sorted {
+        points.map {
+            $0.sorted {
                 if $0.position.x == $1.position.x {
                     return $0.position.y < $1.position.y
                 } else {
@@ -56,6 +41,30 @@ struct XS_Tools {
                 }
             }
         }
+//        let position = points.reduce(CGPoint.zero) { result, points in
+//            let point = points.reduce(CGPoint.zero) { result, point in
+//                CGPoint(x: min(result.x, point.position.x), y: min(result.y, point.position.y))
+//            }
+//            return CGPoint(x: min(result.x, point.x), y: min(result.y, point.y))
+//        }
+//        return points.map {
+//            $0.map { point in
+//                XS_Point(
+//                    position: CGPoint(
+//                        x: point.position.x - position.x,
+//                        y: point.position.y - position.y
+//                    ),
+//                    color: point.color
+//                )
+//            }
+//            .sorted {
+//                if $0.position.x == $1.position.x {
+//                    return $0.position.y < $1.position.y
+//                } else {
+//                    return $0.position.x < $1.position.x
+//                }
+//            }
+//        }
     }
     static func save(_ points: [[XS_Point]], name: String? = nil) -> String? {
         if points.first(where: { !$0.isEmpty }) == nil { return nil }

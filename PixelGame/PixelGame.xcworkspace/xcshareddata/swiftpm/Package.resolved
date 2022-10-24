@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "dynamiccolor",
-      "kind" : "remoteSourceControl",
-      "location" : "git@github.com:yannickl/DynamicColor.git",
-      "state" : {
-        "revision" : "d9beca13ca85baa50ee29832d0db5129fba69630",
-        "version" : "5.0.1"
-      }
-    },
-    {
       "identity" : "swifthash",
       "kind" : "remoteSourceControl",
       "location" : "git@git.zhlh6.cn:onmyway133/SwiftHash.git",
