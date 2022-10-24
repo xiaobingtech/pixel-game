@@ -177,15 +177,15 @@ struct XS_Point: Equatable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         position = try container.decode(CGPoint.self, forKey: .position)
         
-//        let hexString = try container.decode(String.self, forKey: .color)
-//        color = UIColor(hexString).cgColor
+//        let hex = try container.decode(UInt64.self, forKey: .color)
+//        color = UIColor(hex: hex, useAlpha: true).cgColor
         let colorData = try container.decode(Data.self, forKey: .color)
         color = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)!.cgColor
     }
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(position, forKey: .position)
-        try container.encode(UIColor(cgColor: color).toHex(), forKey: .color)
+        try container.encode(UIColor(cgColor: color).toRGBA(), forKey: .color)
     
 //        let colorData = try NSKeyedArchiver.archivedData(withRootObject: UIColor(cgColor: color), requiringSecureCoding: false)
 //        try container.encode(colorData, forKey: .color)
