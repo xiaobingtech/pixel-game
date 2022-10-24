@@ -177,8 +177,8 @@ struct XS_Point: Equatable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         position = try container.decode(CGPoint.self, forKey: .position)
         
-//        let components = try container.decode([CGFloat].self, forKey: .color)
-        
+//        let hexString = try container.decode(String.self, forKey: .color)
+//        color = UIColor(hexString).cgColor
         let colorData = try container.decode(Data.self, forKey: .color)
         color = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)!.cgColor
     }
