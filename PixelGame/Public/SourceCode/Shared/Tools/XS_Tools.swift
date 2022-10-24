@@ -67,7 +67,8 @@ struct XS_Tools {
 //        }
     }
     static func save(_ points: [[XS_Point]], name: String? = nil) -> String? {
-        if points.first(where: { !$0.isEmpty }) == nil { return nil }
+//        if points.first(where: { !$0.isEmpty }) == nil { return nil }
+        if points == [[]] { return nil }
         let points = sorted(points: points)
         do {
             let encoder = JSONEncoder()
