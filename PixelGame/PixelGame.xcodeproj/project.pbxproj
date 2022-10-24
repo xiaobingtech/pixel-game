@@ -31,6 +31,7 @@
 		AEAFEE6928FFE389008FA5A5 /* XS_Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */; };
 		AEAFEE6A28FFE389008FA5A5 /* XS_Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */; };
 		AEAFEE6D28FFE89F008FA5A5 /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEAFEE6C28FFE89F008FA5A5 /* SwiftHash */; };
+		AEB532FF290625DB0094470C /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEB532FE290625DB0094470C /* SwiftHash */; };
 		AEBEA665290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
 		AEBEA666290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
 		AEC5066829026FA5003EC22C /* XS_Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC5066729026FA5003EC22C /* XS_Open.swift */; };
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB532FF290625DB0094470C /* SwiftHash in Frameworks */,
 				75B738E9E3C05AA4209C3F40 /* Pods_PixelGameLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +287,9 @@
 			dependencies = (
 			);
 			name = PixelGameLite;
+			packageProductDependencies = (
+				AEB532FE290625DB0094470C /* SwiftHash */,
+			);
 			productName = PixelGameLite;
 			productReference = AE6E1FB128FCF05B00F15F00 /* PixelGameLite.app */;
 			productType = "com.apple.product-type.application";
@@ -796,6 +801,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		AEAFEE6C28FFE89F008FA5A5 /* SwiftHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEAFEE6B28FFE89F008FA5A5 /* XCRemoteSwiftPackageReference "SwiftHash" */;
+			productName = SwiftHash;
+		};
+		AEB532FE290625DB0094470C /* SwiftHash */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AEAFEE6B28FFE89F008FA5A5 /* XCRemoteSwiftPackageReference "SwiftHash" */;
 			productName = SwiftHash;

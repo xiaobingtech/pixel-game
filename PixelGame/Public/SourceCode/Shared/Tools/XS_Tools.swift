@@ -31,8 +31,14 @@ struct XS_Tools {
         let hash = SHA256.hash(data: data)
         return SymmetricKey(data: hash)
     }
-    static func save(_ points: [[XS_Point]], name: String? = nil) -> String? {
-        if points.first(where: { !$0.isEmpty }) == nil { return nil }
+    static private func sorted(points: [[XS_Point]]) -> [[XS_Point]] {
+//        let position = points.reduce(into: CGPoint.zero) { result, points in
+//            let point = points.reduce(CGPoint.zero) { result, point in
+//                CGPoint(x: min(result.x, point.position.x), y: min(result.y, point.position.y))
+//            }
+//        }
+        
+        
         let points = points.map {
             $0.sorted {
                 if $0.position.x == $1.position.x {
@@ -42,6 +48,11 @@ struct XS_Tools {
                 }
             }
         }
+        return points
+    }
+    static func save(_ points: [[XS_Point]], name: String? = nil) -> String? {
+        if points.first(where: { !$0.isEmpty }) == nil { return nil }
+        let points = sorted(points: points)
         do {
             let encoder = JSONEncoder()
             let data = try encoder.encode(points)
@@ -113,15 +124,7 @@ struct XS_Tools {
     }
     
     static func share(_ points: [[XS_Point]]) -> Bool {
-        let points = points.map {
-            $0.sorted {
-                if $0.position.x == $1.position.x {
-                    return $0.position.y < $1.position.y
-                } else {
-                    return $0.position.x < $1.position.x
-                }
-            }
-        }
+        let points = sorted(points: points)
         do {
             let encoder = JSONEncoder()
             let data = try encoder.encode(points)
