@@ -32,6 +32,8 @@
 		AEAFEE6A28FFE389008FA5A5 /* XS_Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */; };
 		AEAFEE6D28FFE89F008FA5A5 /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEAFEE6C28FFE89F008FA5A5 /* SwiftHash */; };
 		AEB532FF290625DB0094470C /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEB532FE290625DB0094470C /* SwiftHash */; };
+		AEB5330229062B800094470C /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEB5330129062B800094470C /* UIColorHexSwift */; };
+		AEB5330429062B920094470C /* UIColorHexSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEB5330329062B920094470C /* UIColorHexSwift */; };
 		AEBEA665290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
 		AEBEA666290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
 		AEC5066829026FA5003EC22C /* XS_Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC5066729026FA5003EC22C /* XS_Open.swift */; };
@@ -75,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB5330229062B800094470C /* UIColorHexSwift in Frameworks */,
 				AEAFEE6D28FFE89F008FA5A5 /* SwiftHash in Frameworks */,
 				C4B5702BAA515C7392DBBF68 /* Pods_PixelGame.framework in Frameworks */,
 			);
@@ -84,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB5330429062B920094470C /* UIColorHexSwift in Frameworks */,
 				AEB532FF290625DB0094470C /* SwiftHash in Frameworks */,
 				75B738E9E3C05AA4209C3F40 /* Pods_PixelGameLite.framework in Frameworks */,
 			);
@@ -266,6 +270,7 @@
 			name = PixelGame;
 			packageProductDependencies = (
 				AEAFEE6C28FFE89F008FA5A5 /* SwiftHash */,
+				AEB5330129062B800094470C /* UIColorHexSwift */,
 			);
 			productName = PixelGame;
 			productReference = AE6E1F9C28FCEE9700F15F00 /* PixelGame.app */;
@@ -289,6 +294,7 @@
 			name = PixelGameLite;
 			packageProductDependencies = (
 				AEB532FE290625DB0094470C /* SwiftHash */,
+				AEB5330329062B920094470C /* UIColorHexSwift */,
 			);
 			productName = PixelGameLite;
 			productReference = AE6E1FB128FCF05B00F15F00 /* PixelGameLite.app */;
@@ -323,6 +329,7 @@
 			mainGroup = AE6E1F9328FCEE9600F15F00;
 			packageReferences = (
 				AEAFEE6B28FFE89F008FA5A5 /* XCRemoteSwiftPackageReference "SwiftHash" */,
+				AEB5330029062B800094470C /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */,
 			);
 			productRefGroup = AE6E1F9D28FCEE9700F15F00 /* Products */;
 			projectDirPath = "";
@@ -797,6 +804,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		AEB5330029062B800094470C /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:yeahdongcn/UIColor-Hex-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -809,6 +824,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AEAFEE6B28FFE89F008FA5A5 /* XCRemoteSwiftPackageReference "SwiftHash" */;
 			productName = SwiftHash;
+		};
+		AEB5330129062B800094470C /* UIColorHexSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB5330029062B800094470C /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
+			productName = UIColorHexSwift;
+		};
+		AEB5330329062B920094470C /* UIColorHexSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEB5330029062B800094470C /* XCRemoteSwiftPackageReference "UIColor-Hex-Swift" */;
+			productName = UIColorHexSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

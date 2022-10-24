@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIColorHexSwift
 
 struct XS_Root: View {
     @Environment(\.xs_hud) private var xs_hud
@@ -176,23 +177,15 @@ struct XS_Point: Equatable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         position = try container.decode(CGPoint.self, forKey: .position)
         
-        let components = try container.decode([CGFloat].self, forKey: .color)
-        switch components.count {
-        case 2: color = CGColor(gray: components[0], alpha: components[1])
-        case 4: color = CGColor(red: components[0], green: components[1], blue: components[2], alpha: components[3])
-        default: throw NSError()
-        }
-//        let colorData = try container.decode(Data.self, forKey: .color)
-//        color = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)!.cgColor
+//        let components = try container.decode([CGFloat].self, forKey: .color)
+        
+        let colorData = try container.decode(Data.self, forKey: .color)
+        color = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)!.cgColor
     }
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(position, forKey: .position)
-        if let components = color.components {
-            try container.encode(components, forKey: .color)
-        } else {
-            throw NSError()
-        }
+        try container.encode(UIColor(cgColor: color).hexString(), forKey: .color)
 //        let colorData = try NSKeyedArchiver.archivedData(withRootObject: UIColor(cgColor: color), requiringSecureCoding: false)
 //        try container.encode(colorData, forKey: .color)
     }

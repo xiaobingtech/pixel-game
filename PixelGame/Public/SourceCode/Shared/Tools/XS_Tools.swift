@@ -39,7 +39,16 @@ struct XS_Tools {
             return CGPoint(x: min(result.x, point.x), y: min(result.y, point.y))
         }
         return points.map {
-            $0.sorted {
+            $0.map { point in
+                XS_Point(
+                    position: CGPoint(
+                        x: point.position.x - position.x,
+                        y: point.position.y - position.y
+                    ),
+                    color: point.color
+                )
+            }
+            .sorted {
                 if $0.position.x == $1.position.x {
                     return $0.position.y < $1.position.y
                 } else {
