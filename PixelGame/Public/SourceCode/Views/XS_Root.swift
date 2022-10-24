@@ -24,6 +24,10 @@ struct XS_Root: View {
     
     private var save: some View {
         Button {
+            if points == [[]] {
+                xs_hud.showToast("没有保存内容!")
+                return
+            }
             if canSave {
                 if let _ = XS_Tools.save(points) {
                     canSave = false
@@ -49,6 +53,10 @@ struct XS_Root: View {
     }
     private var share: some View {
         Button {
+            if points == [[]] {
+                xs_hud.showToast("没有分享内容!")
+                return
+            }
             if canShare {
                 if XS_Tools.share(points) {
                     canShare = false
@@ -63,7 +71,6 @@ struct XS_Root: View {
                     }
                 }
             }
-            
         } label: {
             Text(canShare ? "Share": "Share (AD)")
             Image(systemName: "paperplane.circle.fill")
@@ -72,6 +79,10 @@ struct XS_Root: View {
 #else
     private var save: some View {
         Button {
+            if points == [[]] {
+                xs_hud.showToast("没有保存内容!")
+                return
+            }
             if let _ = XS_Tools.save(points) {
                 xs_hud.showToast("保存成功!")
             } else {
@@ -84,6 +95,10 @@ struct XS_Root: View {
     }
     private var share: some View {
         Button {
+            if points == [[]] {
+                xs_hud.showToast("没有分享内容!")
+                return
+            }
             if XS_Tools.share(points) {
                 
             } else {
