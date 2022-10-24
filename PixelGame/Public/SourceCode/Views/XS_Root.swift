@@ -18,7 +18,7 @@ struct XS_Root: View {
     
     @State private var isOpen: Bool = false
     
-#if Lite
+#if isLite
     @State private var canSave: Bool = false
     @State private var canShare: Bool = false
     
