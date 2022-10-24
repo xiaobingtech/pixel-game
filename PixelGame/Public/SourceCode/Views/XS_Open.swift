@@ -81,18 +81,24 @@ struct XS_Open: View {
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            if let files = files?.sorted(by: { $0.date > $1.date }) {
-                GeometryReader { proxy in
-                    ScrollView(.vertical, showsIndicators: false) {
-                        XS_WrappedLayout(data: files, gWidth: proxy.size.width - 30, itemSpacing: 20, lineSpacing: 20, content: cell(_:))
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                            .padding(.vertical, 20)
+            Group {
+                if let files = files?.sorted(by: { $0.date > $1.date }) {
+                    if files.isEmpty {
+                        Text("没有模型!")
+                    } else {
+                        GeometryReader { proxy in
+                            ScrollView(.vertical, showsIndicators: false) {
+                                XS_WrappedLayout(data: files, gWidth: proxy.size.width - 30, itemSpacing: 20, lineSpacing: 20, content: cell(_:))
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                                    .padding(.vertical, 20)
+                            }
+                        }
                     }
+                } else {
+                    Text("加载失败!")
                 }
-            } else {
-                Text("加载失败!")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             Button {
                 isOpen = false
             } label: {
