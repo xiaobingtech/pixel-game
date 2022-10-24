@@ -172,6 +172,11 @@ struct XS_Tools {
 //            activityVC.completionWithItemsHandler = { type, completed, item, error in
 //
 //            }
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                let popPresenter = activityVC.popoverPresentationController
+                popPresenter?.sourceView = UIApplication.keyWindow
+                popPresenter?.sourceRect = UIScreen.main.bounds
+            }
             UIApplication.keyWindow?.rootViewController?.present(activityVC, animated: true)
             return true
         } catch let error {
@@ -196,6 +201,11 @@ struct XS_Tools {
                         handle(file)
                     }
                 )
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    let popPresenter = vc.popoverPresentationController
+                    popPresenter?.sourceView = UIApplication.keyWindow
+                    popPresenter?.sourceRect = UIScreen.main.bounds
+                }
                 UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)
                 return true
             } else {
@@ -239,6 +249,11 @@ struct XS_Tools {
                 }
             }
         )
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let popPresenter = vc.popoverPresentationController
+            popPresenter?.sourceView = UIApplication.keyWindow
+            popPresenter?.sourceRect = UIScreen.main.bounds
+        }
         UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)
     }
     
@@ -258,6 +273,11 @@ struct XS_Tools {
                 }
             }
         )
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let popPresenter = vc.popoverPresentationController
+            popPresenter?.sourceView = UIApplication.keyWindow
+            popPresenter?.sourceRect = UIScreen.main.bounds
+        }
         UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)
     }
     static func delete(all: @escaping () -> Void, current: @escaping () -> Void) {
@@ -274,6 +294,11 @@ struct XS_Tools {
                 current()
             }
         )
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let popPresenter = vc.popoverPresentationController
+            popPresenter?.sourceView = UIApplication.keyWindow
+            popPresenter?.sourceRect = UIScreen.main.bounds
+        }
         UIApplication.keyWindow?.rootViewController?.present(vc, animated: true)
     }
 }
