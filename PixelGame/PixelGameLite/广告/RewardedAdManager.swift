@@ -10,6 +10,7 @@ import GoogleMobileAds
 class RewardedAdManager: NSObject {
     var rewardedAd: GADRewardedAd?
     var handler: (() -> Void)?
+    var canShare: (() -> Void)?
     
     let timeoutInterval: TimeInterval = 4 * 3_600
     var isLoadingAd = false
@@ -79,9 +80,7 @@ class RewardedAdManager: NSObject {
             debugPrint("App open ad will be displayed.")
             isShowingAd = true
             ad.present(fromRootViewController: rootViewController) {
-                DispatchQueue.main.async {
-                    handler()
-                }
+                self.canShare = handler
             }
         }
     }
@@ -97,6 +96,12 @@ extension RewardedAdManager: GADFullScreenContentDelegate {
         isShowingAd = false
         debugPrint("App open ad was dismissed.")
         loadAd()
+        if let handler = canShare {
+            canShare = nil
+            DispatchQueue.main.async {
+                handler()
+            }
+        }
     }
     
     func ad(
