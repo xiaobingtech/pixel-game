@@ -22,7 +22,7 @@
 		<key>UILaunchScreen</key>
 		<dict>
 			<key>XS_Launch</key>
-			<string>XS_Launch</string>
+			<string>XS_Launch.swift</string>
 		</dict>
 	</dict>
 </dict>
