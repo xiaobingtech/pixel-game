@@ -33,6 +33,8 @@
 		AEAFEE6D28FFE89F008FA5A5 /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEAFEE6C28FFE89F008FA5A5 /* SwiftHash */; };
 		AEB0C90D290A65DE00DAB6CD /* XS_Others.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0C90C290A65DE00DAB6CD /* XS_Others.swift */; };
 		AEB0C90E290A65DE00DAB6CD /* XS_Others.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0C90C290A65DE00DAB6CD /* XS_Others.swift */; };
+		AEB0C910290A6EF000DAB6CD /* XS_Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0C90F290A6EF000DAB6CD /* XS_Launch.swift */; };
+		AEB0C911290A6EF000DAB6CD /* XS_Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0C90F290A6EF000DAB6CD /* XS_Launch.swift */; };
 		AEB532FF290625DB0094470C /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEB532FE290625DB0094470C /* SwiftHash */; };
 		AEBEA665290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
 		AEBEA666290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
@@ -68,6 +70,7 @@
 		AE92A7E528FE535A00151A7F /* XS_Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Grid.swift; sourceTree = "<group>"; };
 		AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Tools.swift; sourceTree = "<group>"; };
 		AEB0C90C290A65DE00DAB6CD /* XS_Others.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Others.swift; sourceTree = "<group>"; };
+		AEB0C90F290A6EF000DAB6CD /* XS_Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Launch.swift; sourceTree = "<group>"; };
 		AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XS_WrappedLayout.swift; sourceTree = "<group>"; };
 		AEBEA66729029885005E9190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AEC5066729026FA5003EC22C /* XS_Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XS_Open.swift; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 				AE92A7E528FE535A00151A7F /* XS_Grid.swift */,
 				AEC5066729026FA5003EC22C /* XS_Open.swift */,
 				AEB0C90C290A65DE00DAB6CD /* XS_Others.swift */,
+				AEB0C90F290A6EF000DAB6CD /* XS_Launch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -469,6 +473,7 @@
 				AEC5066829026FA5003EC22C /* XS_Open.swift in Sources */,
 				AE6E1FDA28FD586700F15F00 /* XS_Hud.swift in Sources */,
 				AE6E1FA028FCEE9700F15F00 /* PixelGameApp.swift in Sources */,
+				AEB0C910290A6EF000DAB6CD /* XS_Launch.swift in Sources */,
 				AEBEA665290281FD005E9190 /* XS_WrappedLayout.swift in Sources */,
 				AE92A7E628FE535A00151A7F /* XS_Grid.swift in Sources */,
 				AEAFEE6928FFE389008FA5A5 /* XS_Tools.swift in Sources */,
@@ -483,6 +488,7 @@
 				AEBEA666290281FD005E9190 /* XS_WrappedLayout.swift in Sources */,
 				AEAFEE6A28FFE389008FA5A5 /* XS_Tools.swift in Sources */,
 				AEC5066929026FA5003EC22C /* XS_Open.swift in Sources */,
+				AEB0C911290A6EF000DAB6CD /* XS_Launch.swift in Sources */,
 				AEB0C90E290A65DE00DAB6CD /* XS_Others.swift in Sources */,
 				AE6E1FCB28FD39C400F15F00 /* RewardedAdManager.swift in Sources */,
 				AE92A7E728FE535A00151A7F /* XS_Grid.swift in Sources */,
@@ -619,7 +625,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 0;
@@ -633,7 +639,6 @@
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -659,7 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 0;
@@ -673,7 +678,6 @@
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
