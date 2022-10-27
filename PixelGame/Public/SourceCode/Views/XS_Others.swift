@@ -11,8 +11,17 @@ struct XS_Others: View {
     @Binding var isOthers: Bool
     @Binding var options: XS_Options
     
+    @State private var sl: Double = 0
+    
     private var count: some View {
-        EmptyView()
+        Slider(value: $sl) {
+            Text("\(sl)")
+        } minimumValueLabel: {
+            Text("1")
+        } maximumValueLabel: {
+            Text("5")
+        }
+
     }
     private var map: some View {
         Toggle("当前平面预览", isOn: $options.hasMap)
@@ -20,7 +29,7 @@ struct XS_Others: View {
             .frame(height: 50)
     }
     private var map3d: some View {
-        Toggle("整体预览", isOn: $options.has3DMap)
+        Toggle("整体三维预览", isOn: $options.has3DMap)
             .foregroundColor(Color(uiColor: .label))
             .frame(height: 50)
     }
