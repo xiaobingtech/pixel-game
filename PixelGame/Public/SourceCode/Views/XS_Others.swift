@@ -15,7 +15,7 @@ struct XS_Others: View {
         ZStack(alignment: .topTrailing) {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    Image("AppIcon")
+                    Image(systemName: "AppIcon")
                         .resizable()
                         .frame(width: 80, height: 80)
                 }
