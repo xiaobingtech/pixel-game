@@ -14,13 +14,7 @@ struct XS_Others: View {
     @State private var sl: Double = 0
     
     private var count: some View {
-        Slider(value: $sl) {
-            Text("\(sl)")
-        } minimumValueLabel: {
-            Text("1")
-        } maximumValueLabel: {
-            Text("5")
-        }
+        Slider(value: $sl, in: 1...5, step: 1)
 
     }
     private var map: some View {
