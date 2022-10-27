@@ -144,7 +144,7 @@ struct XS_Root: View {
             Image(systemName: "trash.circle.fill")
         }
     }
-    private var about: some View {
+    private var others: some View {
         Button {
             
         } label: {
@@ -185,7 +185,7 @@ struct XS_Root: View {
                 save
                 open
                 delete
-//                about
+                others
             } label: {
                 Image(systemName: "ellipsis.circle")
             }

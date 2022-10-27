@@ -194,7 +194,7 @@ struct XS_Tools {
             let str = try safe(String(data: data, encoding: .utf8))
             let md5 = MD5(str+email)
             if md5 == file.md5 {
-                let vc = UIAlertController(title: "来自分享", message: "是否打开「\(file.name)」", preferredStyle: .alert)
+                let vc = UIAlertController(title: "来自分享", message: "是否打开「\(file.name)」,当前正在编辑内容将被覆盖", preferredStyle: .alert)
                 vc.addAction(UIAlertAction(title: "Cancel", style: .cancel))
                 vc.addAction(
                     UIAlertAction(title: "Open", style: .destructive) { action in
