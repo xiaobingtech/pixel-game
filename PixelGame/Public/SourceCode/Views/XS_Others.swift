@@ -17,7 +17,7 @@ struct XS_Others: View {
                 VStack {
                     if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
                         (
-                            Text("v").font(.title3)
+                            Text("v").font(.title)
                             +
                             Text(version).font(.largeTitle)
                         )
