@@ -15,16 +15,14 @@ struct XS_Others: View {
         EmptyView()
     }
     private var map: some View {
-        EmptyView()
+        Toggle("当前平面预览", isOn: $options.hasMap)
+            .foregroundColor(Color(uiColor: .label))
+            .frame(height: 50)
     }
     private var map3d: some View {
-        HStack {
-            Text("下载免广告版")
-            Spacer()
-            Toggle("123", isOn: $options.has3DMap)
-        }
-        .foregroundColor(Color(uiColor: .label))
-        .frame(height: 50)
+        Toggle("整体预览", isOn: $options.has3DMap)
+            .foregroundColor(Color(uiColor: .label))
+            .frame(height: 50)
     }
 #if isLite
     private var jump: some View {
