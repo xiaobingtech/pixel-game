@@ -15,25 +15,15 @@ struct XS_Others: View {
         ZStack(alignment: .topTrailing) {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    
-                    if let infoDict = Bundle.main.infoDictionary {
-                        if let bundleIcons = infoDict["CFBundleIcons"] as? [String:Any],
-                           let bundlePrimaryIcon = bundleIcons["CFBundlePrimaryIcon"] as? [String:Any],
-                           let bundleIconFiles = bundlePrimaryIcon["CFBundleIconFiles"] as? [String],
-                           let iconName = bundleIconFiles.last {
-                            Image(iconName)
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                        }
-                        if let version = infoDict["CFBundleShortVersionString"] as? String {
-                            (
-                                Text("v").font(.body)
-                                +
-                                Text(version).font(.title)
-                            )
-                            .padding()
-                        }
+                    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                        (
+                            Text("v").font(.body)
+                            +
+                            Text(version).font(.title)
+                        )
+                        .padding(40)
                     }
+                    
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
