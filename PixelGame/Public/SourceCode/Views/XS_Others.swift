@@ -11,6 +11,39 @@ struct XS_Others: View {
     @Binding var isOthers: Bool
     @Binding var options: XS_Options
     
+    private var count: some View {
+        EmptyView()
+    }
+    private var map: some View {
+        EmptyView()
+    }
+    private var map3d: some View {
+        Button {
+            guard let url = URL(string: "https://apps.apple.com/cn/app/id6443961966"), UIApplication.shared.canOpenURL(url) else { return }
+            UIApplication.shared.open(url)
+        } label: {
+            HStack {
+                Text("下载免广告版")
+                Image(systemName: "chevron.right")
+            }
+            .frame(height: 50)
+        }
+    }
+#if isLite
+    private var jump: some View {
+        Button {
+            guard let url = URL(string: "https://apps.apple.com/cn/app/id6443961966"), UIApplication.shared.canOpenURL(url) else { return }
+            UIApplication.shared.open(url)
+        } label: {
+            HStack {
+                Text("下载免广告版")
+                Image(systemName: "chevron.right")
+            }
+            .frame(height: 50)
+        }
+    }
+#endif
+    
     var body: some View {
         ZStack(alignment: .topTrailing) {
             ScrollView(.vertical, showsIndicators: false) {
@@ -24,7 +57,15 @@ struct XS_Others: View {
                         .padding(50)
                     }
                     VStack(spacing: 0) {
+                        count
                         Divider()
+                        map
+                        Divider()
+                        map3d
+#if isLite
+                        Divider()
+                        jump
+#endif
                     }
                     .padding(.horizontal)
                 }
