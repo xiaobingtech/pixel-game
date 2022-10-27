@@ -17,9 +17,11 @@ struct XS_Root: View {
     @State private var bgColor: CGColor = UIColor.white.cgColor
     
     @State private var isOpen: Bool = false
+    @State private var isOthers: Bool = false
     
 //    @SceneStorage("points") private var data: Data?
     @AppStorage("xs_points") private var data: Data?
+    @AppStorage("xs_options") private var optionsData: Data?
     
 #if isLite
     @State private var canSave: Bool = false
@@ -149,7 +151,7 @@ struct XS_Root: View {
     }
     private var others: some View {
         Button {
-            
+            isOthers = true
         } label: {
             Text("Others")
             Image(systemName: "exclamationmark.circle.fill")
@@ -218,6 +220,12 @@ struct XS_Root: View {
                     .background(Color(uiColor: .systemBackground).ignoresSafeArea())
                     .transition(.opacity.animation(.easeInOut))
             }
+            if isOthers {
+                XS_Others(isOthers: $isOthers, options: $options)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color(uiColor: .systemBackground).ignoresSafeArea())
+                    .transition(.opacity.animation(.easeInOut))
+            }
         }
         .onOpenURL { url in
             debugPrint(url)
@@ -234,6 +242,9 @@ struct XS_Root: View {
                 if let data = data {
                     points = try JSONDecoder().decode([[XS_Point]].self, from: data)
                 }
+                if let data = optionsData {
+                    options = try JSONDecoder().decode(XS_Options.self, from: data)
+                }
             } catch let error {
                 debugPrint(error.localizedDescription)
             }
@@ -241,6 +252,13 @@ struct XS_Root: View {
         .onChange(of: points) { newValue in
             do {
                 data = try JSONEncoder().encode(newValue)
+            } catch let error {
+                debugPrint(error.localizedDescription)
+            }
+        }
+        .onChange(of: options) { newValue in
+            do {
+                optionsData = try JSONEncoder().encode(newValue)
             } catch let error {
                 debugPrint(error.localizedDescription)
             }
@@ -287,10 +305,17 @@ struct XS_Point: Equatable, Codable {
     }
 }
 
-struct XS_Options: Equatable {
+struct XS_Options: Codable, Equatable {
     var current: Int = 0
     var count: Int = 10
     var offset: CGPoint = .zero
+    var hasMap: Bool = true
+    var has3DMap: Bool = true
+    
+    enum CodingKeys: String, CodingKey {
+    case current, count, offset, hasMap, has3DMap
+    }
+    
     var isClear: Bool = false
 }
 
