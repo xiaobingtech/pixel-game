@@ -15,12 +15,9 @@ struct XS_Others: View {
         ZStack(alignment: .topTrailing) {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    ZStack {
-                        if let name = UIApplication.shared.alternateIconName {
-                            Image(name).resizable()
-                        }
-                    }
-                    .frame(width: 80, height: 80)
+                    Image("AppIcon60x60")
+                        .resizable()
+                        .frame(width: 80, height: 80)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
