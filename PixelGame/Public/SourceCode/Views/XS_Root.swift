@@ -18,7 +18,8 @@ struct XS_Root: View {
     
     @State private var isOpen: Bool = false
     
-    @SceneStorage("points") private var data: Data?
+//    @SceneStorage("points") private var data: Data?
+    @AppStorage("xs_points") private var data: Data?
     
 #if isLite
     @State private var canSave: Bool = false
