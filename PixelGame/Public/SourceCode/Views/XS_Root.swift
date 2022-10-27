@@ -18,6 +18,8 @@ struct XS_Root: View {
     
     @State private var isOpen: Bool = false
     
+    @SceneStorage("points") private var data: Data?
+    
 #if isLite
     @State private var canSave: Bool = false
     @State private var canShare: Bool = false
@@ -224,6 +226,23 @@ struct XS_Root: View {
                 }
             } else {
                 openShareFile(url)
+            }
+        }
+        .task {
+            do {
+                if let data = data {
+                    points = try JSONDecoder().decode([[XS_Point]].self, from: data)
+                }
+            } catch let error {
+                debugPrint(error.localizedDescription)
+            }
+            
+        }
+        .onChange(of: points) { newValue in
+            do {
+                data = try JSONEncoder().encode(newValue)
+            } catch let error {
+                debugPrint(error.localizedDescription)
             }
         }
     }

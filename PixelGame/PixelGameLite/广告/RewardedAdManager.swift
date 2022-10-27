@@ -50,7 +50,11 @@ class RewardedAdManager: NSObject {
                 debugPrint("Rewarded ad failed to load with error: \(error.localizedDescription)")
                 if let handler = self.handler {
                     self.handler = nil
-                    handler(false)
+                    if (error as NSError).code == 5 {
+                        self.canShare = handler
+                    } else {
+                        handler(false)
+                    }
                 }
                 return
             }
