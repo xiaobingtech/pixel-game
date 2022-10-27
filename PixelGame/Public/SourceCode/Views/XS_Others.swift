@@ -24,8 +24,10 @@ struct XS_Others: View {
         } label: {
             HStack {
                 Text("下载免广告版")
+                Spacer()
                 Image(systemName: "chevron.right")
             }
+            .foregroundColor(Color(uiColor: .label))
             .frame(height: 50)
         }
     }
@@ -37,8 +39,10 @@ struct XS_Others: View {
         } label: {
             HStack {
                 Text("下载免广告版")
+                Spacer()
                 Image(systemName: "chevron.right")
             }
+            .foregroundColor(Color(uiColor: .label))
             .frame(height: 50)
         }
     }
