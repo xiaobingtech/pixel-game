@@ -42,7 +42,7 @@ struct XS_Others: View {
                 Spacer()
                 Image(systemName: "chevron.right")
             }
-            .font(.system(size: 150))
+            .font(.custom("PingFangSC-Regular", size: 40))
             .foregroundColor(Color(uiColor: .label))
             .frame(height: 50)
         }
