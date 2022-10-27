@@ -27,6 +27,7 @@ struct XS_Others: View {
                 Spacer()
                 Image(systemName: "chevron.right")
             }
+            .font(.custom("PingFangSC-Regular", size: 40))
             .foregroundColor(Color(uiColor: .label))
             .frame(height: 50)
         }
@@ -39,10 +40,8 @@ struct XS_Others: View {
         } label: {
             HStack {
                 Text("下载免广告版")
-                    .font(.custom("PingFangSC-Regular", size: 140))
                 Spacer()
                 Image(systemName: "chevron.right")
-                    .font(.custom("PingFangSC-Regular", size: 140))
             }
             .font(.custom("PingFangSC-Regular", size: 140))
             .foregroundColor(Color(uiColor: .label))
