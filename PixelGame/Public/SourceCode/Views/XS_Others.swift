@@ -42,6 +42,7 @@ struct XS_Others: View {
                 Spacer()
                 Image(systemName: "chevron.right")
             }
+            .font(.system(size: 30))
             .foregroundColor(Color(uiColor: .label))
             .frame(height: 50)
         }
