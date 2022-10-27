@@ -15,9 +15,15 @@ struct XS_Others: View {
         ZStack(alignment: .topTrailing) {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    Image("AppIcon60x60")
-                        .resizable()
-                        .frame(width: 80, height: 80)
+                    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                        (
+                            Text("v").font(.body)
+                            +
+                            Text(version).font(.largeTitle)
+                        )
+                        .padding()
+                    }
+                    
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
