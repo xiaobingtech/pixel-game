@@ -238,9 +238,9 @@ struct XS_Root: View {
             }
             
         }
-        .onChange(of: points) { newValue in
+        .onDisappear {
             do {
-                data = try JSONEncoder().encode(newValue)
+                data = try JSONEncoder().encode(points)
             } catch let error {
                 debugPrint(error.localizedDescription)
             }
