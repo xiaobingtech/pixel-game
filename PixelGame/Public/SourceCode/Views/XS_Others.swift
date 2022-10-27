@@ -21,9 +21,12 @@ struct XS_Others: View {
                             +
                             Text(version).font(.title)
                         )
-                        .padding(40)
+                        .padding(50)
                     }
-                    
+                    VStack(spacing: 0) {
+                        Divider()
+                    }
+                    .padding(.horizontal)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
