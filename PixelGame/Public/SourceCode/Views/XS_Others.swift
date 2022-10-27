@@ -18,19 +18,13 @@ struct XS_Others: View {
         EmptyView()
     }
     private var map3d: some View {
-        Button {
-            guard let url = URL(string: "https://apps.apple.com/cn/app/id6443961966"), UIApplication.shared.canOpenURL(url) else { return }
-            UIApplication.shared.open(url)
-        } label: {
-            HStack {
-                Text("下载免广告版")
-                Spacer()
-                Image(systemName: "chevron.right")
-            }
-            .font(.system(size: 25))
-            .foregroundColor(Color(uiColor: .label))
-            .frame(height: 50)
+        HStack {
+            Text("下载免广告版")
+            Spacer()
+            Toggle("123", isOn: $options.has3DMap)
         }
+        .foregroundColor(Color(uiColor: .label))
+        .frame(height: 50)
     }
 #if isLite
     private var jump: some View {
@@ -43,7 +37,6 @@ struct XS_Others: View {
                 Spacer()
                 Image(systemName: "chevron.right")
             }
-            .font(.custom("PingFangSC-Regular", size: 140))
             .foregroundColor(Color(uiColor: .label))
             .frame(height: 50)
         }
