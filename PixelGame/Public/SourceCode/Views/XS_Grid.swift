@@ -232,6 +232,7 @@ struct XS_Grid: View {
             }
             return content
                 .frame(width: s, height: s)
+                .border(Color(uiColor: .label))
                 .position(point)
         }
     }
