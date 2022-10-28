@@ -22,6 +22,7 @@ struct XS_Grid: View {
     @Environment(\.xs_hud) private var xs_hud
     
     @State private var oldCurrent: Int?
+    @State private var bgColor: CGColor = UIColor.red.cgColor
     
     private func onDrag(_ value: DragGesture.Value, size: Double) {
         guard points.count > options.current else { return }
@@ -202,10 +203,9 @@ struct XS_Grid: View {
                 GeometryReader { mapProxy in
                     VStack {
                         if options.has3DMap {
-                            var bgColor: CGColor = UIColor.white.cgColor
                             XS_Preview(color: bgColor, points: points)
                                 .task {
-                                    bgColor = UIColor.red.cgColor
+//                                    bgColor = UIColor.red.cgColor
                                 }
                                 .frame(width: 150, height: 150)
                         }
