@@ -205,7 +205,7 @@ struct XS_Grid: View {
                         if options.has3DMap {
                             XS_Preview(color: bgColor, points: points)
                                 .task {
-//                                    bgColor = UIColor.red.cgColor
+                                    bgColor = UIColor.systemBackground.cgColor
                                 }
                                 .frame(width: 150, height: 150)
                         }
