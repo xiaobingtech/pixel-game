@@ -20,7 +20,7 @@ struct XS_Root: View {
     @State private var isOthers: Bool = false
     
 //    @SceneStorage("points") private var data: Data?
-    @AppStorage("xs_points") private var data: Data?
+//    @AppStorage("xs_points") private var data: Data?
     @AppStorage("xs_options") private var optionsData: Data?
     
 #if isLite
@@ -237,25 +237,25 @@ struct XS_Root: View {
                 openShareFile(url)
             }
         }
-        .task {
-            do {
-                if let data = data {
-                    points = try JSONDecoder().decode([[XS_Point]].self, from: data)
-                }
-                if let data = optionsData {
-                    options = try JSONDecoder().decode(XS_Options.self, from: data)
-                }
-            } catch let error {
-                debugPrint(error.localizedDescription)
-            }
-        }
-        .onChange(of: points) { newValue in
-            do {
-                data = try JSONEncoder().encode(newValue)
-            } catch let error {
-                debugPrint(error.localizedDescription)
-            }
-        }
+//        .task {
+//            do {
+//                if let data = data {
+//                    points = try JSONDecoder().decode([[XS_Point]].self, from: data)
+//                }
+//                if let data = optionsData {
+//                    options = try JSONDecoder().decode(XS_Options.self, from: data)
+//                }
+//            } catch let error {
+//                debugPrint(error.localizedDescription)
+//            }
+//        }
+//        .onChange(of: points) { newValue in
+//            do {
+//                data = try JSONEncoder().encode(newValue)
+//            } catch let error {
+//                debugPrint(error.localizedDescription)
+//            }
+//        }
         .onChange(of: options) { newValue in
             do {
                 optionsData = try JSONEncoder().encode(newValue)
