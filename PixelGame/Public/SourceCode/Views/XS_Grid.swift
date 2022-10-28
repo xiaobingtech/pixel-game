@@ -201,7 +201,7 @@ struct XS_Grid: View {
                 }
                 .font(.title)
                 GeometryReader { mapProxy in
-                    VStack {
+                    ZStack {
                         let bgColor = (colorScheme == .dark ? UIColor.black : UIColor.white).cgColor
                         if options.has3DMap {
                             XS_Preview(color: bgColor, points: points)
@@ -224,7 +224,7 @@ struct XS_Grid: View {
             let s: CGFloat
             let point: CGPoint
             if size.width > size.height {
-                s = size.width - width
+                s = (size.width - width)/2
                 point = CGPoint(x: s/2, y: s/2)
             } else {
                 s = size.height - width
