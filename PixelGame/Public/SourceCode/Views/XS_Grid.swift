@@ -227,7 +227,7 @@ struct XS_Grid: View {
                 s = (size.width - width)/2
                 point = CGPoint(x: s/2, y: s/2)
             } else {
-                s = size.height - width
+                s = (size.height - width)/2
                 point = CGPoint(x: s/2, y: s/2)
             }
             return content
