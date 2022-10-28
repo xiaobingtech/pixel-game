@@ -20,9 +20,9 @@ struct XS_Grid: View {
     @Binding var options: XS_Options
     
     @Environment(\.xs_hud) private var xs_hud
+    @Environment(\.colorScheme) private var colorScheme
     
     @State private var oldCurrent: Int?
-    @State private var bgColor: CGColor?
     
     private func onDrag(_ value: DragGesture.Value, size: Double) {
         guard points.count > options.current else { return }
@@ -202,11 +202,10 @@ struct XS_Grid: View {
                 .font(.title)
                 GeometryReader { mapProxy in
                     VStack {
-                        if let bgColor = bgColor {
-                            if options.has3DMap {
-                                XS_Preview(color: bgColor, points: points)
-                                    .frame(width: 150, height: 150)
-                            }
+                        let bgColor = (colorScheme == .dark ? UIColor.black : UIColor.white).cgColor
+                        if options.has3DMap {
+                            XS_Preview(color: bgColor, points: points)
+                                .modifier(PositionModifier(size: mapProxy.size, width: size))
                         }
                         content
                             .padding()
@@ -214,10 +213,26 @@ struct XS_Grid: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                .task {
-                    bgColor = UIColor.systemGroupedBackground.cgColor
-                }
             }
+        }
+    }
+    
+    private struct PositionModifier: ViewModifier {
+        let size: CGSize
+        let width: CGFloat
+        func body(content: Content) -> some View {
+            let s: CGFloat
+            let point: CGPoint
+            if size.width > size.height {
+                s = size.width - width
+                point = CGPoint(x: s/2, y: s/2)
+            } else {
+                s = size.height - width
+                point = CGPoint(x: s/2, y: s/2)
+            }
+            return content
+                .frame(width: s, height: s)
+                .position(point)
         }
     }
 }
