@@ -16,7 +16,6 @@ struct XS_Root: View {
     @State private var color: CGColor = UIColor.black.cgColor
     @State private var bgColor: CGColor = UIColor.white.cgColor
     
-    
     @State private var isOpen: Bool = false
     @State private var isOthers: Bool = false
     
