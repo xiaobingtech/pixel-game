@@ -232,7 +232,7 @@ struct XS_Grid: View {
             }
             return content
                 .frame(width: s, height: s)
-                .position(point)
+//                .position(point)
         }
     }
 }
