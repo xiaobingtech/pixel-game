@@ -225,10 +225,10 @@ struct XS_Grid: View {
             let point: CGPoint
             if size.width > size.height {
                 s = floor((size.width - width)/2)
-                point = CGPoint(x: s/2 + 2, y: s/2)
+                point = CGPoint(x: s/2 + 5, y: s/2)
             } else {
                 s = floor((size.height - width)/2)
-                point = CGPoint(x: s/2 + 2, y: s/2)
+                point = CGPoint(x: s/2 + 5, y: s/2)
             }
             return content
                 .frame(width: s, height: s)
