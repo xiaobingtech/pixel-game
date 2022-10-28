@@ -215,7 +215,7 @@ struct XS_Grid: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 .task {
-                    bgColor = UIColor.systemBackground.cgColor
+                    bgColor = UIColor.systemGroupedBackground.cgColor
                 }
             }
         }
