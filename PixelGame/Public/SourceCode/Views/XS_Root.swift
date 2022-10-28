@@ -307,7 +307,6 @@ struct XS_Point: Equatable, Codable {
 
 struct XS_Options: Codable, Equatable {
     var current: Int = 0
-    var count: Int = 10
     var offset: CGPoint = .zero
     var hasMap: Bool = true
     var has3DMap: Bool = true
@@ -317,6 +316,31 @@ struct XS_Options: Codable, Equatable {
     }
     
     var isClear: Bool = false
+    
+    var count: Int = 10
+    var countSlider: Double {
+        get {
+            switch count {
+            case 5: return 0
+            case 20: return 2
+            case 30: return 3
+            case 50: return 4
+            case 70: return 5
+            default: return 1
+            }
+        }
+        set {
+            offset = .zero
+            switch newValue {
+            case 0: count = 5
+            case 2: count = 20
+            case 3: count = 30
+            case 4: count = 50
+            case 5: count = 70
+            default: count = 10
+            }
+        }
+    }
 }
 
 struct XS_Root_Previews: PreviewProvider {

@@ -11,11 +11,23 @@ struct XS_Others: View {
     @Binding var isOthers: Bool
     @Binding var options: XS_Options
     
-    @State private var sl: Double = 0
-    
     private var count: some View {
-        Slider(value: $sl, in: 1...5, step: 1)
-
+        GeometryReader { proxy in
+            HStack {
+                let count = options.count*2 + 1
+                Text("网格范围:\(count)x\(count)")
+                Spacer()
+                Slider(value: .init {
+                    options.countSlider
+                } set: { value in
+                    options.countSlider = value
+                }, in: 0...5, step: 1)
+                .frame(maxWidth: proxy.size.width/2)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .foregroundColor(Color(uiColor: .label))
+        .frame(height: 50)
     }
     private var map: some View {
         Toggle("当前平面预览", isOn: $options.hasMap)
