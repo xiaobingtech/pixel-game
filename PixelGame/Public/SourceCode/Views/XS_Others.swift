@@ -16,6 +16,7 @@ struct XS_Others: View {
             HStack {
                 let count = options.count*2 + 1
                 Text("网格范围:\(count)x\(count)")
+                    .layoutPriority(30)
                 Spacer()
                 Slider(value: .init {
                     options.countSlider
@@ -70,8 +71,8 @@ struct XS_Others: View {
                     }
                     VStack(spacing: 0) {
                         count
-                        Divider()
-                        map
+//                        Divider()
+//                        map
                         Divider()
                         map3d
 #if isLite

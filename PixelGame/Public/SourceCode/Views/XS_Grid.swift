@@ -199,10 +199,24 @@ struct XS_Grid: View {
                     currentBtn(.right)
                 }
                 .font(.title)
-                content
-                    .padding()
-                    .frame(width: size, height: size)
+                GeometryReader { mapProxy in
+                    VStack {
+                        if options.has3DMap {
+                            var bgColor: CGColor = UIColor.white.cgColor
+                            XS_Preview(color: bgColor, points: points)
+                                .task {
+                                    bgColor = UIColor.red.cgColor
+                                }
+                                .frame(width: 150, height: 150)
+                        }
+                        content
+                            .padding()
+                            .frame(width: size, height: size)
+                    }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+                
+                    
             }
         }
     }
