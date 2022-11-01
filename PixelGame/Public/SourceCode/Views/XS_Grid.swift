@@ -215,6 +215,7 @@ struct XS_Grid: View {
                         .offset(x: size.width/2, y: size.height/2)
                 }
                 .frame(width: size.width, height: size.height)
+                .scaledToFill()
             }
         }
     }
