@@ -217,7 +217,7 @@ struct XS_Grid: View {
                 .frame(width: size.width, height: size.height)
             }
         }
-        .scaledToFit()
+        .scaledToFill()
     }
     
     var body: some View {
