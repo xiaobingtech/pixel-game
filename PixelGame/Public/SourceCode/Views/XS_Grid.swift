@@ -204,23 +204,23 @@ struct XS_Grid: View {
     }
     private var map: some View {
         GeometryReader { proxy in
-            ZStack {
-                if points.count > options.current {
-                    let points = points[options.current]
-                    let size = mapSize(points)
-                    let scale = min(proxy.size.width/size.width, proxy.size.height/size.height)
+            if points.count > options.current {
+                let points = points[options.current]
+                let size = mapSize(points)
+                let scale = min(proxy.size.width/size.width, proxy.size.height/size.height)
+                ZStack {
                     ForEach(0..<points.count, id: \.self) { index in
                         let point = points[index]
                         Color(cgColor: point.color)
                             .frame(width: 1, height: 1)
                             .position(point.position)
-                            .offset(x: size.width/2, y: size.height/2)
                     }
-                    .frame(width: size.width, height: size.height)
-                    .scaleEffect(scale)
                 }
+                .frame(width: size.width, height: size.height)
+                .scaleEffect(scale)
+                .offset(x: proxy.size.width/2, y: proxy.size.height/2)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
     
