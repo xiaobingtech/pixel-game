@@ -71,8 +71,8 @@ struct XS_Others: View {
                     }
                     VStack(spacing: 0) {
                         count
-//                        Divider()
-//                        map
+                        Divider()
+                        map
                         Divider()
                         map3d
 #if isLite

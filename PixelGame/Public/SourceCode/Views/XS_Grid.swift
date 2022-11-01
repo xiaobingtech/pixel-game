@@ -190,6 +190,11 @@ struct XS_Grid: View {
         }
     }
     
+    private var map: some View {
+        Text("123")
+            .scaledToFit()
+    }
+    
     var body: some View {
         GeometryReader { proxy in
             let size = min(proxy.size.width, proxy.size.height)
@@ -203,9 +208,12 @@ struct XS_Grid: View {
                 GeometryReader { mapProxy in
                     ZStack {
                         let bgColor = (colorScheme == .dark ? UIColor.black : UIColor.white).cgColor
+                        if options.hasMap {
+                            map.modifier(PositionModifier(size: mapProxy.size, width: size, isFirst: true))
+                        }
                         if options.has3DMap {
                             XS_Preview(color: bgColor, points: points)
-                                .modifier(PositionModifier(size: mapProxy.size, width: size))
+                                .modifier(PositionModifier(size: mapProxy.size, width: size, isFirst: !options.hasMap))
                         }
                         content
                             .padding()
@@ -220,15 +228,24 @@ struct XS_Grid: View {
     private struct PositionModifier: ViewModifier {
         let size: CGSize
         let width: CGFloat
+        let isFirst: Bool
         func body(content: Content) -> some View {
             let s: CGFloat
             let point: CGPoint
             if size.width > size.height {
                 s = floor((size.width - width)/2)
-                point = CGPoint(x: s/2 + 5, y: s/2)
+                if isFirst {
+                    point = CGPoint(x: s/2 + 5, y: s/2)
+                } else {
+                    point = CGPoint(x: s/2 + 5, y: s/2 + s + 5)
+                }
             } else {
                 s = floor((size.height - width)/2)
-                point = CGPoint(x: s/2 + 5, y: s/2)
+                if isFirst {
+                    point = CGPoint(x: s/2 + 5, y: s/2)
+                } else {
+                    point = CGPoint(x: s/2 + s + 10, y: s/2)
+                }
             }
             return content
                 .frame(width: s, height: s)

@@ -309,7 +309,7 @@ struct XS_Options: Codable, Equatable {
     var current: Int = 0
     var offset: CGPoint = .zero
     var hasMap: Bool = true
-    var has3DMap: Bool = true
+    var has3DMap: Bool = false
     
     enum CodingKeys: String, CodingKey {
     case current, count, offset, hasMap, has3DMap
