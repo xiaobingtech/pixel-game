@@ -196,10 +196,9 @@ struct XS_Grid: View {
                 let points = points[options.current]
                 ForEach(0..<points.count, id: \.self) { index in
                     let point = points[index]
-                    Path{ path in
-                        path.move(to: point.position)
-                    }
-                    .stroke(Color(cgColor: point.color))
+                    Color(cgColor: point.color)
+                        .frame(width: 1, height: 1)
+                        .position(point.position)
                 }
             }
         }
