@@ -202,6 +202,7 @@ struct XS_Grid: View {
                 }
             }
         }
+        .scaledToFill()
     }
     
     var body: some View {
