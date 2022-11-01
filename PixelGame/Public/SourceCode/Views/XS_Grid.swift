@@ -201,7 +201,7 @@ struct XS_Grid: View {
             maxPoint.y = max(maxPoint.y, point.position.y)
         }
         return (
-            CGSize(width: maxPoint.x - minPoint.x + 2, height: maxPoint.y - minPoint.y + 2),
+            CGSize(width: maxPoint.x - minPoint.x + 3, height: maxPoint.y - minPoint.y + 3),
             CGPoint(x: (maxPoint.x + minPoint.x)/2, y: (maxPoint.y + minPoint.y)/2)
         )
     }
@@ -220,7 +220,7 @@ struct XS_Grid: View {
                     }
                 }
                 .frame(width: size.width, height: size.height)
-                .offset(x: -center.x - 0.05, y: -center.y - 0.5)
+                .offset(x: -center.x - 0.5, y: -center.y - 0.5)
                 .offset(x: size.width/2, y: size.height/2)
                 .scaleEffect(scale)
 //                .offset(x: proxy.size.width/2, y: proxy.size.height/2)
