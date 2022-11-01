@@ -190,19 +190,34 @@ struct XS_Grid: View {
         }
     }
     
+    private func mapSize(_ points: [XS_Point]) -> CGSize {
+        if points.isEmpty { return .zero }
+        var minPoint = points.first!.position
+        var maxPoint = minPoint
+        for point in points {
+            minPoint.x = min(minPoint.x, point.position.x)
+            maxPoint.x = max(maxPoint.x, point.position.x)
+            minPoint.y = min(minPoint.y, point.position.y)
+            maxPoint.y = max(maxPoint.y, point.position.y)
+        }
+        return CGSize(width: maxPoint.x - minPoint.x + 3, height: maxPoint.y - minPoint.y + 3)
+    }
     private var map: some View {
         ZStack {
             if points.count > options.current {
                 let points = points[options.current]
+                let size = mapSize(points)
                 ForEach(0..<points.count, id: \.self) { index in
                     let point = points[index]
                     Color(cgColor: point.color)
                         .frame(width: 1, height: 1)
                         .position(point.position)
+                        .offset(x: size.width/2, y: size.height/2)
                 }
+                .frame(width: size.width, height: size.height)
             }
         }
-        .scaledToFill()
+        .scaledToFit()
     }
     
     var body: some View {
