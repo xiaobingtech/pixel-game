@@ -201,8 +201,8 @@ struct XS_Grid: View {
             maxPoint.y = max(maxPoint.y, point.position.y)
         }
         return (
-            CGSize(width: maxPoint.x - minPoint.x + 1, height: maxPoint.y - minPoint.y + 1),
-            CGPoint(x: (maxPoint.x + minPoint.x)/2, y: (maxPoint.y + minPoint.y)/2)
+            CGSize(width: maxPoint.x - minPoint.x + 2, height: maxPoint.y - minPoint.y + 2),
+            CGPoint(x: (maxPoint.x + minPoint.x)/2 + 1, y: (maxPoint.y + minPoint.y)/2 + 1)
         )
     }
     private var map: some View {
