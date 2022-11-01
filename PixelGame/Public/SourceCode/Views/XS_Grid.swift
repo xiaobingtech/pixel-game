@@ -191,8 +191,19 @@ struct XS_Grid: View {
     }
     
     private var map: some View {
-        Text("123")
-            .scaledToFit()
+        ZStack {
+            if points.count > options.current {
+                let points = points[options.current]
+                ForEach(0..<points.count, id: \.self) { index in
+                    let point = points[index]
+                    Path{ path in
+                        path.move(to: point.position)
+                    }
+                    .stroke(Color(cgColor: point.color))
+                }
+            }
+        }
+        .scaledToFit()
     }
     
     var body: some View {
