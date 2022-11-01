@@ -190,8 +190,8 @@ struct XS_Grid: View {
         }
     }
     
-    private func mapSize(_ points: [XS_Point]) -> CGSize {
-        if points.isEmpty { return .zero }
+    private func mapSize(_ points: [XS_Point]) -> (CGSize, CGPoint) {
+        if points.isEmpty { return (.zero, .zero) }
         var minPoint = points.first!.position
         var maxPoint = minPoint
         for point in points {
@@ -200,13 +200,16 @@ struct XS_Grid: View {
             minPoint.y = min(minPoint.y, point.position.y)
             maxPoint.y = max(maxPoint.y, point.position.y)
         }
-        return CGSize(width: maxPoint.x - minPoint.x + 3, height: maxPoint.y - minPoint.y + 3)
+        return (
+            CGSize(width: maxPoint.x - minPoint.x, height: maxPoint.y - minPoint.y),
+            CGPoint(x: (maxPoint.x + minPoint.x)/2, y: (maxPoint.y + minPoint.y)/2)
+        )
     }
     private var map: some View {
         GeometryReader { proxy in
             if points.count > options.current {
                 let points = points[options.current]
-                let size = mapSize(points)
+                let (size, center) = mapSize(points)
                 let scale = min(proxy.size.width/size.width, proxy.size.height/size.height)
                 ZStack {
                     ForEach(0..<points.count, id: \.self) { index in
@@ -217,6 +220,7 @@ struct XS_Grid: View {
                     }
                 }
                 .frame(width: size.width, height: size.height)
+                .offset(x: center.x, y: center.y)
                 .scaleEffect(scale)
 //                .offset(x: proxy.size.width/2, y: proxy.size.height/2)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
