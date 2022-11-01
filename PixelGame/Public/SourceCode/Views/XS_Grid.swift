@@ -222,7 +222,7 @@ struct XS_Grid: View {
                 .frame(width: size.width, height: size.height)
                 .offset(x: -center.x, y: -center.y)
                 .scaleEffect(scale)
-//                .offset(x: proxy.size.width/2, y: proxy.size.height/2)
+                .offset(x: proxy.size.width/2, y: proxy.size.height/2)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
