@@ -222,6 +222,7 @@ struct XS_Grid: View {
                     Color(uiColor: UIColor.cyan)
                         .opacity(0.1)
                         .frame(width: count, height: count)
+                        .position(options.offset)
                 }
                 .frame(width: size.width, height: size.height)
                 .offset(x: -center.x, y: -center.y)
