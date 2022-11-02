@@ -42,11 +42,11 @@ struct XS_Others: View {
     }
     private var use: some View {
         Button {
-            guard let url = URL(string: "https://github.com/VirtualLion/Flies/raw/main/PixelGame/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md"), UIApplication.shared.canOpenURL(url) else { return }
+            guard let url = URL(string: "https://github.com/VirtualLion/Flies/raw/main/PixelGame/%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E.md"), UIApplication.shared.canOpenURL(url) else { return }
             UIApplication.shared.open(url)
         } label: {
             HStack {
-                Text("使用说明")
+                Text("操作说明")
                 Spacer()
                 Image(systemName: "chevron.right")
             }
