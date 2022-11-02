@@ -209,6 +209,7 @@ struct XS_Grid: View {
         GeometryReader { proxy in
             if points.count > options.current {
                 let points = points[options.current]
+                let count = Double(options.count*2 + 1)
                 let (size, center) = mapSize(points)
                 let scale = min(proxy.size.width/size.width, proxy.size.height/size.height)
                 ZStack {
@@ -218,6 +219,9 @@ struct XS_Grid: View {
                             .frame(width: 1, height: 1)
                             .position(point.position)
                     }
+                    Color(uiColor: UIColor.cyan)
+                        .opacity(0.1)
+                        .frame(width: count, height: count)
                 }
                 .frame(width: size.width, height: size.height)
                 .offset(x: -center.x, y: -center.y)
