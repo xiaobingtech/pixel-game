@@ -36,10 +36,25 @@ struct XS_Others: View {
             .frame(height: 50)
     }
     private var map3d: some View {
-        Toggle("整体三维预览", isOn: $options.has3DMap)
+        Toggle("整体三维预览(开启会降低流畅度)", isOn: $options.has3DMap)
             .foregroundColor(Color(uiColor: .label))
             .frame(height: 50)
     }
+    private var use: some View {
+        Button {
+            guard let url = URL(string: "https://github.com/VirtualLion/Flies/raw/main/PixelGame/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md"), UIApplication.shared.canOpenURL(url) else { return }
+            UIApplication.shared.open(url)
+        } label: {
+            HStack {
+                Text("使用说明")
+                Spacer()
+                Image(systemName: "chevron.right")
+            }
+            .foregroundColor(Color(uiColor: .label))
+            .frame(height: 50)
+        }
+    }
+
 #if isLite
     private var jump: some View {
         Button {
@@ -75,6 +90,8 @@ struct XS_Others: View {
                         map
                         Divider()
                         map3d
+                        Divider()
+                        use
 #if isLite
                         Divider()
                         jump
