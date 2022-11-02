@@ -192,8 +192,9 @@ struct XS_Grid: View {
     
     private func mapSize(_ points: [XS_Point]) -> (CGSize, CGPoint) {
         if points.isEmpty { return (.zero, .zero) }
-        var minPoint = points.first!.position
-        var maxPoint = minPoint
+        let count = Double(options.count)
+        var minPoint = CGPoint(x: options.offset.x - count, y: options.offset.y - count)
+        var maxPoint = CGPoint(x: options.offset.x + count, y: options.offset.y + count)
         for point in points {
             minPoint.x = min(minPoint.x, point.position.x)
             maxPoint.x = max(maxPoint.x, point.position.x)
