@@ -18,6 +18,7 @@ struct XS_Root: View {
     
     @State private var isOpen: Bool = false
     @State private var isOthers: Bool = false
+    @State private var canUse: Bool = false
     
 //    @SceneStorage("points") private var data: Data?
     @AppStorage("xs_points") private var data: Data?
@@ -203,28 +204,30 @@ struct XS_Root: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            if isPreview {
-                XS_Preview(color: bgColor, points: points)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
-            VStack {
-                menu.shadow(color: Color(uiColor: .systemBackground), radius: 1)
-                if !isPreview {
-                    XS_Grid(color: color, points: $points, options: $options)
+            if canUse {
+                if isPreview {
+                    XS_Preview(color: bgColor, points: points)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-            }
-            if isOpen {
-                XS_Open(color: bgColor, isOpen: $isOpen, handle: openFile(_:))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(uiColor: .systemBackground).ignoresSafeArea())
-                    .transition(.opacity.animation(.easeInOut))
-            }
-            if isOthers {
-                XS_Others(isOthers: $isOthers, options: $options)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(uiColor: .systemBackground).ignoresSafeArea())
-                    .transition(.opacity.animation(.easeInOut))
+                VStack {
+                    menu.shadow(color: Color(uiColor: .systemBackground), radius: 1)
+                    if !isPreview {
+                        XS_Grid(color: color, points: $points, options: $options)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
+                }
+                if isOpen {
+                    XS_Open(color: bgColor, isOpen: $isOpen, handle: openFile(_:))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
+                        .transition(.opacity.animation(.easeInOut))
+                }
+                if isOthers {
+                    XS_Others(isOthers: $isOthers, options: $options)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
+                        .transition(.opacity.animation(.easeInOut))
+                }
             }
         }
         .onOpenURL { url in
@@ -248,6 +251,7 @@ struct XS_Root: View {
             } catch let error {
                 debugPrint(error.localizedDescription)
             }
+            canUse = true
         }
         .onChange(of: points) { newValue in
             do {

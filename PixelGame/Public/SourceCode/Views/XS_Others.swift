@@ -36,7 +36,7 @@ struct XS_Others: View {
             .frame(height: 50)
     }
     private var map3d: some View {
-        Toggle("整体三维预览(开启会降低流畅度)", isOn: $options.has3DMap)
+        Toggle("整体三维预览(降低流畅度)", isOn: $options.has3DMap)
             .foregroundColor(Color(uiColor: .label))
             .frame(height: 50)
     }
