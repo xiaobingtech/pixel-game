@@ -54,7 +54,7 @@ class XS_AdBannerVC: UIViewController {
         }
     }
     private var time: Int {
-        5 + Int(arc4random()%10)
+        1 + Int(arc4random()%5)
     }
     
     override func viewDidLoad() {
