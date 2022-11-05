@@ -15,11 +15,15 @@ struct PixelGameLiteApp: App {
     var body: some Scene {
         WindowGroup {
             XS_Hud {
-                VStack(spacing: 0) {
-                    XS_Root()
-                    let size = AdBanner.size
-                    AdBanner()
-                        .frame(width: size.width, height: size.height)
+                GeometryReader { proxy in
+                    VStack(spacing: 0) {
+                        XS_Root()
+                            .frame(width: proxy.size.width)
+                        let size = AdBanner.size
+                        AdBanner()
+                            .frame(width: size.width, height: size.height)
+                    }
+                    .frame(width: proxy.size.width, height: proxy.size.height)
                 }
             }
         }
