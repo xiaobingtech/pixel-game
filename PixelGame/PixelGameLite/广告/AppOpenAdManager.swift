@@ -61,7 +61,7 @@ class AppOpenAdManager: NSObject {
         GADAppOpenAd.load(
             withAdUnitID: adOpenKey,
             request: GADRequest(),
-            orientation: UIInterfaceOrientation.portrait
+            orientation: UIApplication.keyWindow?.windowScene?.interfaceOrientation ?? UIInterfaceOrientation.portrait
         ) { ad, error in
             self.isLoadingAd = false
             if let error = error {
