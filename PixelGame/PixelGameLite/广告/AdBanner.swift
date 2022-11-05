@@ -54,7 +54,8 @@ class XS_AdBannerVC: UIViewController {
         }
     }
     private var time: Int {
-        1 + Int(arc4random()%5)
+//        1 + Int(arc4random()%5)
+        10
     }
     
     override func viewDidLoad() {
@@ -64,10 +65,7 @@ class XS_AdBannerVC: UIViewController {
     }
     
     private func run() {
-        let banner = getBannerView()
-        view.addSubview(banner)
-        
-        
+        view.insertSubview(getBannerView(), at: 0)
     }
     private func getBannerView() -> GADBannerView {
         let bannerView = GADBannerView(adSize: adSize)
@@ -82,7 +80,7 @@ class XS_AdBannerVC: UIViewController {
 
 extension XS_AdBannerVC: GADBannerViewDelegate {
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(time) + .seconds(20)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(time) + .seconds(10)) {
             self.run()
         }
     }
@@ -91,6 +89,7 @@ extension XS_AdBannerVC: GADBannerViewDelegate {
         ani.values = [-bannerView.bounds.size.height, 0]
         ani.duration = 0.25
         bannerView.layer.add(ani, forKey: nil)
+        view.bringSubviewToFront(bannerView)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(250)) {
             for subView in self.view.subviews {
