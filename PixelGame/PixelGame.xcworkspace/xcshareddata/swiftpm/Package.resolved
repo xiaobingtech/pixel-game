@@ -3,7 +3,7 @@
     {
       "identity" : "swifthash",
       "kind" : "remoteSourceControl",
-      "location" : "git@git.zhlh6.cn:onmyway133/SwiftHash.git",
+      "location" : "git@github.com:onmyway133/SwiftHash.git",
       "state" : {
         "revision" : "a900fc3f33c67eb33c9e650651edf6e23a410b3c",
         "version" : "2.0.2"

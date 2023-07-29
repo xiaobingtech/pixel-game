@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		75B738E9E3C05AA4209C3F40 /* Pods_PixelGameLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9676B61537E412B035A385 /* Pods_PixelGameLite.framework */; };
+		AE62C5952A4ED0F700167DCD /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C5942A4ED0F700167DCD /* SwiftHash */; };
+		AE62C5972A4ED11000167DCD /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C5962A4ED11000167DCD /* SwiftHash */; };
 		AE6E1FA028FCEE9700F15F00 /* PixelGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1F9F28FCEE9700F15F00 /* PixelGameApp.swift */; };
 		AE6E1FA428FCEE9900F15F00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6E1FA328FCEE9900F15F00 /* Assets.xcassets */; };
 		AE6E1FA728FCEE9900F15F00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6E1FA628FCEE9900F15F00 /* Preview Assets.xcassets */; };
@@ -32,10 +34,8 @@
 		AE92A7E728FE535A00151A7F /* XS_Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92A7E528FE535A00151A7F /* XS_Grid.swift */; };
 		AEAFEE6928FFE389008FA5A5 /* XS_Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */; };
 		AEAFEE6A28FFE389008FA5A5 /* XS_Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFEE6828FFE389008FA5A5 /* XS_Tools.swift */; };
-		AEAFEE6D28FFE89F008FA5A5 /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEAFEE6C28FFE89F008FA5A5 /* SwiftHash */; };
 		AEB0C90D290A65DE00DAB6CD /* XS_Others.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0C90C290A65DE00DAB6CD /* XS_Others.swift */; };
 		AEB0C90E290A65DE00DAB6CD /* XS_Others.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0C90C290A65DE00DAB6CD /* XS_Others.swift */; };
-		AEB532FF290625DB0094470C /* SwiftHash in Frameworks */ = {isa = PBXBuildFile; productRef = AEB532FE290625DB0094470C /* SwiftHash */; };
 		AEBEA665290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
 		AEBEA666290281FD005E9190 /* XS_WrappedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBEA664290281FD005E9190 /* XS_WrappedLayout.swift */; };
 		AEC5066829026FA5003EC22C /* XS_Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC5066729026FA5003EC22C /* XS_Open.swift */; };
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEAFEE6D28FFE89F008FA5A5 /* SwiftHash in Frameworks */,
+				AE62C5952A4ED0F700167DCD /* SwiftHash in Frameworks */,
 				C4B5702BAA515C7392DBBF68 /* Pods_PixelGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB532FF290625DB0094470C /* SwiftHash in Frameworks */,
+				AE62C5972A4ED11000167DCD /* SwiftHash in Frameworks */,
 				75B738E9E3C05AA4209C3F40 /* Pods_PixelGameLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +273,7 @@
 			);
 			name = PixelGame;
 			packageProductDependencies = (
-				AEAFEE6C28FFE89F008FA5A5 /* SwiftHash */,
+				AE62C5942A4ED0F700167DCD /* SwiftHash */,
 			);
 			productName = PixelGame;
 			productReference = AE6E1F9C28FCEE9700F15F00 /* PixelGame.app */;
@@ -296,7 +296,7 @@
 			);
 			name = PixelGameLite;
 			packageProductDependencies = (
-				AEB532FE290625DB0094470C /* SwiftHash */,
+				AE62C5962A4ED11000167DCD /* SwiftHash */,
 			);
 			productName = PixelGameLite;
 			productReference = AE6E1FB128FCF05B00F15F00 /* PixelGameLite.app */;
@@ -330,7 +330,7 @@
 			);
 			mainGroup = AE6E1F9328FCEE9600F15F00;
 			packageReferences = (
-				AEAFEE6B28FFE89F008FA5A5 /* XCRemoteSwiftPackageReference "SwiftHash" */,
+				AE62C5932A4ED0F700167DCD /* XCRemoteSwiftPackageReference "SwiftHash" */,
 			);
 			productRefGroup = AE6E1F9D28FCEE9700F15F00 /* Products */;
 			projectDirPath = "";
@@ -812,9 +812,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AEAFEE6B28FFE89F008FA5A5 /* XCRemoteSwiftPackageReference "SwiftHash" */ = {
+		AE62C5932A4ED0F700167DCD /* XCRemoteSwiftPackageReference "SwiftHash" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@git.zhlh6.cn:onmyway133/SwiftHash.git";
+			repositoryURL = "git@github.com:onmyway133/SwiftHash.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
@@ -823,14 +823,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AEAFEE6C28FFE89F008FA5A5 /* SwiftHash */ = {
+		AE62C5942A4ED0F700167DCD /* SwiftHash */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AEAFEE6B28FFE89F008FA5A5 /* XCRemoteSwiftPackageReference "SwiftHash" */;
+			package = AE62C5932A4ED0F700167DCD /* XCRemoteSwiftPackageReference "SwiftHash" */;
 			productName = SwiftHash;
 		};
-		AEB532FE290625DB0094470C /* SwiftHash */ = {
+		AE62C5962A4ED11000167DCD /* SwiftHash */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AEAFEE6B28FFE89F008FA5A5 /* XCRemoteSwiftPackageReference "SwiftHash" */;
+			package = AE62C5932A4ED0F700167DCD /* XCRemoteSwiftPackageReference "SwiftHash" */;
 			productName = SwiftHash;
 		};
 /* End XCSwiftPackageProductDependency section */
