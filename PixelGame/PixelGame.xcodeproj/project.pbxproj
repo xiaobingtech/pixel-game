@@ -265,7 +265,6 @@
 				AE6E1F9828FCEE9700F15F00 /* Sources */,
 				AE6E1F9928FCEE9700F15F00 /* Frameworks */,
 				AE6E1F9A28FCEE9700F15F00 /* Resources */,
-				AE6E1FC628FD227800F15F00 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -287,7 +286,6 @@
 				AE6E1FAD28FCF05B00F15F00 /* Sources */,
 				AE6E1FAE28FCF05B00F15F00 /* Frameworks */,
 				AE6E1FAF28FCF05B00F15F00 /* Resources */,
-				AE6E1FC728FD22AB00F15F00 /* ShellScript */,
 				88F3F3D8DDBA10F979382678 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -410,40 +408,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-resources.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		AE6E1FC628FD227800F15F00 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"begin run\"\nget_branch=`git symbolic-ref --short -q HEAD`\necho git branch is $get_branch\nif git add -A && git commit -a -m \"git auto commit $get_branch\"; then\n git pull && git push origin #&& git log -1 | mail -s \"git auto commit successfully!\" 646306561@qq.com\nfi\n";
-		};
-		AE6E1FC728FD22AB00F15F00 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"begin run\"\nget_branch=`git symbolic-ref --short -q HEAD`\necho git branch is $get_branch\nif git add -A && git commit -a -m \"git auto commit $get_branch\"; then\n git pull && git push origin #&& git log -1 | mail -s \"git auto commit successfully!\" 646306561@qq.com\nfi\n";
 		};
 		E96EAE1C7F9677CC544E8DBE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
