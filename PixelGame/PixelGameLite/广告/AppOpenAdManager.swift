@@ -18,7 +18,7 @@ class AppOpenAdManager: NSObject {
     /// https://support.google.com/admob/answer/9341964?hl=en
     let timeoutInterval: TimeInterval = 4 * 3_600
     /// The app open ad.
-    var appOpenAd: GADAppOpenAd?
+    var appOpenAd: AppOpenAd?
     /// Maintains a reference to the delegate.
     weak var appOpenAdManagerDelegate: AppOpenAdManagerDelegate?
     /// Keeps track of if an app open ad is loading.
@@ -58,11 +58,7 @@ class AppOpenAdManager: NSObject {
         }
         isLoadingAd = true
         debugPrint("Start loading app open ad.")
-        GADAppOpenAd.load(
-            withAdUnitID: adOpenKey,
-            request: GADRequest(),
-            orientation: UIApplication.keyWindow?.windowScene?.interfaceOrientation ?? UIInterfaceOrientation.portrait
-        ) { ad, error in
+        AppOpenAd.load(with: adOpenKey, request: Request()) { ad, error in
             self.isLoadingAd = false
             if let error = error {
                 self.appOpenAd = nil
@@ -100,17 +96,17 @@ class AppOpenAdManager: NSObject {
         if let ad = appOpenAd {
             debugPrint("App open ad will be displayed.")
             isShowingAd = true
-            ad.present(fromRootViewController: viewController)
+            ad.present(from: viewController)
         }
     }
 }
 
-extension AppOpenAdManager: GADFullScreenContentDelegate {
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+extension AppOpenAdManager: FullScreenContentDelegate {
+    func adWillPresentFullScreenContent(_ ad: FullScreenPresentingAd) {
         debugPrint("App open ad is will be presented.")
     }
     
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adDidDismissFullScreenContent(_ ad: FullScreenPresentingAd) {
         appOpenAd = nil
         isShowingAd = false
         debugPrint("App open ad was dismissed.")
@@ -119,7 +115,7 @@ extension AppOpenAdManager: GADFullScreenContentDelegate {
     }
     
     func ad(
-        _ ad: GADFullScreenPresentingAd,
+        _ ad: FullScreenPresentingAd,
         didFailToPresentFullScreenContentWithError error: Error
     ) {
         appOpenAd = nil

@@ -10,7 +10,7 @@ import GoogleMobileAds
 
 struct AdBanner: UIViewControllerRepresentable {
     static var size: CGSize {
-        GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width).size
+        currentOrientationAnchoredAdaptiveBanner(width: UIScreen.main.bounds.size.width).size
     }
     
     func makeUIViewController(context: Context) -> XS_AdBannerVC {
@@ -26,7 +26,7 @@ struct AdBanner: UIViewControllerRepresentable {
     }
     func updateUIViewController(_ uiViewController: XS_AdBannerVC, context: Context) {
 //        context.coordinator.bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
-        uiViewController.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width)
+        uiViewController.adSize = currentOrientationAnchoredAdaptiveBanner(width: UIScreen.main.bounds.size.width)
     }
     
 //    func makeCoordinator() -> Coordinator {
@@ -44,10 +44,10 @@ struct AdBanner: UIViewControllerRepresentable {
 }
 
 class XS_AdBannerVC: UIViewController {
-    lazy var adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.size.width) {
+    lazy var adSize = currentOrientationAnchoredAdaptiveBanner(width: UIScreen.main.bounds.size.width) {
         didSet {
             for subView in view.subviews {
-                if let subView = subView as? GADBannerView {
+                if let subView = subView as? BannerView {
                     subView.adSize = adSize
                 }
             }
@@ -67,8 +67,8 @@ class XS_AdBannerVC: UIViewController {
     private func run() {
         view.insertSubview(getBannerView(), at: 0)
     }
-    private func getBannerView() -> GADBannerView {
-        let bannerView = GADBannerView(adSize: adSize)
+    private func getBannerView() -> BannerView {
+        let bannerView = BannerView(adSize: adSize)
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         bannerView.adUnitID = adBannerKey
         bannerView.rootViewController = self
@@ -78,13 +78,13 @@ class XS_AdBannerVC: UIViewController {
     }
 }
 
-extension XS_AdBannerVC: GADBannerViewDelegate {
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+extension XS_AdBannerVC: BannerViewDelegate {
+    func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(time) + .seconds(10)) {
             self.run()
         }
     }
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: BannerView) {
         let ani = CAKeyframeAnimation(keyPath: "transform.translation.y")
         ani.values = [-bannerView.bounds.size.height, 0]
         ani.duration = 0.25
@@ -99,7 +99,7 @@ extension XS_AdBannerVC: GADBannerViewDelegate {
             }
         }
     }
-    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+    func bannerViewDidRecordImpression(_ bannerView: BannerView) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(time)) {
             self.run()
         }

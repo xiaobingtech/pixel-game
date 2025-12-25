@@ -1,14 +1,15 @@
 {
+  "originHash" : "d196f17504ee47a4d099dcbd934a76cfab7a0ab089147561b38c5f79dd53ee46",
   "pins" : [
     {
       "identity" : "swifthash",
       "kind" : "remoteSourceControl",
-      "location" : "git@git.zhlh6.cn:onmyway133/SwiftHash.git",
+      "location" : "https://github.com/onmyway133/SwiftHash.git",
       "state" : {
         "revision" : "a900fc3f33c67eb33c9e650651edf6e23a410b3c",
         "version" : "2.0.2"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

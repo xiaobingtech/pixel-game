@@ -287,8 +287,8 @@
 				AE6E1FAD28FCF05B00F15F00 /* Sources */,
 				AE6E1FAE28FCF05B00F15F00 /* Frameworks */,
 				AE6E1FAF28FCF05B00F15F00 /* Resources */,
-				8F69E0EADFCFFB6646DDE52F /* [CP] Embed Pods Frameworks */,
 				AE6E1FC728FD22AB00F15F00 /* ShellScript */,
+				88F3F3D8DDBA10F979382678 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -390,21 +390,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8F69E0EADFCFFB6646DDE52F /* [CP] Embed Pods Frameworks */ = {
+		88F3F3D8DDBA10F979382678 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PixelGameLite/Pods-PixelGameLite-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AE6E1FC628FD227800F15F00 /* ShellScript */ = {
@@ -628,7 +632,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 20251225;
 				DEVELOPMENT_ASSET_PATHS = "\"PixelGame/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F9N98X7P4L;
@@ -647,7 +651,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = xsf.hyz.PixelGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -668,7 +672,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 20251225;
 				DEVELOPMENT_ASSET_PATHS = "\"PixelGame/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F9N98X7P4L;
@@ -687,7 +691,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = xsf.hyz.PixelGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -707,7 +711,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20251225;
 				DEVELOPMENT_ASSET_PATHS = "\"PixelGameLite/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F9N98X7P4L;
@@ -727,7 +731,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_SWIFT_FLAGS = "-D isLite";
 				PRODUCT_BUNDLE_IDENTIFIER = xsf.hyz.PixelGameLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -747,7 +751,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20251225;
 				DEVELOPMENT_ASSET_PATHS = "\"PixelGameLite/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F9N98X7P4L;
@@ -767,7 +771,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_SWIFT_FLAGS = "-D isLite";
 				PRODUCT_BUNDLE_IDENTIFIER = xsf.hyz.PixelGameLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -814,7 +818,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		AEAFEE6B28FFE89F008FA5A5 /* XCRemoteSwiftPackageReference "SwiftHash" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@git.zhlh6.cn:onmyway133/SwiftHash.git";
+			repositoryURL = "https://github.com/onmyway133/SwiftHash.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;

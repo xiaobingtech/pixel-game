@@ -8,7 +8,7 @@
 import GoogleMobileAds
 
 class RewardedAdManager: NSObject {
-    var rewardedAd: GADRewardedAd?
+    var rewardedAd: RewardedAd?
     var handler: ((Bool) -> Void)?
     var canShare: ((Bool) -> Void)?
     
@@ -39,9 +39,9 @@ class RewardedAdManager: NSObject {
         }
         isLoadingAd = true
         debugPrint("Start loading app open ad.")
-        GADRewardedAd.load(
-            withAdUnitID: adRewardedKey,
-            request: GADRequest()
+        RewardedAd.load(
+            with: adRewardedKey,
+            request: Request()
         ) { (ad, error) in
             self.isLoadingAd = false
             if let error = error {
@@ -87,19 +87,19 @@ class RewardedAdManager: NSObject {
         if let ad = rewardedAd, let rootViewController = UIApplication.keyWindow?.rootViewController {
             debugPrint("App open ad will be displayed.")
             isShowingAd = true
-            ad.present(fromRootViewController: rootViewController) {
+            ad.present(from: rootViewController) {
                 self.canShare = handler
             }
         }
     }
 }
 
-extension RewardedAdManager: GADFullScreenContentDelegate {
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+extension RewardedAdManager: FullScreenContentDelegate {
+    func adWillPresentFullScreenContent(_ ad: FullScreenPresentingAd) {
         debugPrint("App open ad is will be presented.")
     }
     
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adDidDismissFullScreenContent(_ ad: FullScreenPresentingAd) {
         rewardedAd = nil
         isShowingAd = false
         debugPrint("App open ad was dismissed.")
@@ -113,7 +113,7 @@ extension RewardedAdManager: GADFullScreenContentDelegate {
     }
     
     func ad(
-        _ ad: GADFullScreenPresentingAd,
+        _ ad: FullScreenPresentingAd,
         didFailToPresentFullScreenContentWithError error: Error
     ) {
         rewardedAd = nil
